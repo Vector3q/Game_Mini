@@ -41,6 +41,22 @@ public class @InputControl : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Flash"",
+                    ""type"": ""Button"",
+                    ""id"": ""37cbd3ca-24b5-4a3f-8d63-c28fd96ffe6f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Skill"",
+                    ""type"": ""Button"",
+                    ""id"": ""8a338be0-1f9d-4cb3-992c-02f1ce3140a4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -102,7 +118,7 @@ public class @InputControl : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cb4b9c66-7bfd-4e7f-9adb-3814351cfc24"",
-                    ""path"": ""<Keyboard>/z"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -113,11 +129,33 @@ public class @InputControl : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0e9b106a-dc38-4972-93c3-033b226e3fd0"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4f6aab4e-4d1b-408f-9273-2764a4c0926d"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Flash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48f79c06-61d5-4bfc-a5f6-56df61f8e05f"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skill"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -158,6 +196,8 @@ public class @InputControl : IInputActionCollection, IDisposable
         m_GamePlayer_Movement = m_GamePlayer.FindAction("Movement", throwIfNotFound: true);
         m_GamePlayer_Jump = m_GamePlayer.FindAction("Jump", throwIfNotFound: true);
         m_GamePlayer_Attack = m_GamePlayer.FindAction("Attack", throwIfNotFound: true);
+        m_GamePlayer_Flash = m_GamePlayer.FindAction("Flash", throwIfNotFound: true);
+        m_GamePlayer_Skill = m_GamePlayer.FindAction("Skill", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
@@ -213,6 +253,8 @@ public class @InputControl : IInputActionCollection, IDisposable
     private readonly InputAction m_GamePlayer_Movement;
     private readonly InputAction m_GamePlayer_Jump;
     private readonly InputAction m_GamePlayer_Attack;
+    private readonly InputAction m_GamePlayer_Flash;
+    private readonly InputAction m_GamePlayer_Skill;
     public struct GamePlayerActions
     {
         private @InputControl m_Wrapper;
@@ -220,6 +262,8 @@ public class @InputControl : IInputActionCollection, IDisposable
         public InputAction @Movement => m_Wrapper.m_GamePlayer_Movement;
         public InputAction @Jump => m_Wrapper.m_GamePlayer_Jump;
         public InputAction @Attack => m_Wrapper.m_GamePlayer_Attack;
+        public InputAction @Flash => m_Wrapper.m_GamePlayer_Flash;
+        public InputAction @Skill => m_Wrapper.m_GamePlayer_Skill;
         public InputActionMap Get() { return m_Wrapper.m_GamePlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -238,6 +282,12 @@ public class @InputControl : IInputActionCollection, IDisposable
                 @Attack.started -= m_Wrapper.m_GamePlayerActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_GamePlayerActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_GamePlayerActionsCallbackInterface.OnAttack;
+                @Flash.started -= m_Wrapper.m_GamePlayerActionsCallbackInterface.OnFlash;
+                @Flash.performed -= m_Wrapper.m_GamePlayerActionsCallbackInterface.OnFlash;
+                @Flash.canceled -= m_Wrapper.m_GamePlayerActionsCallbackInterface.OnFlash;
+                @Skill.started -= m_Wrapper.m_GamePlayerActionsCallbackInterface.OnSkill;
+                @Skill.performed -= m_Wrapper.m_GamePlayerActionsCallbackInterface.OnSkill;
+                @Skill.canceled -= m_Wrapper.m_GamePlayerActionsCallbackInterface.OnSkill;
             }
             m_Wrapper.m_GamePlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -251,6 +301,12 @@ public class @InputControl : IInputActionCollection, IDisposable
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
+                @Flash.started += instance.OnFlash;
+                @Flash.performed += instance.OnFlash;
+                @Flash.canceled += instance.OnFlash;
+                @Skill.started += instance.OnSkill;
+                @Skill.performed += instance.OnSkill;
+                @Skill.canceled += instance.OnSkill;
             }
         }
     }
@@ -293,6 +349,8 @@ public class @InputControl : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnFlash(InputAction.CallbackContext context);
+        void OnSkill(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

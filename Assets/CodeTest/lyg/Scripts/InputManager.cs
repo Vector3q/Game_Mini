@@ -22,7 +22,8 @@ public class InputManager : MonoBehaviour
         InputControl.GamePlayer.Movement.Enable();
         InputControl.GamePlayer.Jump.Enable();
         InputControl.GamePlayer.Attack.Enable();
-
+        InputControl.GamePlayer.Flash.Enable();
+        InputControl.GamePlayer.Skill.Enable();
     }
 
     private void OnDisable()
@@ -30,5 +31,7 @@ public class InputManager : MonoBehaviour
         InputControl.GamePlayer.Movement.Disable();
         InputControl.GamePlayer.Jump.Disable();
         InputControl.GamePlayer.Attack.Disable();
+        InputControl.GamePlayer.Flash.Disable();
+        InputControl.GamePlayer.Skill.Disable();
     }
 }

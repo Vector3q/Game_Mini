@@ -8,34 +8,34 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     #region Propertries
+
     readonly Vector3 flippedScale = new Vector3(-1, 1, 1);
 
+    [Header("依赖组件")]
+    private Animator animator = null;
     private Rigidbody2D controllerRigibody;
-
-    [Header("依赖脚本")]
-    [SerializeField] Animator animator;
 
     [Header("移动参数")]
     [SerializeField] float maxSpeed = 0.0f;
-    [SerializeField] float maxGravityVelocity = 10.0f;
     [SerializeField] float jumpForce = 0.0f;
-    [SerializeField] float groundedGravityScale = 0.0f;
 
-    [SerializeField] float jumpGravityScale = 0.0f;
-    [SerializeField] float fallGravityScale = 0.0f;
+    [SerializeField] float maxGravityVelocity = 10.0f;
+    [SerializeField] float jumpGravityScale = 1.0f;
+    [SerializeField] float fallGravityScale = 1.0f;
+    [SerializeField] float groundedGravityScale = 1.0f;
 
-    private Vector2 vectorInput;
-    private int jumpCount;
-    private bool JumpInput;
-    private float counter;
-
-    private bool enableGravity;
-    private bool canMove;
+    public Vector2 vectorInput;
+    public bool JumpInput;
+    public int jumpCount;
+    public bool enableGravity;
 
     private bool isOnGround;
     private bool isFacingLeft;
-    private bool isJumping;
+    public bool isJumping;
     private bool isFalling;
+
+    [Header("其它参数")]
+    [SerializeField] private bool firstLanding;
 
     private int animatorFirstLandingBool;
     private int animatorGroundedBool;
@@ -44,12 +44,13 @@ public class PlayerController : MonoBehaviour
     private int animatorJumpTrigger;
     private int animatorDoubleJumpTrigger;
 
-    [Header("其它参数")]
-    [SerializeField] private bool firstLanding;
+    public float counter;
+    public bool canMove;
 
     #endregion
 
     #region CallBackFunctions
+
     private void Awake()
     {
         controllerRigibody = GetComponent<Rigidbody2D>();
@@ -74,14 +75,14 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-/*        animatorFirstLandingBool = Animator.StringToHash("FirstLanding");
+        animatorFirstLandingBool = Animator.StringToHash("FirstLanding");
         animatorGroundedBool = Animator.StringToHash("Grounded");
-        animatorVelocitySpeed = Animator.StringToHash("Velocity");
         animatorMovementSpeed = Animator.StringToHash("Movement");
+        animatorVelocitySpeed = Animator.StringToHash("Velocity");
         animatorJumpTrigger = Animator.StringToHash("Jump");
         animatorDoubleJumpTrigger = Animator.StringToHash("DoubleJump");
 
-        animator.SetBool(animatorFirstLandingBool, firstLanding);*/
+        animator.SetBool(animatorFirstLandingBool, firstLanding);
 
         enableGravity = true;
         canMove = true;
@@ -91,7 +92,8 @@ public class PlayerController : MonoBehaviour
     {
         UpdateVelocity();
         UpdateDirection();
-
+        UpdateJump();
+        UpdateGravityScale();
     }
 
     #endregion
@@ -101,14 +103,7 @@ public class PlayerController : MonoBehaviour
     private void UpdateVelocity()
     {
         Vector2 velocity = controllerRigibody.velocity;
-        if (vectorInput.x != 0)
-        {
-            velocity.y = Mathf.Clamp(velocity.y, -maxGravityVelocity / 2, maxGravityVelocity / 2);
-        }
-        else
-        {
-            velocity.y = Mathf.Clamp(velocity.y, -maxGravityVelocity, maxGravityVelocity);
-        }
+        velocity.y = Mathf.Clamp(velocity.y, -maxGravityVelocity, maxGravityVelocity);
         animator.SetFloat(animatorVelocitySpeed, controllerRigibody.velocity.y);
         if (canMove)
         {
@@ -132,49 +127,78 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void UpdateJump()
+    {
+        //下落
+        if (isJumping && controllerRigibody.velocity.y < 0)
+        {
+            isFalling = true;
+        }
+
+        //跳跃
+        if (JumpInput)
+        {
+            controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            isJumping = true;
+
+        }
+        if (isOnGround && !isJumping && jumpCount != 0) //如果已经落地了，则重置跳跃计数器
+        {
+            jumpCount = 0;
+            counter = Time.time - counter;
+        }
+    }
+
+    private void UpdateGravityScale()
+    {
+        var gravityScale = groundedGravityScale;
+
+        if (!isOnGround)
+        {
+            gravityScale = controllerRigibody.velocity.y > 0.0f ? jumpGravityScale : fallGravityScale;
+        }
+
+        if (!enableGravity)
+        {
+            gravityScale = 0;
+        }
+
+        controllerRigibody.gravityScale = gravityScale;
+    }
+
+    private void JumpCancel()
+    {
+        JumpInput = false;
+        isJumping = false;
+        if (jumpCount == 1)
+        {
+            animator.ResetTrigger(animatorJumpTrigger);
+        }
+        else if (jumpCount == 2)
+        {
+            animator.ResetTrigger(animatorDoubleJumpTrigger);
+        }
+    }
+
     private void UpdateGrounding(Collision2D collision, bool exitState)
     {
         if (exitState)
         {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Terrian") || collision.gameObject.layer == LayerMask.NameToLayer("Soft Terrian"))
+            if (collision.gameObject.tag == "Ground" && isOnGround)
             {
                 isOnGround = false;
-
             }
         }
         else
         {
             //判断为落地状态
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Terrian")
-                || collision.gameObject.layer == LayerMask.NameToLayer("Soft Terrian")
-                && collision.contacts[0].normal == Vector2.up
-                && !isOnGround)
+            if (collision.gameObject.tag == "Ground"  && !isOnGround)
             {
                 isOnGround = true;
                 isJumping = false;
                 isFalling = false;
             }
-            //判断为头顶碰到物体状态
-            else if (collision.gameObject.layer == LayerMask.NameToLayer("Terrian") || collision.gameObject.layer == LayerMask.NameToLayer("Soft Terrian")
-                && collision.contacts[0].normal == Vector2.down && isJumping)
-            {
-
-            }
         }
-        animator.SetBool(animatorGroundedBool, isOnGround);
-    }
-
-    public void StopHorizontalMovement()
-    {
-        Vector2 velocity = controllerRigibody.velocity;
-        velocity.x = 0;
-        controllerRigibody.velocity = velocity;
-        animator.SetInteger(animatorMovementSpeed, 0);
-    }
-
-    public void SetIsOnGrounded(bool state)
-    {
-        isOnGround = state;
         animator.SetBool(animatorGroundedBool, isOnGround);
     }
     #endregion
@@ -182,7 +206,7 @@ public class PlayerController : MonoBehaviour
     #region Combat
     private void Jump_Canceled(InputAction.CallbackContext context)
     {
-
+        JumpCancel();
     }
 
     private void Jump_Performed(InputAction.CallbackContext context)
@@ -192,7 +216,24 @@ public class PlayerController : MonoBehaviour
 
     private void Jump_Started(InputAction.CallbackContext context)
     {
-
+        counter = Time.time;
+        if (jumpCount <= 1)
+        {
+            ++jumpCount;
+            if (jumpCount == 1)
+            {
+                animator.SetTrigger(animatorJumpTrigger);
+            }
+            else if (jumpCount == 2)
+            {
+                animator.SetTrigger(animatorDoubleJumpTrigger);
+            }
+        }
+        else
+        {
+            return;
+        }
+        JumpInput = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -209,14 +250,5 @@ public class PlayerController : MonoBehaviour
     {
         UpdateGrounding(collision, true);
     }
-    #endregion
-
-    #region Others
-
-    public void FirstLanding()
-    {
-
-    }
- 
     #endregion
 }
