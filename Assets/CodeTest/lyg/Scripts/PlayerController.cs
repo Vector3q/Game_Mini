@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("移动参数")]
     [SerializeField] float maxSpeed = 1.0f;
+    [SerializeField] float MoveForce = 1.0f;
     [SerializeField] float jumpForce = 1.0f;
 
     [SerializeField] float maxGravityVelocity = 10.0f;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private int animatorVelocitySpeed;
     private int animatorJumpTrigger;
     private int animatorAttackTrigger;
+    private int animatorFlashTrigger;
 
 
     public float counter;
@@ -68,6 +70,9 @@ public class PlayerController : MonoBehaviour
         InputManager.InputControl.GamePlayer.Attack.started += Attack_started;
         InputManager.InputControl.GamePlayer.Attack.performed += Attack_performed;
         InputManager.InputControl.GamePlayer.Attack.canceled += Attack_canceled;
+        InputManager.InputControl.GamePlayer.Flash.started += Flash_started;
+        InputManager.InputControl.GamePlayer.Flash.performed += Flash_performed;
+        InputManager.InputControl.GamePlayer.Flash.canceled += Flash_canceled;
     }
 
     private void OnDisable()
@@ -79,6 +84,9 @@ public class PlayerController : MonoBehaviour
         InputManager.InputControl.GamePlayer.Attack.started -= Attack_started;
         InputManager.InputControl.GamePlayer.Attack.performed -= Attack_performed;
         InputManager.InputControl.GamePlayer.Attack.canceled -= Attack_canceled;
+        InputManager.InputControl.GamePlayer.Flash.started -= Flash_started;
+        InputManager.InputControl.GamePlayer.Flash.performed -= Flash_performed;
+        InputManager.InputControl.GamePlayer.Flash.canceled -= Flash_canceled;
     }
 
     private void Start()
@@ -89,6 +97,7 @@ public class PlayerController : MonoBehaviour
         animatorVelocitySpeed = Animator.StringToHash("Velocity");
         animatorJumpTrigger = Animator.StringToHash("Jump");
         animatorAttackTrigger = Animator.StringToHash("Attack");
+        animatorFlashTrigger = Animator.StringToHash("Flash");
 
         enableGravity = true;
         canMove = true;
@@ -105,7 +114,6 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Movement
-
     //控制玩家的移动
     private void UpdateVelocity()
     {
@@ -115,13 +123,30 @@ public class PlayerController : MonoBehaviour
         if (canMove)
         {
             controllerRigibody.velocity = new Vector2(vectorInput.x * maxSpeed, velocity.y);
-            animator.SetInteger(animatorMovementSpeed, (int)vectorInput.x);
+            animator.SetInteger(animatorMovementSpeed, (int)controllerRigibody.velocity.x);
         }
         if (vectorInput.x == 0)
             animator.SetBool(animatorStopBool, true);
         else
             animator.SetBool(animatorStopBool, false);
     }
+
+    /*    //控制玩家的移动(加力的方式)
+        private void UpdateVelocity()
+        {
+            controllerRigibody.AddForce(new Vector2(vectorInput.x * MoveForce, 0), ForceMode2D.Impulse);
+
+            Vector2 velocity = controllerRigibody.velocity;
+            velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
+            velocity.y = Mathf.Clamp(velocity.y, -maxGravityVelocity, maxGravityVelocity);
+            controllerRigibody.velocity = velocity;
+            animator.SetFloat(animatorVelocitySpeed, controllerRigibody.velocity.y);
+            animator.SetInteger(animatorMovementSpeed, (int)controllerRigibody.velocity.x);
+            if (vectorInput.x == 0)
+                animator.SetBool(animatorStopBool, true);
+            else
+                animator.SetBool(animatorStopBool, false);
+        }*/
 
     //控制玩家的旋转
     private void UpdateDirection()
@@ -191,6 +216,11 @@ public class PlayerController : MonoBehaviour
         animator.ResetTrigger(animatorAttackTrigger);
     }
 
+    private void FlashCancel()
+    {
+        animator.ResetTrigger(animatorFlashTrigger);
+    }
+
     private void UpdateGrounding(Collision2D collision, bool exitState)
     {
         if (exitState)
@@ -216,6 +246,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Combat
+    //跳跃键输入
     private void Jump_Started(InputAction.CallbackContext context)
     {
         counter = Time.time;
@@ -232,6 +263,7 @@ public class PlayerController : MonoBehaviour
         JumpCancel();
     }
 
+    //攻击键输入
     private void Attack_started(InputAction.CallbackContext context)
     {
         AttackInput = true;
@@ -247,6 +279,25 @@ public class PlayerController : MonoBehaviour
     private void Attack_canceled(InputAction.CallbackContext context)
     {
         AttackCancel();
+    }
+
+    //瞬移键输入
+    private void Flash_started(InputAction.CallbackContext context)
+    {
+        //FlashInput = true;
+        //animator.SetTrigger(animatorFlashTrigger);
+        //animator.Play("Player_Flash");
+        //controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+    }
+
+    private void Flash_performed(InputAction.CallbackContext context)
+    {
+
+    }
+
+    private void Flash_canceled(InputAction.CallbackContext context)
+    {
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

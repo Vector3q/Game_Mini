@@ -97,7 +97,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2504138825951317756}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7240284f6bd3e4a4dbae17d323ec91cf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 2918141005265816466}
   - component: {fileID: 4807036420029150520}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

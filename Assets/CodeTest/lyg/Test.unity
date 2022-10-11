@@ -224,8 +224,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sword: {fileID: 0}
-  maxSpeed: 8
-  jumpForce: 10
+  maxSpeed: 5
+  MoveForce: 0.5
+  jumpForce: 8
   maxGravityVelocity: 10
   jumpGravityScale: 2
   fallGravityScale: 8
@@ -233,7 +234,7 @@ MonoBehaviour:
   vectorInput: {x: 0, y: 0}
   JumpInput: 0
   jumpCount: 0
-  enableGravity: 0
+  enableGravity: 1
   AttackInput: 0
   isOnGround: 0
   isFacingLeft: 0
@@ -269,7 +270,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 363031976}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7240284f6bd3e4a4dbae17d323ec91cf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

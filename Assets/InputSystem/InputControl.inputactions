@@ -126,6 +126,17 @@
                 },
                 {
                     "name": "",
+                    "id": "b3b2bf8f-4762-4d6d-a235-80dc7cc0788a",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4f6aab4e-4d1b-408f-9273-2764a4c0926d",
                     "path": "<Keyboard>/k",
                     "interactions": "",
