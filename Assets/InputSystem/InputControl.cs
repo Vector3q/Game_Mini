@@ -74,7 +74,7 @@ public class @InputControl : IInputActionCollection, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""8270463f-d89f-4287-8894-daffd40f2d3e"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -85,7 +85,7 @@ public class @InputControl : IInputActionCollection, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""8d077bf8-4d51-472e-8e9c-4f60e7b1f03d"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -96,7 +96,7 @@ public class @InputControl : IInputActionCollection, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""e0df92c2-0e54-4fef-ad00-4da133eb8898"",
-                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -107,7 +107,7 @@ public class @InputControl : IInputActionCollection, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""7cefa0c9-08db-47d9-9d74-2411bef2c6f4"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -129,7 +129,7 @@ public class @InputControl : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0e9b106a-dc38-4972-93c3-033b226e3fd0"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -140,7 +140,7 @@ public class @InputControl : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4f6aab4e-4d1b-408f-9273-2764a4c0926d"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -151,7 +151,7 @@ public class @InputControl : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""48f79c06-61d5-4bfc-a5f6-56df61f8e05f"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

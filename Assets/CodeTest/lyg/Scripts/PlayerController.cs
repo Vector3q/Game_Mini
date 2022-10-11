@@ -14,10 +14,11 @@ public class PlayerController : MonoBehaviour
     [Header("依赖组件")]
     private Animator animator = null;
     private Rigidbody2D controllerRigibody;
+    public GameObject sword;
 
     [Header("移动参数")]
-    [SerializeField] float maxSpeed = 0.0f;
-    [SerializeField] float jumpForce = 0.0f;
+    [SerializeField] float maxSpeed = 1.0f;
+    [SerializeField] float jumpForce = 1.0f;
 
     [SerializeField] float maxGravityVelocity = 10.0f;
     [SerializeField] float jumpGravityScale = 1.0f;
@@ -28,21 +29,21 @@ public class PlayerController : MonoBehaviour
     public bool JumpInput;
     public int jumpCount;
     public bool enableGravity;
+    public bool AttackInput;
 
-    private bool isOnGround;
-    private bool isFacingLeft;
+    public bool isOnGround;
+    public bool isFacingLeft;
     public bool isJumping;
-    private bool isFalling;
+    public bool isFalling;
 
     [Header("其它参数")]
-    [SerializeField] private bool firstLanding;
-
-    private int animatorFirstLandingBool;
     private int animatorGroundedBool;
+    private int animatorStopBool;
     private int animatorMovementSpeed;
     private int animatorVelocitySpeed;
     private int animatorJumpTrigger;
-    private int animatorDoubleJumpTrigger;
+    private int animatorAttackTrigger;
+
 
     public float counter;
     public bool canMove;
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         controllerRigibody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        sword = GameObject.Find("Sword");
     }
 
     private void OnEnable()
@@ -63,6 +65,9 @@ public class PlayerController : MonoBehaviour
         InputManager.InputControl.GamePlayer.Jump.started += Jump_Started;
         InputManager.InputControl.GamePlayer.Jump.performed += Jump_Performed;
         InputManager.InputControl.GamePlayer.Jump.canceled += Jump_Canceled;
+        InputManager.InputControl.GamePlayer.Attack.started += Attack_started;
+        InputManager.InputControl.GamePlayer.Attack.performed += Attack_performed;
+        InputManager.InputControl.GamePlayer.Attack.canceled += Attack_canceled;
     }
 
     private void OnDisable()
@@ -71,18 +76,19 @@ public class PlayerController : MonoBehaviour
         InputManager.InputControl.GamePlayer.Jump.started -= Jump_Started;
         InputManager.InputControl.GamePlayer.Jump.performed -= Jump_Performed;
         InputManager.InputControl.GamePlayer.Jump.canceled -= Jump_Canceled;
+        InputManager.InputControl.GamePlayer.Attack.started -= Attack_started;
+        InputManager.InputControl.GamePlayer.Attack.performed -= Attack_performed;
+        InputManager.InputControl.GamePlayer.Attack.canceled -= Attack_canceled;
     }
 
     private void Start()
     {
-        animatorFirstLandingBool = Animator.StringToHash("FirstLanding");
         animatorGroundedBool = Animator.StringToHash("Grounded");
+        animatorStopBool = Animator.StringToHash("Stop");
         animatorMovementSpeed = Animator.StringToHash("Movement");
         animatorVelocitySpeed = Animator.StringToHash("Velocity");
         animatorJumpTrigger = Animator.StringToHash("Jump");
-        animatorDoubleJumpTrigger = Animator.StringToHash("DoubleJump");
-
-        animator.SetBool(animatorFirstLandingBool, firstLanding);
+        animatorAttackTrigger = Animator.StringToHash("Attack");
 
         enableGravity = true;
         canMove = true;
@@ -100,6 +106,7 @@ public class PlayerController : MonoBehaviour
 
     #region Movement
 
+    //控制玩家的移动
     private void UpdateVelocity()
     {
         Vector2 velocity = controllerRigibody.velocity;
@@ -110,11 +117,15 @@ public class PlayerController : MonoBehaviour
             controllerRigibody.velocity = new Vector2(vectorInput.x * maxSpeed, velocity.y);
             animator.SetInteger(animatorMovementSpeed, (int)vectorInput.x);
         }
+        if (vectorInput.x == 0)
+            animator.SetBool(animatorStopBool, true);
+        else
+            animator.SetBool(animatorStopBool, false);
     }
 
+    //控制玩家的旋转
     private void UpdateDirection()
     {
-        //控制玩家的旋转
         if (controllerRigibody.velocity.x > 1f && isFacingLeft)
         {
             isFacingLeft = false;
@@ -127,28 +138,29 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //控制玩家的跳跃
     private void UpdateJump()
     {
-        //下落
-        if (isJumping && controllerRigibody.velocity.y < 0)
+        if (JumpInput && jumpCount == 0)
         {
-            isFalling = true;
-        }
-
-        //跳跃
-        if (JumpInput)
-        {
+            ++jumpCount;
             controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            animator.SetTrigger(animatorJumpTrigger);
             isJumping = true;
-
         }
-        if (isOnGround && !isJumping && jumpCount != 0) //如果已经落地了，则重置跳跃计数器
+        if (isOnGround && jumpCount != 0) //如果已经落地了，则重置跳跃计数器
         {
             jumpCount = 0;
             counter = Time.time - counter;
         }
+        //判断下落
+        if (isJumping && controllerRigibody.velocity.y < 0)
+        {
+            isFalling = true;
+        }
     }
 
+    //控制玩家的重力
     private void UpdateGravityScale()
     {
         var gravityScale = groundedGravityScale;
@@ -170,20 +182,20 @@ public class PlayerController : MonoBehaviour
     {
         JumpInput = false;
         isJumping = false;
-        if (jumpCount == 1)
-        {
-            animator.ResetTrigger(animatorJumpTrigger);
-        }
-        else if (jumpCount == 2)
-        {
-            animator.ResetTrigger(animatorDoubleJumpTrigger);
-        }
+        animator.ResetTrigger(animatorJumpTrigger);
+    }
+
+    private void AttackCancel()
+    {
+        AttackInput = false;
+        animator.ResetTrigger(animatorAttackTrigger);
     }
 
     private void UpdateGrounding(Collision2D collision, bool exitState)
     {
         if (exitState)
         {
+            //判断不在地面
             if (collision.gameObject.tag == "Ground" && isOnGround)
             {
                 isOnGround = false;
@@ -204,9 +216,10 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Combat
-    private void Jump_Canceled(InputAction.CallbackContext context)
+    private void Jump_Started(InputAction.CallbackContext context)
     {
-        JumpCancel();
+        counter = Time.time;
+        JumpInput = true;
     }
 
     private void Jump_Performed(InputAction.CallbackContext context)
@@ -214,26 +227,26 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void Jump_Started(InputAction.CallbackContext context)
+    private void Jump_Canceled(InputAction.CallbackContext context)
     {
-        counter = Time.time;
-        if (jumpCount <= 1)
-        {
-            ++jumpCount;
-            if (jumpCount == 1)
-            {
-                animator.SetTrigger(animatorJumpTrigger);
-            }
-            else if (jumpCount == 2)
-            {
-                animator.SetTrigger(animatorDoubleJumpTrigger);
-            }
-        }
-        else
-        {
-            return;
-        }
-        JumpInput = true;
+        JumpCancel();
+    }
+
+    private void Attack_started(InputAction.CallbackContext context)
+    {
+        AttackInput = true;
+        //animator.SetTrigger(animatorAttackTrigger);
+        animator.Play("Player_Attack");
+    }
+
+    private void Attack_performed(InputAction.CallbackContext context)
+    {
+
+    }
+
+    private void Attack_canceled(InputAction.CallbackContext context)
+    {
+        AttackCancel();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -873,15 +873,17 @@ MonoBehaviour:
   maxSpeed: 8
   jumpForce: 5
   maxGravityVelocity: 10
-  jumpGravityScale: 5
-  fallGravityScale: 7
+  jumpGravityScale: 2
+  fallGravityScale: 4
   groundedGravityScale: 0.5
   vectorInput: {x: 0, y: 0}
   JumpInput: 0
   jumpCount: 0
   enableGravity: 0
+  isOnGround: 0
+  isFacingLeft: 0
   isJumping: 0
-  firstLanding: 1
+  isFalling: 0
   counter: 0
   canMove: 0
 --- !u!1 &1645105582
