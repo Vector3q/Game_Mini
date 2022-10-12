@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Common;
 
 namespace Game.Skill
 {
@@ -35,7 +36,6 @@ namespace Game.Skill
             else
                 return null;
         }
-
         private SkillData Find(int id)
         {
             for(int i=0; i<skills.Length; i++)
@@ -54,10 +54,15 @@ namespace Game.Skill
         public void GenerateSkill(SkillData data)
         {
             //创建技能预制体
-            GameObject skillGo = Instantiate(data.skillPrefab, transform.position, transform.rotation);
+            //GameObject skillGo = Instantiate(data.skillPrefab, transform.position, transform.rotation);
+            GameObject skillGo = GameObjectPool.instance.CreateObject("skill", data.skillPrefab, transform.position, transform.rotation);
+            SkillDeployer deployer = skillGo.GetComponent<SkillDeployer>();
+            //传递技能数据
+            deployer.SkillData = data;
 
             //销毁技能
-            Destroy(skillGo, data.durationTime);
+            //Destroy(skillGo, data.durationTime);
+            GameObjectPool.instance.CollectObject(skillGo,data.durationTime);
 
             //技能冷却
             StartCoroutine(CoolTimeDown(data));
