@@ -4,9 +4,11 @@ using UnityEngine;
 
 namespace Game.Skill
 {
-    public interface IImpactEffect
+    public enum SelectorType
     {
-        void Execute(SkillDeployer deployer);
+        Collider,
+        Global,
+        All,
+        Random
     }
-
 }
