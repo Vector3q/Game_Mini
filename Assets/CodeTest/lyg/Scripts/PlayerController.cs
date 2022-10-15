@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Movement
-    //控制玩家的移动
+    ///控制玩家的移动
     /*    private void UpdateVelocity()
         {
             Vector2 velocity = controllerRigibody.velocity;
@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool(animatorStopBool, false);
         }*/
 
-    //控制玩家的移动(加力的方式)
+    ///控制玩家的移动(加力的方式)
     private void UpdateVelocity()
     {
         int x = 1;
@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool(animatorStopBool, false);
     }
 
-    //控制玩家的旋转
+    ///控制玩家的旋转
     private void UpdateDirection()
     {
         {
@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //控制玩家的跳跃
+    ///控制玩家的跳跃
     private void UpdateJump()
     {
         if (JumpInput && jumpCount == 0)
@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
     {
         ++jumpCount;
         animator.SetTrigger(animatorJumpTrigger);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.05f);
         controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         isJumping = true;
     }
@@ -264,7 +264,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Combat
-    //跳跃键输入
+    ///跳跃键输入
     private void Jump_Started(InputAction.CallbackContext context)
     {
         counter = Time.time;
@@ -281,7 +281,7 @@ public class PlayerController : MonoBehaviour
         JumpCancel();
     }
 
-    //攻击键输入
+    ///攻击键输入
     private void Attack_started(InputAction.CallbackContext context)
     {
         if (!FlashInput)
@@ -302,14 +302,13 @@ public class PlayerController : MonoBehaviour
         AttackCancel();
     }
 
-    //瞬移键输入
+    ///瞬移键输入
     private void Flash_started(InputAction.CallbackContext context)
     {
         if(!FlashInput)
             StartCoroutine(Flash());
         //FlashInput = true;
         //animator.Play("Player_Flash");
-        //controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
     }
 
     IEnumerator Flash()
