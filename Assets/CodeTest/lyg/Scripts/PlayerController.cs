@@ -315,12 +315,12 @@ public class PlayerController : MonoBehaviour
     {
         FlashInput = true;
         animator.SetTrigger(animatorFlashTrigger);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         maxSpeed = Flashspeed;
         controllerRigibody.AddForce(new Vector2(10* vectorInput.x * MoveForce, 0), ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.25f);
         maxSpeed = Speed;
-        yield return new WaitForSeconds(0.02f);
+        yield return new WaitForSeconds(0.1f);
         FlashInput = false;
     }
 
