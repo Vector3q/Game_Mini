@@ -1,43 +1,37 @@
 fileFormatVersion: 2
-guid: 9ba26b8f30bed57469d98168a2f97401
+guid: 6dedad1ef0996194180087f865925a13
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7071935623343613943
-    second: Player_Run_0
+      213: -1483665779731714255
+    second: Bomb_0
   - first:
-      213: 7927430643088319458
-    second: Player_Run_1
+      213: -1902917897002446259
+    second: Bomb_1
   - first:
-      213: -1396096166093489214
-    second: Player_Run_2
+      213: -5839540051515997725
+    second: Bomb_2
   - first:
-      213: 1781292534199600417
-    second: Player_Run_3
+      213: -5337159410277229379
+    second: Bomb_3
   - first:
-      213: 3041140956625590587
-    second: Player_Run_4
+      213: 4119226490080697988
+    second: Bomb_4
   - first:
-      213: 5743889843950775253
-    second: Player_Run_5
+      213: -3851982506454002795
+    second: Bomb_5
   - first:
-      213: -2326533491371090439
-    second: Player_Run_6
+      213: 6209065506319696928
+    second: Bomb_6
   - first:
-      213: -1732827444613157014
-    second: Player_Run_7
+      213: -3399856696407936989
+    second: Bomb_7
   - first:
-      213: 959529608333098588
-    second: Player_Run_8
+      213: 1985883963534080937
+    second: Bomb_8
   - first:
-      213: -6458370430407502735
-    second: Player_Run_9
-  - first:
-      213: -664291302208399456
-    second: Player_Run_10
-  - first:
-      213: -8780102290416826438
-    second: Player_Run_11
+      213: 4628270932175567455
+    second: Bomb_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,13 +121,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Run_0
+      name: Bomb_0
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 1606
+        width: 674
+        height: 442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f20b985d5f86be0800000000000000
+      internalID: -1483665779731714255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb_1
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 1606
+        width: 674
+        height: 442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d429f68314a7795e0800000000000000
+      internalID: -1902917897002446259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 777
-        width: 173
-        height: 247
+        y: 1164
+        width: 674
+        height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f7a3df0bff842260800000000000000
-      internalID: 7071935623343613943
+      spriteID: 3e109b92349c5fea0800000000000000
+      internalID: -5839540051515997725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Run_1
+      name: Bomb_3
       rect:
         serializedVersion: 2
-        x: 173
-        y: 777
-        width: 173
-        height: 247
+        x: 674
+        y: 1164
+        width: 674
+        height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e363d62b24e30e60800000000000000
-      internalID: 7927430643088319458
+      spriteID: dbcdac83bc99ee5b0800000000000000
+      internalID: -5337159410277229379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Run_2
+      name: Bomb_4
       rect:
         serializedVersion: 2
-        x: 346
-        y: 777
-        width: 173
-        height: 247
+        x: 1348
+        y: 1164
+        width: 674
+        height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,62 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cb76bb0fe110ace0800000000000000
-      internalID: -1396096166093489214
+      spriteID: 48e93aa0bae6a2930800000000000000
+      internalID: 4119226490080697988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Run_3
-      rect:
-        serializedVersion: 2
-        x: 519
-        y: 777
-        width: 173
-        height: 247
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 125c5064f1c68b810800000000000000
-      internalID: 1781292534199600417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Run_4
-      rect:
-        serializedVersion: 2
-        x: 692
-        y: 777
-        width: 173
-        height: 247
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b395f8f569d443a20800000000000000
-      internalID: 3041140956625590587
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Run_5
+      name: Bomb_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 530
-        width: 173
-        height: 247
+        y: 722
+        width: 674
+        height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +240,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dbe8a1716566bf40800000000000000
-      internalID: 5743889843950775253
+      spriteID: 5935acda1520b8ac0800000000000000
+      internalID: -3851982506454002795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Run_6
+      name: Bomb_6
       rect:
         serializedVersion: 2
-        x: 173
-        y: 530
-        width: 173
-        height: 247
+        x: 674
+        y: 722
+        width: 674
+        height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,20 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fdd6c8bd1e76bfd0800000000000000
-      internalID: -2326533491371090439
+      spriteID: 02401535e280b2650800000000000000
+      internalID: 6209065506319696928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Run_7
+      name: Bomb_7
       rect:
         serializedVersion: 2
-        x: 346
-        y: 530
-        width: 173
-        height: 247
+        x: 1348
+        y: 722
+        width: 674
+        height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,62 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6fe8cabe92c3f7e0800000000000000
-      internalID: -1732827444613157014
+      spriteID: 3203f5b095841d0d0800000000000000
+      internalID: -3399856696407936989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Run_8
-      rect:
-        serializedVersion: 2
-        x: 519
-        y: 530
-        width: 173
-        height: 247
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5ef920581fe05d00800000000000000
-      internalID: 959529608333098588
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Run_9
-      rect:
-        serializedVersion: 2
-        x: 692
-        y: 530
-        width: 173
-        height: 247
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1749cabbf424f56a0800000000000000
-      internalID: -6458370430407502735
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Run_10
+      name: Bomb_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 283
-        width: 173
-        height: 247
+        y: 280
+        width: 674
+        height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,20 +303,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a79c788496f7c6f0800000000000000
-      internalID: -664291302208399456
+      spriteID: 9abf79371f64f8b10800000000000000
+      internalID: 1985883963534080937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Run_11
+      name: Bomb_9
       rect:
         serializedVersion: 2
-        x: 173
-        y: 283
-        width: 173
-        height: 247
+        x: 674
+        y: 280
+        width: 674
+        height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,8 +324,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab78c106c7fc62680800000000000000
-      internalID: -8780102290416826438
+      spriteID: f5a379424ebea3040800000000000000
+      internalID: 4628270932175567455
       vertices: []
       indices: 
       edges: []
