@@ -13,24 +13,28 @@ public class PlayerController : MonoBehaviour
 
     [Header("依赖组件")]
     private Animator animator = null;
+    public GameObject Attack = null;
+    private Animator Attackanimator = null;
     private Rigidbody2D controllerRigibody;
-    public GameObject sword;
 
     [Header("移动参数")]
-    [SerializeField] float maxSpeed = 1.0f;
-    [SerializeField] float MoveForce = 1.0f;
-    [SerializeField] float jumpForce = 1.0f;
+    public float maxSpeed = 1.0f;
+    public float Speed = 1.0f;
+    public float Flashspeed = 1.0f;
+    public float MoveForce = 1.0f;
+    public float jumpForce = 1.0f;
 
-    [SerializeField] float maxGravityVelocity = 10.0f;
-    [SerializeField] float jumpGravityScale = 1.0f;
-    [SerializeField] float fallGravityScale = 1.0f;
-    [SerializeField] float groundedGravityScale = 1.0f;
+    public float maxGravityVelocity = 10.0f;
+    public float jumpGravityScale = 1.0f;
+    public float fallGravityScale = 1.0f;
+    public float groundedGravityScale = 1.0f;
 
     public Vector2 vectorInput;
     public bool JumpInput;
     public int jumpCount;
     public bool enableGravity;
-    public bool AttackInput;
+    static public bool AttackInput;
+    public bool FlashInput;
 
     public bool isOnGround;
     public bool isFacingLeft;
@@ -46,9 +50,9 @@ public class PlayerController : MonoBehaviour
     private int animatorAttackTrigger;
     private int animatorFlashTrigger;
 
-
     public float counter;
     public bool canMove;
+    public bool canAttack;
 
     #endregion
 
@@ -58,7 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         controllerRigibody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        sword = GameObject.Find("Sword");
+        Attackanimator = Attack.GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -115,51 +119,57 @@ public class PlayerController : MonoBehaviour
 
     #region Movement
     //控制玩家的移动
-    private void UpdateVelocity()
-    {
-        Vector2 velocity = controllerRigibody.velocity;
-        velocity.y = Mathf.Clamp(velocity.y, -maxGravityVelocity, maxGravityVelocity);
-        animator.SetFloat(animatorVelocitySpeed, controllerRigibody.velocity.y);
-        if (canMove)
+    /*    private void UpdateVelocity()
         {
-            controllerRigibody.velocity = new Vector2(vectorInput.x * maxSpeed, velocity.y);
-            animator.SetInteger(animatorMovementSpeed, (int)controllerRigibody.velocity.x);
-        }
-        if (vectorInput.x == 0)
-            animator.SetBool(animatorStopBool, true);
-        else
-            animator.SetBool(animatorStopBool, false);
-    }
-
-    /*    //控制玩家的移动(加力的方式)
-        private void UpdateVelocity()
-        {
-            controllerRigibody.AddForce(new Vector2(vectorInput.x * MoveForce, 0), ForceMode2D.Impulse);
-
             Vector2 velocity = controllerRigibody.velocity;
-            velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
             velocity.y = Mathf.Clamp(velocity.y, -maxGravityVelocity, maxGravityVelocity);
-            controllerRigibody.velocity = velocity;
             animator.SetFloat(animatorVelocitySpeed, controllerRigibody.velocity.y);
-            animator.SetInteger(animatorMovementSpeed, (int)controllerRigibody.velocity.x);
+            if (canMove)
+            {
+                controllerRigibody.velocity = new Vector2(vectorInput.x * maxSpeed, velocity.y);
+                animator.SetInteger(animatorMovementSpeed, (int)controllerRigibody.velocity.x);
+            }
             if (vectorInput.x == 0)
                 animator.SetBool(animatorStopBool, true);
             else
                 animator.SetBool(animatorStopBool, false);
         }*/
 
+    //控制玩家的移动(加力的方式)
+    private void UpdateVelocity()
+    {
+        int x = 1;
+        if (isFacingLeft) x = -1;
+        controllerRigibody.AddForce(new Vector2(vectorInput.x * MoveForce, 0), ForceMode2D.Impulse);
+        if (vectorInput.x == 0 && FlashInput) { controllerRigibody.AddForce(new Vector2(x * MoveForce, 0), ForceMode2D.Impulse); }
+        Vector2 velocity = controllerRigibody.velocity;
+        if (vectorInput.x == 0 && !FlashInput){velocity.x = 0;}
+        if (FlashInput) { velocity.y = 0; }
+        velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
+        velocity.y = Mathf.Clamp(velocity.y, -maxGravityVelocity, maxGravityVelocity);
+        controllerRigibody.velocity = velocity;
+        animator.SetFloat(animatorVelocitySpeed, controllerRigibody.velocity.y);
+        animator.SetInteger(animatorMovementSpeed, (int)controllerRigibody.velocity.x);
+        if (vectorInput.x == 0)
+            animator.SetBool(animatorStopBool, true);
+        else
+            animator.SetBool(animatorStopBool, false);
+    }
+
     //控制玩家的旋转
     private void UpdateDirection()
     {
-        if (controllerRigibody.velocity.x > 1f && isFacingLeft)
         {
-            isFacingLeft = false;
-            transform.localScale = Vector3.one;
-        }
-        else if (controllerRigibody.velocity.x < -1f && !isFacingLeft)
-        {
-            isFacingLeft = true;
-            transform.localScale = flippedScale;
+            if (controllerRigibody.velocity.x > 1f && isFacingLeft)
+            {
+                isFacingLeft = false;
+                transform.localScale = Vector3.one;
+            }
+            else if (controllerRigibody.velocity.x < -1f && !isFacingLeft)
+            {
+                isFacingLeft = true;
+                transform.localScale = flippedScale;
+            }
         }
     }
 
@@ -168,10 +178,9 @@ public class PlayerController : MonoBehaviour
     {
         if (JumpInput && jumpCount == 0)
         {
-            ++jumpCount;
-            controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            animator.SetTrigger(animatorJumpTrigger);
-            isJumping = true;
+            StartCoroutine(Jump());
+            //controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            //animator.SetTrigger(animatorJumpTrigger);
         }
         if (isOnGround && jumpCount != 0) //如果已经落地了，则重置跳跃计数器
         {
@@ -183,6 +192,15 @@ public class PlayerController : MonoBehaviour
         {
             isFalling = true;
         }
+    }
+
+    IEnumerator Jump()
+    {
+        ++jumpCount;
+        animator.SetTrigger(animatorJumpTrigger);
+        yield return new WaitForSeconds(0.2f);
+        controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        isJumping = true;
     }
 
     //控制玩家的重力
@@ -266,9 +284,12 @@ public class PlayerController : MonoBehaviour
     //攻击键输入
     private void Attack_started(InputAction.CallbackContext context)
     {
-        AttackInput = true;
-        //animator.SetTrigger(animatorAttackTrigger);
-        animator.Play("Player_Attack");
+        if (!FlashInput)
+        {
+            AttackInput = true;
+            Attackanimator.SetTrigger(animatorAttackTrigger);
+        }
+        //Attackanimator.Play("Player_Attack");
     }
 
     private void Attack_performed(InputAction.CallbackContext context)
@@ -284,10 +305,24 @@ public class PlayerController : MonoBehaviour
     //瞬移键输入
     private void Flash_started(InputAction.CallbackContext context)
     {
+        if(!FlashInput)
+            StartCoroutine(Flash());
         //FlashInput = true;
-        //animator.SetTrigger(animatorFlashTrigger);
         //animator.Play("Player_Flash");
         //controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+    }
+
+    IEnumerator Flash()
+    {
+        FlashInput = true;
+        animator.SetTrigger(animatorFlashTrigger);
+        yield return new WaitForSeconds(0.1f);
+        maxSpeed = Flashspeed;
+        controllerRigibody.AddForce(new Vector2(10* vectorInput.x * MoveForce, 0), ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.3f);
+        maxSpeed = Speed;
+        yield return new WaitForSeconds(0.02f);
+        FlashInput = false;
     }
 
     private void Flash_performed(InputAction.CallbackContext context)
@@ -297,7 +332,7 @@ public class PlayerController : MonoBehaviour
 
     private void Flash_canceled(InputAction.CallbackContext context)
     {
-
+        animator.ResetTrigger(animatorFlashTrigger);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
