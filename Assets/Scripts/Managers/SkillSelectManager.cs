@@ -24,15 +24,15 @@ public class SkillSelectManager : MonoBehaviour
             _instance = this;
         }
 
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded += (scene,mode) =>
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += (scene, mode) =>
         {
-            if(scene.name == "GameScene")
+            if (scene.name == "GameScene")
             {
                 FindPlayer();
                 SkillSelectManager.Instance._copySkills();
                 GameManager.Instance.State = GameManager.GameState.RUNNING;
             }
-        }
+        };
     }
     void Start()
     {
