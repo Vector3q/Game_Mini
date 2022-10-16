@@ -1591,6 +1591,10 @@ MonoBehaviour:
     acbFile: Character_movement.acb
     awbFile: 
     loaderStatus: 0
+  - name: Enviroment
+    acbFile: Enviroment.acb
+    awbFile: 
+    loaderStatus: 0
   dspBusSetting: 
   dontDestroyOnLoad: 0
   dontRemoveExistsCueSheet: 0
@@ -2051,6 +2055,7 @@ Transform:
   - {fileID: 1757330185}
   - {fileID: 1841458898}
   - {fileID: 688910471}
+  - {fileID: 1219779590}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2637,6 +2642,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2918141005265816466, guid: e478dde072b1494468cde104ce7d8133, type: 3}
   m_PrefabInstance: {fileID: 796906868}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1219779589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1219779590}
+  - component: {fileID: 1219779591}
+  m_Layer: 0
+  m_Name: "\u73AF\u5883\u97F3\u8272(CriAtomSource)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1219779590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219779589}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.458442, y: -2.1239517, z: 7.979847}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 919536945}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1219779591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219779589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 1
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _freezeOrientation: 0
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+  _use3dRandomization: 0
+  _randomPositionListMaxLength: 0
+  randomize3dConfig:
+    followsOriginalSource: 0
+    calculationType: 0
+    calculationParameters:
+    - 0
+    - 0
+    - 0
+  _cueName: "\u73AF\u5883\u97F3\u8272"
+  _cueSheet: Enviroment
 --- !u!4 &1228290964 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2918141005265816466, guid: e478dde072b1494468cde104ce7d8133, type: 3}
@@ -3689,7 +3758,7 @@ MonoBehaviour:
   initializesAtom: 1
   atomConfig:
     acfFileName: 
-    maxVirtualVoices: 32
+    maxVirtualVoices: 34
     maxVoiceLimitGroups: 32
     maxCategories: 32
     maxAisacs: 8
@@ -3701,8 +3770,8 @@ MonoBehaviour:
       memoryVoices: 16
       streamingVoices: 8
     hcaMxVoicePoolConfig:
-      memoryVoices: 0
-      streamingVoices: 0
+      memoryVoices: 5
+      streamingVoices: 5
     outputSamplingRate: 0
     usesInGamePreview: 0
     inGamePreviewMode: 0
