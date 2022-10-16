@@ -4363,7 +4363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7040946893620667368, guid: 5fb7637463971204dbe38934175a9f58, type: 3}
       propertyPath: jumpForce
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7040946893620667368, guid: 5fb7637463971204dbe38934175a9f58, type: 3}
       propertyPath: Flashspeed
@@ -4371,19 +4371,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7040946893620667368, guid: 5fb7637463971204dbe38934175a9f58, type: 3}
       propertyPath: maxFallVelocity
-      value: 10
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 7040946893620667368, guid: 5fb7637463971204dbe38934175a9f58, type: 3}
       propertyPath: maxJumpVelocity
-      value: 10
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 7040946893620667368, guid: 5fb7637463971204dbe38934175a9f58, type: 3}
       propertyPath: fallGravityScale
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7040946893620667368, guid: 5fb7637463971204dbe38934175a9f58, type: 3}
       propertyPath: jumpGravityScale
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7040946893620667368, guid: 5fb7637463971204dbe38934175a9f58, type: 3}
       propertyPath: maxGravityVelocity
