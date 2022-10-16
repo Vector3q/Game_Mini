@@ -381,7 +381,12 @@ public class PlayerController : MonoBehaviour
     /// <param name="context"></param>
     private void Skill_1_started(InputAction.CallbackContext context)
     {
-
+        Game.Skill.CharacterSkillManager manager = GetComponent<Game.Skill.CharacterSkillManager>();
+        if (manager.skills[0].isPassive)
+            return;
+        Game.Skill.SkillData data = manager.PrepareSkill(manager.skills[0].skillID);
+        if (data != null)
+            manager.GenerateSkill(data);
     }
 
     private void Skill_1_performed(InputAction.CallbackContext context)
@@ -400,7 +405,12 @@ public class PlayerController : MonoBehaviour
     /// <param name="context"></param>
     private void Skill_2_started(InputAction.CallbackContext context)
     {
-
+        Game.Skill.CharacterSkillManager manager = GetComponent<Game.Skill.CharacterSkillManager>();
+        if (manager.skills[1].isPassive)
+            return;
+        Game.Skill.SkillData data = manager.PrepareSkill(manager.skills[1].skillID);
+        if (data != null)
+            manager.GenerateSkill(data);
     }
 
     private void Skill_2_performed(InputAction.CallbackContext context)

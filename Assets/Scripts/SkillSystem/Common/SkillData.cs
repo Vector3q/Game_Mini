@@ -16,6 +16,7 @@ namespace Game.Skill
         public float coolRemain; // ÀäÈ´Ê£Óà 
         public float attackDistance; // ¹¥»÷¾àÀë
         public string[] attackTargetTags;// ¹¥»÷¶ÔÏótags
+        public bool isPassive = false;
 
         [HideInInspector]
         public Transform[] attackTargets; // ¹¥»÷Ä¿±ê
