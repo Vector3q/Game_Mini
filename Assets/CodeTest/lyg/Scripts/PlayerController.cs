@@ -1,4 +1,4 @@
-//using Com.LuisPedroFonseca.ProCamera2D;
+using Com.LuisPedroFonseca.ProCamera2D;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,7 +24,8 @@ public class PlayerController : MonoBehaviour
     public float MoveForce = 1.0f;
     public float jumpForce = 1.0f;
 
-    public float maxGravityVelocity = 10.0f;
+    public float maxJumpVelocity = 10.0f;
+    public float maxFallVelocity = 10.0f;
     public float jumpGravityScale = 1.0f;
     public float fallGravityScale = 1.0f;
     public float groundedGravityScale = 1.0f;
@@ -146,7 +147,7 @@ public class PlayerController : MonoBehaviour
         if (vectorInput.x == 0 && !FlashInput){velocity.x = 0;}
         if (FlashInput) { velocity.y = 0; }
         velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
-        velocity.y = Mathf.Clamp(velocity.y, -maxGravityVelocity, maxGravityVelocity);
+        velocity.y = Mathf.Clamp(velocity.y, -maxFallVelocity, maxJumpVelocity);
         controllerRigibody.velocity = velocity;
         animator.SetFloat(animatorVelocitySpeed, controllerRigibody.velocity.y);
         animator.SetInteger(animatorMovementSpeed, (int)controllerRigibody.velocity.x);
@@ -203,7 +204,7 @@ public class PlayerController : MonoBehaviour
         isJumping = true;
     }
 
-    //控制玩家的重力
+    ///控制玩家的重力
     private void UpdateGravityScale()
     {
         var gravityScale = groundedGravityScale;
