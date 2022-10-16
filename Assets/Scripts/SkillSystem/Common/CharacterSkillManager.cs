@@ -7,6 +7,7 @@ namespace Game.Skill
 {
     public class CharacterSkillManager : MonoBehaviour
     {
+        [HideInInspector]
         public SkillData[] skills; // 技能列表
         public Animator anima = null;
 
