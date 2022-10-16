@@ -92,4 +92,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.16666667
+    functionName: PlaySe
+    data: Click
+    objectReferenceParameter: {fileID: 11500000, guid: 527a2e92d37bcce4ba449815f5976ada, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
