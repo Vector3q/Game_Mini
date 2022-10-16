@@ -72,12 +72,22 @@ public class PlayerController : MonoBehaviour
         InputManager.InputControl.GamePlayer.Jump.started += Jump_Started;
         InputManager.InputControl.GamePlayer.Jump.performed += Jump_Performed;
         InputManager.InputControl.GamePlayer.Jump.canceled += Jump_Canceled;
+
         InputManager.InputControl.GamePlayer.Attack.started += Attack_started;
         InputManager.InputControl.GamePlayer.Attack.performed += Attack_performed;
         InputManager.InputControl.GamePlayer.Attack.canceled += Attack_canceled;
+
         InputManager.InputControl.GamePlayer.Flash.started += Flash_started;
         InputManager.InputControl.GamePlayer.Flash.performed += Flash_performed;
         InputManager.InputControl.GamePlayer.Flash.canceled += Flash_canceled;
+
+        InputManager.InputControl.GamePlayer.Skill_1.started += Skill_1_started;
+        InputManager.InputControl.GamePlayer.Skill_1.performed += Skill_1_performed;
+        InputManager.InputControl.GamePlayer.Skill_1.canceled += Skill_1_canceled;
+
+        InputManager.InputControl.GamePlayer.Skill_2.started += Skill_2_started;
+        InputManager.InputControl.GamePlayer.Skill_2.performed += Skill_2_performed;
+        InputManager.InputControl.GamePlayer.Skill_2.canceled += Skill_2_canceled;
     }
 
     private void OnDisable()
@@ -86,12 +96,22 @@ public class PlayerController : MonoBehaviour
         InputManager.InputControl.GamePlayer.Jump.started -= Jump_Started;
         InputManager.InputControl.GamePlayer.Jump.performed -= Jump_Performed;
         InputManager.InputControl.GamePlayer.Jump.canceled -= Jump_Canceled;
+
         InputManager.InputControl.GamePlayer.Attack.started -= Attack_started;
         InputManager.InputControl.GamePlayer.Attack.performed -= Attack_performed;
         InputManager.InputControl.GamePlayer.Attack.canceled -= Attack_canceled;
+
         InputManager.InputControl.GamePlayer.Flash.started -= Flash_started;
         InputManager.InputControl.GamePlayer.Flash.performed -= Flash_performed;
         InputManager.InputControl.GamePlayer.Flash.canceled -= Flash_canceled;
+
+        InputManager.InputControl.GamePlayer.Skill_1.started -= Skill_1_started;
+        InputManager.InputControl.GamePlayer.Skill_1.performed -= Skill_1_performed;
+        InputManager.InputControl.GamePlayer.Skill_1.canceled -= Skill_1_canceled;
+
+        InputManager.InputControl.GamePlayer.Skill_2.started -= Skill_2_started;
+        InputManager.InputControl.GamePlayer.Skill_2.performed -= Skill_2_performed;
+        InputManager.InputControl.GamePlayer.Skill_2.canceled -= Skill_2_canceled;
     }
 
     private void Start()
@@ -157,7 +177,9 @@ public class PlayerController : MonoBehaviour
             animator.SetBool(animatorStopBool, false);
     }
 
-    ///控制玩家的旋转
+    /// <summary>
+    /// 控制玩家的旋转
+    /// </summary>
     private void UpdateDirection()
     {
         {
@@ -174,7 +196,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    ///控制玩家的跳跃
+    /// <summary>
+    /// 控制玩家的跳跃
+    /// </summary>
     private void UpdateJump()
     {
         if (JumpInput && jumpCount == 0)
@@ -204,7 +228,9 @@ public class PlayerController : MonoBehaviour
         isJumping = true;
     }
 
-    ///控制玩家的重力
+    /// <summary>
+    /// 控制玩家的重力
+    /// </summary>
     private void UpdateGravityScale()
     {
         var gravityScale = groundedGravityScale;
@@ -240,6 +266,11 @@ public class PlayerController : MonoBehaviour
         animator.ResetTrigger(animatorFlashTrigger);
     }
 
+    /// <summary>
+    /// 根据碰撞更新地面接触状态
+    /// </summary>
+    /// <param name="collision"></param>
+    /// <param name="exitState"></param>
     private void UpdateGrounding(Collision2D collision, bool exitState)
     {
         if (exitState)
@@ -265,7 +296,10 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Combat
-    ///跳跃键输入
+    /// <summary>
+    /// 跳跃键输入
+    /// </summary>
+    /// <param name="context"></param>
     private void Jump_Started(InputAction.CallbackContext context)
     {
         counter = Time.time;
@@ -282,7 +316,10 @@ public class PlayerController : MonoBehaviour
         JumpCancel();
     }
 
-    ///攻击键输入
+    /// <summary>
+    /// 攻击键输入
+    /// </summary>
+    /// <param name="context"></param>
     private void Attack_started(InputAction.CallbackContext context)
     {
         if (!FlashInput)
@@ -303,7 +340,10 @@ public class PlayerController : MonoBehaviour
         AttackCancel();
     }
 
-    ///瞬移键输入
+    /// <summary>
+    /// 瞬移键输入
+    /// </summary>
+    /// <param name="context"></param>
     private void Flash_started(InputAction.CallbackContext context)
     {
         if(!FlashInput)
@@ -335,6 +375,48 @@ public class PlayerController : MonoBehaviour
         animator.ResetTrigger(animatorFlashTrigger);
     }
 
+    /// <summary>
+    /// 技能键输入1
+    /// </summary>
+    /// <param name="context"></param>
+    private void Skill_1_started(InputAction.CallbackContext context)
+    {
+
+    }
+
+    private void Skill_1_performed(InputAction.CallbackContext context)
+    {
+
+    }
+
+    private void Skill_1_canceled(InputAction.CallbackContext context)
+    {
+
+    }
+
+    /// <summary>
+    /// 技能键输入2
+    /// </summary>
+    /// <param name="context"></param>
+    private void Skill_2_started(InputAction.CallbackContext context)
+    {
+
+    }
+
+    private void Skill_2_performed(InputAction.CallbackContext context)
+    {
+
+    }
+
+    private void Skill_2_canceled(InputAction.CallbackContext context)
+    {
+
+    }
+
+    /// <summary>
+    /// 碰撞检测
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
         UpdateGrounding(collision, false);
