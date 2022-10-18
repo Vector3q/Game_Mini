@@ -4786,10 +4786,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 291856498332880132, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 291856498413014480, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: atomBsource
       value: 
       objectReference: {fileID: 553112622}
+    - target: {fileID: 291856498454643499, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 291856498413014483, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}

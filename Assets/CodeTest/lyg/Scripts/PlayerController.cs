@@ -381,6 +381,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="context"></param>
     private void Skill_1_started(InputAction.CallbackContext context)
     {
+        animator.Play("Player_SpiralAttack");
         Game.Skill.CharacterSkillManager manager = GetComponent<Game.Skill.CharacterSkillManager>();
         if (manager.skills[0].isPassive)
             return;
