@@ -9,7 +9,7 @@ namespace Game.Skill
     {
         public static IAttackSelector CreateAttackSelector(SkillData data)
         {
-            return _createObject<IAttackSelector>("Skill." + data.selectorType + "AttackSelector");
+            return _createObject<IAttackSelector>("Game.Skill." + data.selectorType + "AttackSelector");
         }
 
         public static List<IImpactEffect> CreateImpactEffect(SkillData data)
@@ -17,7 +17,7 @@ namespace Game.Skill
             List<IImpactEffect> result = new List<IImpactEffect>();
             foreach (string impact in data.impactType)
             {
-                result.Add(_createObject<IImpactEffect>("Skill." + impact + "Impact"));
+                result.Add(_createObject<IImpactEffect>("Game.Skill." + impact + "Impact"));
             }
             return result;
         }

@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Game.Skill
 {
-    /// <summary>
-    /// ¼¼ÄÜÊÍ·ÅÆ÷
-    /// </summary>
     public abstract class SkillDeployer : MonoBehaviour
     {
         private SkillData _skillData;
@@ -54,6 +51,5 @@ namespace Game.Skill
         {
             Destroy(this.gameObject);
         }
-        
     }
 }

@@ -7,7 +7,7 @@ namespace Game.Skill
 {
     public class CharacterSkillManager : MonoBehaviour
     {
-        [HideInInspector]
+        //[HideInInspector]
         public SkillData[] skills; // 技能列表
         public Animator anima = null;
 
@@ -17,6 +17,7 @@ namespace Game.Skill
             {
                 this.InitSkill(skill);
             }
+            anima = gameObject.GetComponent<Animator>();
         }
 
         /// <summary>
@@ -76,7 +77,8 @@ namespace Game.Skill
             //播放技能动画
             if(data.animationName != "")
             {
-                anima.SetTrigger(data.animationName);
+                anima.Play(data.animationName);
+                //anima.SetTrigger(data.animationName);
             }
 
             //执行技能
