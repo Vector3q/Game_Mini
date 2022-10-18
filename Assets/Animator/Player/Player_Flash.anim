@@ -92,7 +92,7 @@ AnimationClip:
   m_Events:
   - time: 0.05
     functionName: PlaySe
-    data: "\u5176\u4ED6\u52A8\u4F5C"
+    data: Flash
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

@@ -95,7 +95,7 @@ AnimationClip:
   m_Events:
   - time: 0.16666667
     functionName: PlaySe
-    data: Click
+    data: "\u653B\u51FB"
     objectReferenceParameter: {fileID: 11500000, guid: 527a2e92d37bcce4ba449815f5976ada, type: 3}
     floatParameter: 0
     intParameter: 0
