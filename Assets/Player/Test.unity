@@ -4738,6 +4738,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 291856497728267754, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: Speed
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 291856497728267754, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: maxSpeed
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 291856497728267754, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: MoveForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 291856497728267754, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: jumpForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 291856497728267754, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: Flashspeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 291856497728267754, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: maxJumpVelocity
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 291856497728267759, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: m_RootOrder
       value: 1
