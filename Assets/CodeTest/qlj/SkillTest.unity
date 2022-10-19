@@ -4138,7 +4138,7 @@ MonoBehaviour:
   - skillID: 1003
     name: "\u87BA\u65CB\u65A9"
     description: rasenZhan
-    coolTime: 10
+    coolTime: 5
     coolRemain: 0
     attackDistance: 0
     attackTargetTags: []
@@ -4152,7 +4152,7 @@ MonoBehaviour:
     owner: {fileID: 0}
     prefabName: Skill.rasenZhan
     skillPrefab: {fileID: 0}
-    animationName: Player_Respawn
+    animationName: Player_SpiralAttack
     hitFxName: 
     hitFxPrefab: {fileID: 0}
     selectorType: 0
