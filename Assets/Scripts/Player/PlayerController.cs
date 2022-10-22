@@ -325,9 +325,9 @@ public class PlayerController : MonoBehaviour
         if (!FlashInput)
         {
             AttackInput = true;
-            Attackanimator.SetTrigger(animatorAttackTrigger);
+            //Attackanimator.SetTrigger(animatorAttackTrigger);
+            animator.Play("Player_CommonAttack");
         }
-        //Attackanimator.Play("Player_Attack");
     }
 
     private void Attack_performed(InputAction.CallbackContext context)
