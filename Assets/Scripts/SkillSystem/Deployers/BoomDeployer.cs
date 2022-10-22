@@ -12,7 +12,7 @@ namespace Game.Skill
         bool isBoom;
         private void Start()
         {
-            cd.gameObject.SetActive(false);
+            //cd.gameObject.SetActive(false);
             isBoom = false;
             DeploySkill();
         }
