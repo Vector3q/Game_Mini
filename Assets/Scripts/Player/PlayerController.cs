@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
 {
     #region Propertries
 
-    readonly Vector3 flippedScale = new Vector3(-1, 1, 1);
+    readonly Vector3 flippedleft = new Vector3(-1.4f, 1.4f, 1.4f);
+    readonly Vector3 flippedright = new Vector3(1.4f, 1.4f, 1.4f);
 
     [Header("ÒÀÀµ×é¼þ")]
     private Animator animator = null;
@@ -186,12 +187,12 @@ public class PlayerController : MonoBehaviour
             if (controllerRigibody.velocity.x > 1f && isFacingLeft)
             {
                 isFacingLeft = false;
-                transform.localScale = Vector3.one;
+                transform.localScale = flippedright;
             }
             else if (controllerRigibody.velocity.x < -1f && !isFacingLeft)
             {
                 isFacingLeft = true;
-                transform.localScale = flippedScale;
+                transform.localScale = flippedleft;
             }
         }
     }
