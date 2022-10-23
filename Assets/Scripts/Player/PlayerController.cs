@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     public bool isFacingLeft;
     public bool isJumping;
     public bool isFalling;
+    static public bool isSkilling = false;
 
     [Header("其它参数")]
     private int animatorGroundedBool;
@@ -323,7 +324,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="context"></param>
     private void Attack_started(InputAction.CallbackContext context)
     {
-        if (!FlashInput)
+        if (!FlashInput && !isSkilling)
         {
             AttackInput = true;
             //Attackanimator.SetTrigger(animatorAttackTrigger);
