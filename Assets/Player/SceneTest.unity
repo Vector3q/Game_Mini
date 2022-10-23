@@ -913,9 +913,9 @@ MonoBehaviour:
     durationTime: 0
     atkInterval: 0
     owner: {fileID: 0}
-    prefabName: Skill.fly
+    prefabName: Skill.dome
     skillPrefab: {fileID: 0}
-    animationName: Player_SpiralAttack
+    animationName: Player_Dome
     hitFxName: 
     hitFxPrefab: {fileID: 0}
     selectorType: 2
@@ -1029,6 +1029,30 @@ PrefabInstance:
     - target: {fileID: 188001002249373903, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.data[1].name
+      value: "\u7A79\u9876\u4E4B\u4E0B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.data[1].skillID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.data[1].coolTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.data[1].prefabName
+      value: Skill.dome
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.data[1].description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.data[1].animationName
+      value: Player_Dome
       objectReference: {fileID: 0}
     - target: {fileID: 560285918874428779, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: m_Name
@@ -1148,7 +1172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3848099833939928200, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4342535412067454818, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
