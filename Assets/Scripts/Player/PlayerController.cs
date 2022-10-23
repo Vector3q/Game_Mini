@@ -209,15 +209,17 @@ public class PlayerController : MonoBehaviour
             //controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             //animator.SetTrigger(animatorJumpTrigger);
         }
-        if (isOnGround && jumpCount != 0) //如果已经落地了，则重置跳跃计数器
+        if (isOnGround && isFalling && jumpCount != 0) //如果已经落地了，则重置跳跃计数器
         {
             jumpCount = 0;
+            isFalling = false;
             counter = Time.time - counter;
         }
         //判断下落
         if (isJumping && controllerRigibody.velocity.y < 0)
         {
             isFalling = true;
+            isJumping = false;
         }
     }
 
@@ -225,8 +227,9 @@ public class PlayerController : MonoBehaviour
     {
         ++jumpCount;
         animator.SetTrigger(animatorJumpTrigger);
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.02f);
         controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        isFalling = false;
         isJumping = true;
     }
 
@@ -253,7 +256,6 @@ public class PlayerController : MonoBehaviour
     private void JumpCancel()
     {
         JumpInput = false;
-        isJumping = false;
         animator.ResetTrigger(animatorJumpTrigger);
     }
 
@@ -289,8 +291,6 @@ public class PlayerController : MonoBehaviour
             if (collision.gameObject.tag == "Ground"  && !isOnGround)
             {
                 isOnGround = true;
-                isJumping = false;
-                isFalling = false;
             }
         }
         animator.SetBool(animatorGroundedBool, isOnGround);
@@ -408,7 +408,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="context"></param>
     private void Skill_2_started(InputAction.CallbackContext context)
     {
-        animator.Play("Player_Dome");
+        //animator.Play("Player_Dome");
         Game.Skill.CharacterSkillManager manager = GetComponent<Game.Skill.CharacterSkillManager>();
         if (manager.skills[1].isPassive)
             return;

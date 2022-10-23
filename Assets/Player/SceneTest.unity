@@ -1120,6 +1120,14 @@ PrefabInstance:
       propertyPath: maxJumpVelocity
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: fallGravityScale
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: jumpGravityScale
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 560285918874428790, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.23
