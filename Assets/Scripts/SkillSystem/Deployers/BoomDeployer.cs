@@ -14,7 +14,7 @@ namespace Game.Skill
         {
             originalTrans = gameObject.transform.position;
             gameObject.transform.position = new Vector3(originalTrans.x, originalTrans.y - 0.5f, originalTrans.z);
-            //cd.gameObject.SetActive(false);
+            
             DeploySkill();
         }
         public override void DeploySkill()
