@@ -209,17 +209,17 @@ public class PlayerController : MonoBehaviour
             //controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             //animator.SetTrigger(animatorJumpTrigger);
         }
-        if (isOnGround && isFalling && jumpCount != 0) //如果已经落地了，则重置跳跃计数器
+        if (isOnGround && isJumping && jumpCount != 0) //如果已经落地了，则重置跳跃计数器
         {
             jumpCount = 0;
             isFalling = false;
+            isJumping = false;
             counter = Time.time - counter;
         }
         //判断下落
         if (isJumping && controllerRigibody.velocity.y < 0)
         {
             isFalling = true;
-            isJumping = false;
         }
     }
 
@@ -229,7 +229,6 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger(animatorJumpTrigger);
         yield return new WaitForSeconds(0.02f);
         controllerRigibody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-        isFalling = false;
         isJumping = true;
     }
 
