@@ -20,8 +20,12 @@ public class Spllite : MonoBehaviour
             ani.Play("SpikedSlime_Death");
             if(gameObject.transform.localScale.x>=0.6)
             {
-                
-                var another = GameObject.Instantiate(Self, gameObject.transform.position, gameObject.transform.rotation);
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x + gameObject.transform.localScale.x / 1.14f, gameObject.transform.position.y, gameObject.transform.position.z);
+
+                var another = GameObject.Instantiate(Self, 
+                    new Vector3(gameObject.transform.position.x- gameObject.transform.localScale.x / 1.14f, gameObject.transform.position.y, gameObject.transform.position.z),
+                    gameObject.transform.rotation);
+
                 another.transform.localScale = new Vector3(gameObject.transform.localScale.x / 1.14f, gameObject.transform.localScale.y / 1.14f, gameObject.transform.localScale.z / 1.14f);
                 gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x / 1.14f, gameObject.transform.localScale.y / 1.14f, gameObject.transform.localScale.z / 1.14f);
                 ani.Play("SpikedSlime_Ability");

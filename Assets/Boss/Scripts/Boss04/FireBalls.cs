@@ -5,21 +5,28 @@ using UnityEngine;
 
 public class FireBalls : Action
 {
+    public Rigidbody2D rb;
     public GameObject FireBall;
+    private Animator ani;
+    public float speed;
+
     public float offset;
     public int OFFset;
-
+    
     public int index;
     public int num;
     public int[] Ct = { 0, 1, 2, 3, 2, 1, 0 };
     public override void OnAwake()
     {
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        ani = gameObject.GetComponentInChildren<Animator>();
         index = Random.Range(-14, 14);
         num = 0;
     }
     public override TaskStatus OnUpdate()
     {
-        Debug.Log(index);
+        ani.Play("Golem_Reset");
+        rb.velocity = new Vector2(0, speed);
         for(int i=-14;i<=14;i++)
         {   
             if(i<=index-Ct[num] || i>=index+Ct[num])
@@ -30,14 +37,16 @@ public class FireBalls : Action
         }
         num++;
         if (num >= 6) { num = 0;
-            if(index<-2)
-                index = index + Random.Range(3-OFFset, 3+OFFset);
-            else if(index>2)
-                index = index + Random.Range(-3-OFFset, -3+OFFset);
-            else 
-                index = index + Random.Range(-OFFset, OFFset);
-            if (index >= 14) index = 14;
-            else if (index <= -14) index = -14;
+
+            index = Random.Range(-14, 14);
+            //if(index<-4)
+            //    index = index + Random.Range(3-OFFset, 3+OFFset);
+            //else if(index>4)
+            //    index = index + Random.Range(-3-OFFset, -3+OFFset);
+            //else 
+            //    index = index + Random.Range(-OFFset, OFFset);
+            //if (index >= 14) index = 14;
+            //else if (index <= -14) index = -14;
         }
         return TaskStatus.Success;
     }
