@@ -19,7 +19,7 @@ namespace Game.Skill
         }
         private IEnumerator wait()
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
             player.GetComponent<PlayerController>().fallGravityScale = 12f;
             Destroy(gameObject);
         }
