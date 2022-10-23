@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Threading;
 
 public class text : MonoBehaviour
 {
@@ -18,7 +20,7 @@ public class text : MonoBehaviour
         tex = GetComponent<Text>();
         str = tex.text;
         tex.text = "";
-        i = 15;
+        i = 12;
     }
 
     // Update is called once per frame
@@ -32,15 +34,21 @@ public class text : MonoBehaviour
                 if (index >= str.Length)
                 {
                     ison = false;
+                    Invoke("Scenechange", 1);
                     return;
                 }
                 str1 = str1 + str[index].ToString();
                 tex.text = str1;
                 index += 1;
-                i = 15;
+                i = 12;
             }
         }
 
+    }
+
+    public void Scenechange()
+    {
+        SceneManager.LoadScene("Main Scene");
     }
 
 
