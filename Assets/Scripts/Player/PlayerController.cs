@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using CriWare;
 
 public class PlayerController : MonoBehaviour
 {
@@ -56,6 +57,10 @@ public class PlayerController : MonoBehaviour
     public float counter;
     public bool canMove;
     public bool canAttack;
+
+    [Header("音效参数")]
+    public CriAtomSource CRIsource;
+
 
     #endregion
 
@@ -289,6 +294,7 @@ public class PlayerController : MonoBehaviour
             //判断为落地状态
             if (collision.gameObject.tag == "Ground"  && !isOnGround)
             {
+                CRIsource.Play("Land");
                 isOnGround = true;
             }
         }

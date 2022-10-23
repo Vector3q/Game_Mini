@@ -8,7 +8,7 @@ public class PlayerAtomSourceFromAnimation : MonoBehaviour
     public CriAtomSource atomBsource;
     public float a;
    
-    public void PlaySe(string cueName)
+    public void PlayAttack(string cueName)
     {
         atomBsource.Play(cueName);
     }
