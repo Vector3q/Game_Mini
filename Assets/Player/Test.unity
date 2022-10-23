@@ -971,7 +971,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &537381468
 MonoBehaviour:
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraTargets:
-  - TargetTransform: {fileID: 1665514773}
+  - TargetTransform: {fileID: 0}
     TargetInfluenceH: 1
     TargetInfluenceV: 1
     TargetOffset: {x: 0, y: 0}
@@ -1237,44 +1237,6 @@ MonoBehaviour:
   OnExitedAllRooms:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &553112621 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 291856497052564398, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
-  m_PrefabInstance: {fileID: 291856498311436538}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &553112622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553112621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playOnStart: 0
-  _regionOnStart: {fileID: 0}
-  _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 1
-  _freezeOrientation: 0
-  _loop: 0
-  _volume: 0.594
-  _pitch: 0
-  _androidUseLowLatencyVoicePool: 0
-  need_to_player_update_all: 1
-  _use3dRandomization: 0
-  _randomPositionListMaxLength: 0
-  randomize3dConfig:
-    followsOriginalSource: 0
-    calculationType: 0
-    calculationParameters:
-    - 0
-    - 0
-    - 0
-  _cueName: "\u653B\u51FB"
-  _cueSheet: Character_movement
 --- !u!1001 &557013339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2188,7 +2150,7 @@ MonoBehaviour:
     owner: {fileID: 0}
     prefabName: Skill.fly
     skillPrefab: {fileID: 0}
-    animationName: 
+    animationName: Player_SpiralAttack
     hitFxName: 
     hitFxPrefab: {fileID: 0}
     selectorType: 2
@@ -3183,49 +3145,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2918141005265816466, guid: e478dde072b1494468cde104ce7d8133, type: 3}
   m_PrefabInstance: {fileID: 630720640}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1367061173 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 291856497728267765, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
-  m_PrefabInstance: {fileID: 291856498311436538}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1367061174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1367061173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d28b87e948a45164cb8b17bc35f56176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skills:
-  - skillID: 3
-    name: "\u87BA\u65CB\u65A9"
-    description: "1. \u84C4\u529B _2s_ \u5185\u4E0D\u80FD\u88AB\u51FB\u4E2D 2. \u95EA\u907F\u81F3\u7A7A\u4E2D\u5219\u84C4\u529B\u4E2D\u65AD\uFF0C\u8DF3\u8DC3\u4E0D\u4F1A
-      3. \u653B\u51FB\u8303\u56F4\u76F8\u5F53\u4E8E\u5DE6\u53F3\u540C\u65F6\u91CA\u653E\u65A9\u51FB\u7684\u8303\u56F4
-      4. \u8303\u56F4\u5185\u591A\u4E2A\u654C\u4EBA\u540C\u65F6\u88AB\u4F24\u5BB3\uFF0C\u51FB\u4E2D\u540C\u65F6\u88AB\u5F39\u5F00
-      5. \u5BF9\u62A4\u7532\u65E0\u6548\uFF08\u88AB\u683C\u6321\uFF09  "
-    coolTime: 5
-    coolRemain: 0
-    attackDistance: 0
-    attackTargetTags: []
-    isPassive: 0
-    attackTargets: []
-    impactType: []
-    nextBatterID: 0
-    atkRatio: 0
-    durationTime: 0
-    atkInterval: 0
-    owner: {fileID: 0}
-    prefabName: Skill.rasenZhan
-    skillPrefab: {fileID: 0}
-    animationName: Player_SpiralAttack
-    hitFxName: 
-    hitFxPrefab: {fileID: 0}
-    selectorType: 0
-  anima: {fileID: 0}
 --- !u!4 &1384366015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2918141005265816466, guid: e478dde072b1494468cde104ce7d8133, type: 3}
@@ -3794,11 +3713,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8507cb2080d1ee64d8d6a3349a0f94de, type: 3}
---- !u!4 &1665514773 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 291856497728267759, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
-  m_PrefabInstance: {fileID: 291856498311436538}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1666687301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5027,7 +4941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 291856497728267759, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.7
+      value: 5.99
       objectReference: {fileID: 0}
     - target: {fileID: 291856497728267759, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5072,10 +4986,18 @@ PrefabInstance:
     - target: {fileID: 291856498413014480, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: atomBsource
       value: 
-      objectReference: {fileID: 553112622}
+      objectReference: {fileID: 0}
     - target: {fileID: 291856498454643499, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 560285918874428785, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 560285918874428785, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.79
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 291856498413014483, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}

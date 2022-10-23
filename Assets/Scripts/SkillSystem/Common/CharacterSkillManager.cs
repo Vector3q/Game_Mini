@@ -67,6 +67,13 @@ namespace Game.Skill
                 Debug.LogError("Cannot generate null skill");
                 return;
             }
+
+            if(data.skillID == 2)
+            {
+                if (!gameObject.GetComponent<PlayerController>().isOnGround)
+                    return;
+            }
+
             //创建技能预制体
             GameObject skillGo = Instantiate(data.skillPrefab, this.transform.position, this.transform.rotation);
 
