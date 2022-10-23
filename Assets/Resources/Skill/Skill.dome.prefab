@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3738104499453293559}
   - component: {fileID: 3886449134549215946}
   - component: {fileID: 3958384459593281744}
+  - component: {fileID: -7481321121530168878}
   m_Layer: 0
-  m_Name: Skill
-  m_TagString: Untagged
+  m_Name: Skill.dome
+  m_TagString: QDZX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,3 +103,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7481321121530168878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442915249651814140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66046f7ed2e2bc74d877688981c4674d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

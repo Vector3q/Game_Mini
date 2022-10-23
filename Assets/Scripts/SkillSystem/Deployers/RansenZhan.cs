@@ -11,9 +11,9 @@ namespace Game.Skill
         }
         public override void DeploySkill()
         {
-            Debug.Log("ÂÝÐýÕ¶");
-            Destroy(gameObject, 0.5f);
-            Debug.Log("ÂÝÐýÕ¶");
+            //Debug.Log("ÂÝÐýÕ¶");
+            Destroy(gameObject, 1f);
+            //Debug.Log("ÂÝÐýÕ¶");
         }
 
     }
