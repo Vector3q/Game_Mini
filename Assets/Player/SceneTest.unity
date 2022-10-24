@@ -1057,12 +1057,9 @@ MonoBehaviour:
     hitFxPrefab: {fileID: 0}
     selectorType: 2
   - skillID: 6
-    name: "\u4E0B\u780D"
-    description: "1. \u8DF3\u8D77\u540E\u5728\u7A7A\u4E2D\u6309\u4F4F\u6280\u80FD\u952E\uFF0C\u6709
-      _2s_ \u60AC\u6D6E\u6548\u679C\uFF08\u4E0B\u843D\u51CF\u6162\uFF09 2. \u677E\u624B\u540E\u6B63\u5E38\u4E0B\u843D
-      3. \u8DF3\u8DC3\u9AD8\u5EA6\u4E0D\u53D8  4. \u8DF3\u8DC3\u81F3\u6BD4\u5E73\u5E38\u66F4\u9AD8\u7684\u9AD8\u5EA6\uFF08\u4F9D\u7136\u65E0\u6CD5\u591F\u5230B007\uFF09
-      5. \u4ECE\u7A7A\u4E2D\u5411\u4E0B\u65A9\u51FB "
-    coolTime: 10
+    name: "\u4E0B\u5288"
+    description: 
+    coolTime: 5
     coolRemain: 0
     attackDistance: 0
     attackTargetTags:
@@ -1077,7 +1074,7 @@ MonoBehaviour:
     owner: {fileID: 0}
     prefabName: Skill.fallattack
     skillPrefab: {fileID: 0}
-    animationName: 
+    animationName: Player_Chopup
     hitFxName: 
     hitFxPrefab: {fileID: 0}
     selectorType: 2
@@ -1175,19 +1172,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].name
-      value: "\u98DE"
+      value: "\u4E0B\u5288"
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].skillID
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].coolTime
-      value: 0.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].prefabName
-      value: Skill.fly
+      value: Skill.fallattack
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].description
@@ -1195,7 +1192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].animationName
-      value: Player_Hover
+      value: Player_Chopup
       objectReference: {fileID: 0}
     - target: {fileID: 560285918874428779, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: m_Name
