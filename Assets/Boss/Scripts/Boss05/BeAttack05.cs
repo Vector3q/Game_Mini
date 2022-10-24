@@ -6,6 +6,7 @@ using UnityEngine;
 public class BeAttack05 : Action
 {
     private Animator ani;
+    
 
     public override void OnAwake()
     {
@@ -15,6 +16,12 @@ public class BeAttack05 : Action
     public override TaskStatus OnUpdate()
     {
         ani.Play("Rat_Hit");
+        Boss05State.HP -= 1;
+        if(Boss05State.HP==0)
+        {
+            ani.Play("Rat_Death");
+            return TaskStatus.Failure;
+        }
         return TaskStatus.Success;
     }
 

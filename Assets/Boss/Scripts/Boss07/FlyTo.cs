@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FlyTo : Action
 {
-    public Vector2 target;
+    public Vector3 target;
     public GameObject Bullet;
     public float fireSpeed;
     public float speed;
@@ -26,9 +26,9 @@ public class FlyTo : Action
             bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, fireSpeed);
             c_time = Time.time;
         }
-            
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, target, speed);
-        if(Mathf.Abs(gameObject.transform.position.x-target.x)>=0.1f)
+
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, target, speed * Time.deltaTime);
+        if(Mathf.Abs(gameObject.transform.position.x-target.x)<=0.1f)
              return TaskStatus.Success;
         return TaskStatus.Running;
     }
