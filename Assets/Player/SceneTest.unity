@@ -1179,8 +1179,12 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.data[0].coolTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].coolTime
-      value: 5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].prefabName

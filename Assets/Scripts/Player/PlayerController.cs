@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     readonly Vector3 flippedright = new Vector3(1.4f, 1.4f, 1.4f);
 
     [Header("依赖组件")]
-    private Animator animator = null;
-    private Rigidbody2D controllerRigibody;
+    public Animator animator = null;
+    public Rigidbody2D controllerRigibody;
 
     [Header("移动参数")]
     public Vector2 vectorInput;
