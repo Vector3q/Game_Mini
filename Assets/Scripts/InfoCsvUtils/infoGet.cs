@@ -7,12 +7,12 @@ public class infoGet : MonoBehaviour
     public List<GameObject> bossObjs;
 
 
-    List<List<string>> bosslist = new List<List<string>>(); 
-    List<List<string>> information = new List<List<string>>();
-    List<List<string>> lyrics = new List<List<string>>();
-    List<int> bossRandomSeq = new List<int>();
+    static List<List<string>> bosslist = new List<List<string>>(); 
+    static List<List<string>> information = new List<List<string>>();
+    static List<List<string>> lyrics = new List<List<string>>();
+    static List<int> bossRandomSeq = new List<int>();
 
-    public int curBossCount = 0;
+    public static int curStage = 0;
 
     void OnEnable()
     {
@@ -20,30 +20,29 @@ public class infoGet : MonoBehaviour
         information = CSVUtils.ParseCSV("information", 1);
         lyrics = CSVUtils.ParseCSV("lyrics", 1);
 
-        bossRandomSeq = getRandomSeq(7);
+        BossSeqInit();
     }
 
     void Start()
     {
-        getStartInfo();
-        getDieInfo();
-
-        getBossInfo(1);
-
-        //for(int i = 1; i <= 7; i++)
+        //for (int i = 0; i < bossObjs.Count; i++)
         //{
-        //    getBossInfo(i);
+        //    getBossInfo();
+        //    Debug.Log("i" + i);
         //}
     }
 
-
+    public void BossSeqInit()
+    {
+        bossRandomSeq = getRandomSeq(bossObjs.Count);
+        curStage = 0;
+    }
 
     /// <summary>
     /// 获取游戏开始/胜利后加载界面文案
     /// </summary>
-    public string getStartInfo()
+    public string getLoadInfo()
     {
-
         List<string> startTexts = CSVUtils.GetDataArray<string>(lyrics[0][1], '#');
         List<int> randomID = getRandomSeq(startTexts.Count);
         Debug.Log("随机到的开始/切换界面文案是：" + startTexts[randomID[0]]);
@@ -53,7 +52,7 @@ public class infoGet : MonoBehaviour
     /// <summary>
     /// 获取死亡时界面加载文案
     /// </summary>
-    public string getDieInfo()
+    public string getLossInfo()
     {
         List<string> dieTexts = CSVUtils.GetDataArray<string>(lyrics[1][1], '#');
         List<int> randomID = getRandomSeq(dieTexts.Count);
@@ -61,24 +60,45 @@ public class infoGet : MonoBehaviour
         return dieTexts[randomID[0]];
     }
 
-    /// <summary>
-    /// 获取当前boss信息
-    /// </summary>
-    /// <param name="stage">当前是第几关（取值1-7）</param>
-    public List<string> getBossInfo(int stage)
+    public void battleStart()
     {
-        
-        Debug.Log("当前是第"+stage+"关，关卡随机到的BOSS是<B00"+(bossRandomSeq[stage-1]+1)+">");
-        List<string> bossInfo = parseBossInfo(bossRandomSeq[stage-1]+1);
+        Instantiate(bossObjs[bossRandomSeq[curStage]]);
+    }
+
+
+    /// <summary>
+    /// 获取一次boss信息（自动增加关卡数）
+    /// </summary>
+    public List<string> getBossInfo()
+    {
+        //Debug.Log("boss数组："+bossRandomSeq.Count);
+        //Debug.Log("curStage"+curStage);
+
+        List<string> bossInfo = getOneBossInfo(curStage);
+        if(++curStage >= bossObjs.Count)
+        {
+            curStage = 0;
+        }
+
+        return bossInfo;
+    }
+
+    #region private Functions
+    /// <summary>
+    /// 获取指定关卡的boss信息
+    /// </summary>
+    /// <param name="stage">获取第几关（取值1-7）的boss信息</param>
+    private List<string> getOneBossInfo(int stage)
+    {
+        Debug.Log("当前是第"+(stage+1)+"关，关卡随机到的BOSS是<B00"+(bossRandomSeq[stage]+1)+">");
+        List<string> bossInfo = parseBossInfo(bossRandomSeq[stage]+1);
         Debug.Log("该BOSS的第一条信息是：" + bossInfo[0]);
         Debug.Log("该BOSS的第二条信息是：" + bossInfo[1]);
         return bossInfo;
     }
 
-
-
     /// 获取指定编号boss的信息
-    public List<string> parseBossInfo(int id)
+    private List<string> parseBossInfo(int id)
     {
         List<string> bossInfo = new List<string>();
 
@@ -137,6 +157,6 @@ public class infoGet : MonoBehaviour
         }
         return result;
     }
-
+    #endregion
 
 }
