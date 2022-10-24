@@ -14,12 +14,16 @@ namespace Game.Skill
         }
         public override void DeploySkill()
         {
-            player.GetComponent<PlayerController>().fallGravityScale = 0.5f;
-            StartCoroutine(wait());
+            Destroy(gameObject,2.0f);
+            if (!player.GetComponent<PlayerController>().isOnGround)
+            {
+                player.GetComponent<PlayerController>().fallGravityScale = 0.5f;
+                StartCoroutine(wait());
+            }
         }
         private IEnumerator wait()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.6f);
             player.GetComponent<PlayerController>().fallGravityScale = 12f;
             Destroy(gameObject);
         }

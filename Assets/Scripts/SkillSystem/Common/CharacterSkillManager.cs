@@ -74,6 +74,14 @@ namespace Game.Skill
                     return;
             }
 
+            if(data.skillID == 5)
+            {
+                if(data.owner.GetComponent<PlayerController>().isOnGround)
+                {
+                    return;
+                }
+            }
+
             //创建技能预制体
             GameObject skillGo = Instantiate(data.skillPrefab, this.transform.position, this.transform.rotation);
 
@@ -84,6 +92,7 @@ namespace Game.Skill
             //播放技能动画
             if(data.animationName != "")
             {
+                
                 anima.Play(data.animationName);
                 //anima.SetTrigger(data.animationName);
             }
