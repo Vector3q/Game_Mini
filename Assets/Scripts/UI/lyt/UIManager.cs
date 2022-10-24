@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     private Text bossInfo2;
     private Text loadInfo;
     private Text loseInfo;
+    public Text bossName;
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class UIManager : MonoBehaviour
         bossInfo2.text = bossInfo[1];
         loadInfo.text = info.getLoadInfo();
         loseInfo.text = info.getLossInfo();
+        bossName.text = "击杀者：" + info.getBossName();
 
         GameEvents.current.onBossDie += onPortalOpen;
         GameEvents.current.onPlayerDie += onLoseShow;

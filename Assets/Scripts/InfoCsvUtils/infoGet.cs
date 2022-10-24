@@ -65,6 +65,15 @@ public class infoGet : MonoBehaviour
         Instantiate(bossObjs[bossRandomSeq[curStage]]);
     }
 
+    /// <summary>
+    /// 获取当前boss名字
+    /// </summary>
+    public string getBossName()
+    {
+        string name = bosslist[bossRandomSeq[curStage]][2];
+        Debug.Log("该Boss的名字是：" + name);
+        return name;
+    }
 
     /// <summary>
     /// 获取一次boss信息（自动增加关卡数）
