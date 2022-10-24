@@ -1,0 +1,636 @@
+fileFormatVersion: 2
+guid: 98357c8c0bff59242b2a3e3b6eaa2e5f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4821821489893732155
+    second: Spiral_Attack 2_0
+  - first:
+      213: -1510254080966421004
+    second: Spiral_Attack 2_1
+  - first:
+      213: 5378080122266496812
+    second: Spiral_Attack 2_2
+  - first:
+      213: -8237807798103866068
+    second: Spiral_Attack 2_3
+  - first:
+      213: -1797122886117480184
+    second: Spiral_Attack 2_4
+  - first:
+      213: -5404598803143752211
+    second: Spiral_Attack 2_5
+  - first:
+      213: 6974023876074682109
+    second: Spiral_Attack 2_6
+  - first:
+      213: -4446982160033685843
+    second: Spiral_Attack 2_7
+  - first:
+      213: -3647832334077212862
+    second: Spiral_Attack 2_8
+  - first:
+      213: 7507936390085152735
+    second: Spiral_Attack 2_9
+  - first:
+      213: -2710195072042732097
+    second: Spiral_Attack 2_10
+  - first:
+      213: 8520802400309918936
+    second: Spiral_Attack 2_11
+  - first:
+      213: -4501082700995029221
+    second: Spiral_Attack 2_12
+  - first:
+      213: 6539788729806878411
+    second: Spiral_Attack 2_13
+  - first:
+      213: 7701404172323125716
+    second: Spiral_Attack 2_14
+  - first:
+      213: 6739080197783648576
+    second: Spiral_Attack 2_15
+  - first:
+      213: 465647242575008531
+    second: Spiral_Attack 2_16
+  - first:
+      213: 3897005593081771017
+    second: Spiral_Attack 2_17
+  - first:
+      213: -725248815030800814
+    second: Spiral_Attack 2_18
+  - first:
+      213: 8104048337779699166
+    second: Spiral_Attack 2_19
+  - first:
+      213: 68008818532745905
+    second: Spiral_Attack 2_20
+  - first:
+      213: -2658577617423142367
+    second: Spiral_Attack 2_21
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spiral_Attack 2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1801
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c01a8ce6e2751db0800000000000000
+      internalID: -4821821489893732155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_1
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1801
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5996f3aef7a0be0800000000000000
+      internalID: -1510254080966421004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_2
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1801
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2fa84d7067c2aa40800000000000000
+      internalID: 5378080122266496812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_3
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 1801
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c258312147d6dad80800000000000000
+      internalID: -8237807798103866068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_4
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 1801
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8092e33b1465f07e0800000000000000
+      internalID: -1797122886117480184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1554
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de58d19f5020ff4b0800000000000000
+      internalID: -5404598803143752211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_6
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1554
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6368ce3c5b8c060800000000000000
+      internalID: 6974023876074682109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_7
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1554
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae51bc59452942c0800000000000000
+      internalID: -4446982160033685843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_8
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 1554
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247c427b1db406dc0800000000000000
+      internalID: -3647832334077212862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_9
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 1554
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf01473e5c813860800000000000000
+      internalID: 7507936390085152735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1307
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5f0e2f0f3736ad0800000000000000
+      internalID: -2710195072042732097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_11
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1307
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dcb4cf43a8ff3670800000000000000
+      internalID: 8520802400309918936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_12
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1307
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1719869121f881c0800000000000000
+      internalID: -4501082700995029221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_13
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 1307
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6fd32533ff1ca50800000000000000
+      internalID: 6539788729806878411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_14
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 1307
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9f70b7a42e0ea60800000000000000
+      internalID: 7701404172323125716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1060
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04973c51cb5068d50800000000000000
+      internalID: 6739080197783648576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_16
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1060
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313d25433bf467600800000000000000
+      internalID: 465647242575008531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_17
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1060
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904795f80f1f41630800000000000000
+      internalID: 3897005593081771017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_18
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 1060
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ee0569b066fe5f0800000000000000
+      internalID: -725248815030800814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_19
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 1060
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd24ffa60d577070800000000000000
+      internalID: 8104048337779699166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 813
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b20d3ef8ad91f000800000000000000
+      internalID: 68008818532745905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spiral_Attack 2_21
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 813
+        width: 783
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12270b12eb5da1bd0800000000000000
+      internalID: -2658577617423142367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
