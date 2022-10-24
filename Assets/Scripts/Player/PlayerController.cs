@@ -9,17 +9,15 @@ using CriWare;
 public class PlayerController : MonoBehaviour
 {
     #region Propertries
-
     readonly Vector3 flippedleft = new Vector3(-1.4f, 1.4f, 1.4f);
     readonly Vector3 flippedright = new Vector3(1.4f, 1.4f, 1.4f);
 
     [Header("依赖组件")]
     private Animator animator = null;
-    public GameObject Attack = null;
-    private Animator Attackanimator = null;
     private Rigidbody2D controllerRigibody;
 
     [Header("移动参数")]
+    public Vector2 vectorInput;
     public float maxSpeed = 1.0f;
     public float Speed = 1.0f;
     public float Flashspeed = 1.0f;
@@ -32,11 +30,10 @@ public class PlayerController : MonoBehaviour
     public float fallGravityScale = 1.0f;
     public float groundedGravityScale = 1.0f;
 
-    public Vector2 vectorInput;
-    public bool JumpInput;
     public int jumpCount;
-    public bool enableGravity;
+    public bool JumpInput;
     static public bool AttackInput;
+    public bool enableGravity;
     public bool FlashInput;
 
     public bool isOnGround;
@@ -70,7 +67,6 @@ public class PlayerController : MonoBehaviour
     {
         controllerRigibody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        Attackanimator = Attack.GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -146,24 +142,9 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Movement
-    ///控制玩家的移动
-    /*    private void UpdateVelocity()
-        {
-            Vector2 velocity = controllerRigibody.velocity;
-            velocity.y = Mathf.Clamp(velocity.y, -maxGravityVelocity, maxGravityVelocity);
-            animator.SetFloat(animatorVelocitySpeed, controllerRigibody.velocity.y);
-            if (canMove)
-            {
-                controllerRigibody.velocity = new Vector2(vectorInput.x * maxSpeed, velocity.y);
-                animator.SetInteger(animatorMovementSpeed, (int)controllerRigibody.velocity.x);
-            }
-            if (vectorInput.x == 0)
-                animator.SetBool(animatorStopBool, true);
-            else
-                animator.SetBool(animatorStopBool, false);
-        }*/
-
-    ///控制玩家的移动(加力的方式)
+    /// <summary>
+    /// 控制玩家的移动(加力的方式)
+    /// </summary>
     private void UpdateVelocity()
     {
         int x = 1;
@@ -332,7 +313,6 @@ public class PlayerController : MonoBehaviour
         if (!FlashInput && !isSkilling)
         {
             AttackInput = true;
-            //Attackanimator.SetTrigger(animatorAttackTrigger);
             animator.Play("Player_CommonAttack");
         }
     }
@@ -355,8 +335,6 @@ public class PlayerController : MonoBehaviour
     {
         if(!FlashInput)
             StartCoroutine(Flash());
-        //FlashInput = true;
-        //animator.Play("Player_Flash");
     }
 
     IEnumerator Flash()
@@ -388,7 +366,6 @@ public class PlayerController : MonoBehaviour
     /// <param name="context"></param>
     private void Skill_1_started(InputAction.CallbackContext context)
     {
-        //animator.Play("Player_SpiralAttack");
         Game.Skill.CharacterSkillManager manager = GetComponent<Game.Skill.CharacterSkillManager>();
         if (manager.skills[0].isPassive)
             return;
@@ -413,7 +390,6 @@ public class PlayerController : MonoBehaviour
     /// <param name="context"></param>
     private void Skill_2_started(InputAction.CallbackContext context)
     {
-        //animator.Play("Player_Dome");
         Game.Skill.CharacterSkillManager manager = GetComponent<Game.Skill.CharacterSkillManager>();
         if (manager.skills[1].isPassive)
             return;
