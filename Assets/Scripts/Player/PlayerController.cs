@@ -16,33 +16,43 @@ public class PlayerController : MonoBehaviour
     public Animator animator = null;
     public Rigidbody2D controllerRigibody;
 
+    [Header("基础属性")]
+    public int PlayerHealth = 10;
+
     [Header("移动参数")]
     public Vector2 vectorInput;
     public float maxSpeed = 1.0f;
     public float Speed = 1.0f;
     public float Flashspeed = 1.0f;
     public float MoveForce = 1.0f;
-    public float jumpForce = 1.0f;
 
+    [Header("跳跃参数")]
+    public float jumpForce = 1.0f;
     public float maxJumpVelocity = 10.0f;
     public float maxFallVelocity = 10.0f;
     public float jumpGravityScale = 1.0f;
     public float fallGravityScale = 1.0f;
     public float groundedGravityScale = 1.0f;
-
-    public int jumpCount;
-    public bool JumpInput;
-    static public bool AttackInput;
     public bool enableGravity;
+
+    [Header("状态参数")]
+    static public bool AttackInput;
+    public bool JumpInput;
     public bool FlashInput;
 
-    public bool isOnGround;
     public bool isFacingLeft;
+    public bool isOnGround;
+    public int jumpCount;
     public bool isJumping;
     public bool isFalling;
     static public bool isSkilling = false;
+    public bool isBeAttacked = false;
 
-    [Header("其它参数")]
+    public float counter;
+    public bool canMove;
+    public bool canAttack;
+
+    [Header("动画参数")]
     private int animatorGroundedBool;
     private int animatorStopBool;
     private int animatorMovementSpeed;
@@ -51,13 +61,8 @@ public class PlayerController : MonoBehaviour
     private int animatorAttackTrigger;
     private int animatorFlashTrigger;
 
-    public float counter;
-    public bool canMove;
-    public bool canAttack;
-
     [Header("音效参数")]
     public CriAtomSource CRIsource;
-
 
     #endregion
 
@@ -133,10 +138,35 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        UpdateHealth();
         UpdateVelocity();
         UpdateDirection();
         UpdateJump();
         UpdateGravityScale();
+    }
+    #endregion
+
+    #region Health
+    private void UpdateHealth()
+    {
+        if (isBeAttacked == true)
+        {                     
+            StartCoroutine(BeAttacked());
+            if (PlayerHealth <= 0)
+            {
+                animator.SetTrigger("Dead");
+            }
+        }
+    }
+
+    IEnumerator BeAttacked()
+    {
+        canMove = false;
+        animator.Play("Player_BeAttacked");
+        yield return new WaitForSeconds(0.1f);
+        PlayerHealth--;
+        canMove = true;
+        isBeAttacked = false;
     }
 
     #endregion

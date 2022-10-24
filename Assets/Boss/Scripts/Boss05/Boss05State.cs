@@ -17,7 +17,7 @@ public class Boss05State : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(HP);
+        //Debug.Log(HP);
         if (collision.tag == "Wall")
             dir = -dir;
     }
