@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -28,9 +29,51 @@ public class UIManager : MonoBehaviour
         bossInfo1.text = bossInfo[0];
         bossInfo2.text = bossInfo[1];
         loadInfo.text = info.getLoadInfo();
-        loseInfo.text = info.getLossInfo(); 
+        loseInfo.text = info.getLossInfo();
+
+        GameEvents.current.onBossDie += onPortalOpen;
+        GameEvents.current.onPlayerDie += onLoseShow;
     }
 
+    void OnDestroy()
+    {
+        GameEvents.current.onBossDie -= onPortalOpen;
+        GameEvents.current.onPlayerDie -= onLoseShow;
+    }
+
+    #region PortalRise
+    public Animator animator = null;
+    private float risePortalLate = 1f; // boss死后多久升起传送门
+
+    private void onPortalOpen()
+    {
+        Invoke(nameof(portalOpen), risePortalLate);
+    }
+
+    private void portalOpen()
+    {
+        animator.SetTrigger("DoorRise");
+    }
+
+    #endregion
+
+    #region LoseShow
+    private float showLoseDuration = 5f; // lose界面显示多长时间
+
+    private void onLoseShow()
+    {
+        lose.SetActive(true);
+        Invoke(nameof(LoseShow), showLoseDuration);
+    }
+
+    private void LoseShow()
+    {
+        SceneManager.LoadScene("Start_Scene");
+    }
+
+    #endregion
+
+    #region Button
     public void backButton()
     {
         getinfo.SetActive(false);
@@ -54,5 +97,5 @@ public class UIManager : MonoBehaviour
         bossStart = true;
         info.battleStart();
     }
-
+    #endregion
 }

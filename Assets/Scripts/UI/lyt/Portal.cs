@@ -25,6 +25,6 @@ public class Portal : MonoBehaviour
     private void winLoad()
     {
         Debug.Log("——————————————————");
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Main_Scene");
     }
 }

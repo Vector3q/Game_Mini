@@ -48,6 +48,6 @@ public class textN : MonoBehaviour
 
     public void Scenechange()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Main_Scene");
     }
 }
