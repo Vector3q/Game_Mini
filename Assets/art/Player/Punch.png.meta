@@ -1,40 +1,28 @@
 fileFormatVersion: 2
-guid: 377a0abef8a0eed4e8d8250c7a669967
+guid: e850c5eb4595d2c4bbb97aa9d8ea1b0a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7578126087101498299
-    second: Lower_Chop_0
+      213: -4335222134116007343
+    second: Punch_0
   - first:
-      213: 6977692391705482298
-    second: Lower_Chop_1
+      213: -5313627634084164227
+    second: Punch_1
   - first:
-      213: 1704077608972956668
-    second: Lower_Chop_2
+      213: 3163940477569658373
+    second: Punch_2
   - first:
-      213: -3113917222930466552
-    second: Lower_Chop_3
+      213: -7795563826625877672
+    second: Punch_3
   - first:
-      213: -7154889414812368909
-    second: Lower_Chop_4
+      213: 6766305641077335316
+    second: Punch_4
   - first:
-      213: -2670159455067554391
-    second: Lower_Chop_5
+      213: 4705998927709936230
+    second: Punch_5
   - first:
-      213: -382815965421703344
-    second: Lower_Chop_6
-  - first:
-      213: -2403739887362220572
-    second: Lower_Chop_7
-  - first:
-      213: -158652953282131225
-    second: Lower_Chop_8
-  - first:
-      213: -2005085534458962634
-    second: Lower_Chop_9
-  - first:
-      213: 8610294552452004540
-    second: Lower_Chop_10
+      213: 3661561310044129345
+    second: Punch_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,13 +112,97 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lower_Chop_0
+      name: Punch_0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 629
+        width: 186
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152ca91207236d3c0800000000000000
+      internalID: -4335222134116007343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punch_1
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 629
+        width: 186
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7dc6b1d1d33246b0800000000000000
+      internalID: -5313627634084164227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punch_2
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 629
+        width: 186
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ee400e91398eb20800000000000000
+      internalID: 3163940477569658373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punch_3
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 629
+        width: 186
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859641a900890d390800000000000000
+      internalID: -7795563826625877672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punch_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 1681
-        width: 343
-        height: 367
+        y: 234
+        width: 186
+        height: 395
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +210,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb34ecc8689ea2960800000000000000
-      internalID: 7578126087101498299
+      spriteID: 415e222912fb6ed50800000000000000
+      internalID: 6766305641077335316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lower_Chop_1
+      name: Punch_5
       rect:
         serializedVersion: 2
-        x: 343
-        y: 1681
-        width: 343
-        height: 367
+        x: 186
+        y: 234
+        width: 186
+        height: 395
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a341d87c24eb5d060800000000000000
-      internalID: 6977692391705482298
+      spriteID: 66a158f57111f4140800000000000000
+      internalID: 4705998927709936230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lower_Chop_2
+      name: Punch_6
       rect:
         serializedVersion: 2
-        x: 686
-        y: 1681
-        width: 343
-        height: 367
+        x: 372
+        y: 234
+        width: 186
+        height: 395
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,176 +252,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf3b7888e8916a710800000000000000
-      internalID: 1704077608972956668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lower_Chop_3
-      rect:
-        serializedVersion: 2
-        x: 1029
-        y: 1681
-        width: 343
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8093243b8c429c4d0800000000000000
-      internalID: -3113917222930466552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lower_Chop_4
-      rect:
-        serializedVersion: 2
-        x: 1372
-        y: 1681
-        width: 343
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3fff7e64cf9b4bc90800000000000000
-      internalID: -7154889414812368909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lower_Chop_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1314
-        width: 343
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ad3c0b6f10b1fad0800000000000000
-      internalID: -2670159455067554391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lower_Chop_6
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 1314
-        width: 343
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05fe0be58e6ffaaf0800000000000000
-      internalID: -382815965421703344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lower_Chop_7
-      rect:
-        serializedVersion: 2
-        x: 686
-        y: 1314
-        width: 343
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ed5659de4334aed0800000000000000
-      internalID: -2403739887362220572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lower_Chop_8
-      rect:
-        serializedVersion: 2
-        x: 1029
-        y: 1314
-        width: 343
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ea4d05caf95ccdf0800000000000000
-      internalID: -158652953282131225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lower_Chop_9
-      rect:
-        serializedVersion: 2
-        x: 1372
-        y: 1314
-        width: 343
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63d9c4e64518c24e0800000000000000
-      internalID: -2005085534458962634
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lower_Chop_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 947
-        width: 343
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbaf162b649ed7770800000000000000
-      internalID: 8610294552452004540
+      spriteID: 1488e789c9a70d230800000000000000
+      internalID: 3661561310044129345
       vertices: []
       indices: 
       edges: []

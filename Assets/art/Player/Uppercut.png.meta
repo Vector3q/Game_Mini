@@ -1,40 +1,28 @@
 fileFormatVersion: 2
-guid: 377a0abef8a0eed4e8d8250c7a669967
+guid: efd63110eda3cd640bd0d7c00fe12314
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7578126087101498299
-    second: Lower_Chop_0
+      213: -3970379528606528002
+    second: Uppercut_0
   - first:
-      213: 6977692391705482298
-    second: Lower_Chop_1
+      213: 8143856503831445885
+    second: Uppercut_1
   - first:
-      213: 1704077608972956668
-    second: Lower_Chop_2
+      213: -5562361733445196312
+    second: Uppercut_2
   - first:
-      213: -3113917222930466552
-    second: Lower_Chop_3
+      213: 7250886298221376740
+    second: Uppercut_3
   - first:
-      213: -7154889414812368909
-    second: Lower_Chop_4
+      213: 7602420661122157425
+    second: Uppercut_4
   - first:
-      213: -2670159455067554391
-    second: Lower_Chop_5
+      213: 629456303111874120
+    second: Uppercut_5
   - first:
-      213: -382815965421703344
-    second: Lower_Chop_6
-  - first:
-      213: -2403739887362220572
-    second: Lower_Chop_7
-  - first:
-      213: -158652953282131225
-    second: Lower_Chop_8
-  - first:
-      213: -2005085534458962634
-    second: Lower_Chop_9
-  - first:
-      213: 8610294552452004540
-    second: Lower_Chop_10
+      213: 7770710363274039860
+    second: Uppercut_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lower_Chop_0
+      name: Uppercut_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1681
-        width: 343
-        height: 367
+        y: 1401
+        width: 463
+        height: 647
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +126,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb34ecc8689ea2960800000000000000
-      internalID: 7578126087101498299
+      spriteID: efdccedcad066e8c0800000000000000
+      internalID: -3970379528606528002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lower_Chop_1
+      name: Uppercut_1
       rect:
         serializedVersion: 2
-        x: 343
-        y: 1681
-        width: 343
-        height: 367
+        x: 463
+        y: 1401
+        width: 463
+        height: 647
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a341d87c24eb5d060800000000000000
-      internalID: 6977692391705482298
+      spriteID: d71c0ac975ac40170800000000000000
+      internalID: 8143856503831445885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lower_Chop_2
+      name: Uppercut_2
       rect:
         serializedVersion: 2
-        x: 686
-        y: 1681
-        width: 343
-        height: 367
+        x: 926
+        y: 1401
+        width: 463
+        height: 647
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf3b7888e8916a710800000000000000
-      internalID: 1704077608972956668
+      spriteID: 8e5e5cd59758ec2b0800000000000000
+      internalID: -5562361733445196312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lower_Chop_3
+      name: Uppercut_3
       rect:
         serializedVersion: 2
-        x: 1029
-        y: 1681
-        width: 343
-        height: 367
+        x: 1389
+        y: 1401
+        width: 463
+        height: 647
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,41 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8093243b8c429c4d0800000000000000
-      internalID: -3113917222930466552
+      spriteID: 4e47b30eba250a460800000000000000
+      internalID: 7250886298221376740
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lower_Chop_4
-      rect:
-        serializedVersion: 2
-        x: 1372
-        y: 1681
-        width: 343
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3fff7e64cf9b4bc90800000000000000
-      internalID: -7154889414812368909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lower_Chop_5
+      name: Uppercut_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 1314
-        width: 343
-        height: 367
+        y: 754
+        width: 463
+        height: 647
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +210,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ad3c0b6f10b1fad0800000000000000
-      internalID: -2670159455067554391
+      spriteID: 17bc64bdf49318960800000000000000
+      internalID: 7602420661122157425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lower_Chop_6
+      name: Uppercut_5
       rect:
         serializedVersion: 2
-        x: 343
-        y: 1314
-        width: 343
-        height: 367
+        x: 463
+        y: 754
+        width: 463
+        height: 647
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05fe0be58e6ffaaf0800000000000000
-      internalID: -382815965421703344
+      spriteID: 8462d943c274cb800800000000000000
+      internalID: 629456303111874120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lower_Chop_7
+      name: Uppercut_6
       rect:
         serializedVersion: 2
-        x: 686
-        y: 1314
-        width: 343
-        height: 367
+        x: 926
+        y: 754
+        width: 463
+        height: 647
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,71 +252,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ed5659de4334aed0800000000000000
-      internalID: -2403739887362220572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lower_Chop_8
-      rect:
-        serializedVersion: 2
-        x: 1029
-        y: 1314
-        width: 343
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ea4d05caf95ccdf0800000000000000
-      internalID: -158652953282131225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lower_Chop_9
-      rect:
-        serializedVersion: 2
-        x: 1372
-        y: 1314
-        width: 343
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63d9c4e64518c24e0800000000000000
-      internalID: -2005085534458962634
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lower_Chop_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 947
-        width: 343
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbaf162b649ed7770800000000000000
-      internalID: 8610294552452004540
+      spriteID: 432556787eb17db60800000000000000
+      internalID: 7770710363274039860
       vertices: []
       indices: 
       edges: []
