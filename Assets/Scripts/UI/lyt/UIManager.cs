@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        bossInfo = getinfo.transform.Find("bossInfo1").GetComponent<Text>();
+        bossInfo = getinfo.transform.Find("bossInfo").GetComponent<Text>();
         loadInfo = load.transform.Find("loadInfo").GetComponent<Text>();
         loseInfo = lose.transform.Find("loseInfo").GetComponent<Text>();
 
