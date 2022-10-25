@@ -14,6 +14,13 @@ public class ScreenShake : MonoBehaviour
     {
         originalPos = gameObject.transform.position;
     }
+
+    private void Update()
+    {
+        originalPos = gameObject.transform.position;
+    }
+
+
     IEnumerator CameraShake()
     {
         yield return new WaitForSeconds(0.33f);

@@ -27,7 +27,6 @@ public class enemyState : MonoBehaviour
     private void Update()
     {
         AnimatorController();
-        if (Input.GetKeyDown(KeyCode.A)) BeAttacked();
     }
 
     private void BeAttacked()
