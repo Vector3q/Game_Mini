@@ -62,7 +62,7 @@ public class UIManager : MonoBehaviour
     #endregion
 
     #region LoseShow
-    private float showLoseDuration = 5f; // lose界面显示多长时间
+    private float showLoseDuration = 4f; // lose界面显示多长时间
 
     private void onLoseShow()
     {
@@ -70,9 +70,13 @@ public class UIManager : MonoBehaviour
         Invoke(nameof(LoseShow), showLoseDuration);
     }
 
+    public GameObject Restart;
+    public GameObject Quit;
+
     private void LoseShow()
     {
-        SceneManager.LoadScene("Start_Scene");
+        Restart.SetActive(true);
+        Quit.SetActive(true);
     }
 
     #endregion
@@ -101,6 +105,16 @@ public class UIManager : MonoBehaviour
         bloodBar.SetActive(true);
         bossStart = true;
         info.battleStart();
+    }
+
+    public void restartButton()
+    {
+        SceneManager.LoadScene("Start_Scene");
+    }
+
+    public void quitButton()
+    {
+        Application.Quit();
     }
     #endregion
 
