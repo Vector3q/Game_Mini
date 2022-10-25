@@ -15,7 +15,7 @@ namespace Game.Skill
         public override void DeploySkill()
         {
             player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 100), ForceMode2D.Impulse);
-
+            Destroy(gameObject, 1.5f);
         }
     }
 }

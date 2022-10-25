@@ -1254,7 +1254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossObjs: []
-  curBossCount: 0
 --- !u!1 &2058307605 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3433914885449457047, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
