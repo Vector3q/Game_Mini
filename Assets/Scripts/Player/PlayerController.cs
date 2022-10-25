@@ -177,6 +177,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("Dead");
             canMove = false;
+            GameEvents.current.PlayerDie();
         }
     }
 

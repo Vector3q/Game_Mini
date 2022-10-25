@@ -19,6 +19,14 @@ public class UIManager : MonoBehaviour
     private Text loseInfo;
     public Text bossName;
 
+    public GameObject bloodBar;
+
+    private void OnEnable()
+    {
+        GameEvents.current.OnBossDie += onPortalOpen;
+        GameEvents.current.OnPlayerDie += onLoseShow;
+    }
+
     private void Start()
     {
         bossInfo1 = getinfo.transform.Find("bossInfo1").GetComponent<Text>();
@@ -27,14 +35,10 @@ public class UIManager : MonoBehaviour
         loseInfo = lose.transform.Find("loseInfo").GetComponent<Text>();
 
         List<string> bossInfo = info.getBossInfo();
-        bossInfo1.text = bossInfo[0];
-        bossInfo2.text = bossInfo[1];
+        bossInfo1.text = tooLongHandle(bossInfo[0])[0] + "\n" + tooLongHandle(bossInfo[0])[1] + '\n' + '\n' + tooLongHandle(bossInfo[1])[0] + "\n" + tooLongHandle(bossInfo[1])[1];
         loadInfo.text = info.getLoadInfo();
         loseInfo.text = info.getLossInfo();
         //bossName.text = "击杀者：" + info.getBossName();
-
-        GameEvents.current.OnBossDie += onPortalOpen;
-        GameEvents.current.OnPlayerDie += onLoseShow;
     }
 
     void OnDestroy()
@@ -96,8 +100,16 @@ public class UIManager : MonoBehaviour
     public void battleButton()
     {
         getskill.SetActive(false);
+        bloodBar.SetActive(true);
         bossStart = true;
         info.battleStart();
     }
     #endregion
+
+    private string[] tooLongHandle(string info)
+    {
+        string[] lines;
+        lines = info.Split(new char[] { '*' });
+        return lines;
+    }
 }

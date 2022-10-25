@@ -9,7 +9,7 @@ public class text : MonoBehaviour
 {
     string str;
     Text tex;
-    int i = 0;   //����������Ե������ֵ��ٶ�
+    int i = 0;
     int index = 0;
     string str1 = "";
     bool ison = true;
@@ -20,7 +20,7 @@ public class text : MonoBehaviour
         tex = GetComponent<Text>();
         str = tex.text;
         tex.text = "";
-        i = 12;
+        i = 6;
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class text : MonoBehaviour
                 str1 = str1 + str[index].ToString();
                 tex.text = str1;
                 index += 1;
-                i = 12;
+                i = 6;
             }
         }
 
