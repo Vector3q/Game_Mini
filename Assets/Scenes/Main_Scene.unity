@@ -1412,7 +1412,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 515913974}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2009845535}
+        m_TargetAssemblyTypeName: SkillChoose, Assembly-CSharp
+        m_MethodName: changeSkillID_3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &515913974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2307,7 +2319,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 690636988}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2009845535}
+        m_TargetAssemblyTypeName: SkillChoose, Assembly-CSharp
+        m_MethodName: changeSkillID_1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &690636988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3039,7 +3063,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 833983194}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2009845535}
+        m_TargetAssemblyTypeName: SkillChoose, Assembly-CSharp
+        m_MethodName: changeSkillID_5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &833983194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4556,7 +4592,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1299537003}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2009845535}
+        m_TargetAssemblyTypeName: SkillChoose, Assembly-CSharp
+        m_MethodName: changeSkillID_6
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1299537003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5334,6 +5382,10 @@ PrefabInstance:
       propertyPath: PlayerHealth
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: game_manager
+      value: 
+      objectReference: {fileID: 2009845531}
     - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: maxJumpVelocity
       value: 25
@@ -6696,7 +6748,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1666533869}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2009845535}
+        m_TargetAssemblyTypeName: SkillChoose, Assembly-CSharp
+        m_MethodName: changeSkillID_4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1666533869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7260,7 +7324,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1875677937}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2009845535}
+        m_TargetAssemblyTypeName: SkillChoose, Assembly-CSharp
+        m_MethodName: changeSkillID_2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1875677937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7845,6 +7921,7 @@ GameObject:
   - component: {fileID: 2009845533}
   - component: {fileID: 2009845532}
   - component: {fileID: 2009845534}
+  - component: {fileID: 2009845535}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -8030,6 +8107,27 @@ MonoBehaviour:
     hitFxName: 
     hitFxPrefab: {fileID: 0}
     selectorType: 2
+  - skillID: 0
+    name: 
+    description: 
+    coolTime: 0
+    coolRemain: 0
+    attackDistance: 0
+    attackTargetTags: []
+    isPassive: 0
+    attackTargets: []
+    impactType: []
+    nextBatterID: 0
+    atkRatio: 0
+    durationTime: 0
+    atkInterval: 0
+    owner: {fileID: 0}
+    prefabName: 
+    skillPrefab: {fileID: 0}
+    animationName: 
+    hitFxName: 
+    hitFxPrefab: {fileID: 0}
+    selectorType: 2
   State: 0
 --- !u!4 &2009845533
 Transform:
@@ -8065,6 +8163,18 @@ MonoBehaviour:
   - {fileID: 6655618051500590707, guid: 7ade3801e1c46e042a7b2c97f4e365fc, type: 3}
   - {fileID: 6655618051500590707, guid: 7ade3801e1c46e042a7b2c97f4e365fc, type: 3}
   - {fileID: 6655618051500590707, guid: 7ade3801e1c46e042a7b2c97f4e365fc, type: 3}
+--- !u!114 &2009845535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009845531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af82d8dbb4ffd34abb3af496b15dd38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2041810993
 GameObject:
   m_ObjectHideFlags: 0
@@ -8307,7 +8417,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2109532808}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2009845535}
+        m_TargetAssemblyTypeName: SkillChoose, Assembly-CSharp
+        m_MethodName: changeSkillID_7
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2109532808
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using CriWare;
+using Game.Skill;
 
 public class PlayerController : MonoBehaviour
 {
@@ -64,6 +65,8 @@ public class PlayerController : MonoBehaviour
     [Header("音效参数")]
     public CriAtomSource CRIsource;
 
+    [Header("游戏管理")]
+    public GameObject game_manager;
     #endregion
 
     #region CallBackFunctions
@@ -72,6 +75,8 @@ public class PlayerController : MonoBehaviour
     {
         controllerRigibody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        gameObject.GetComponent<CharacterSkillManager>().skills[0] = game_manager.GetComponent<GameManager>().SkillPool[7];
     }
 
     private void OnEnable()
