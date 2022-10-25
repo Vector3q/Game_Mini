@@ -139,10 +139,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         UpdateHealth();
-        UpdateVelocity();
-        UpdateDirection();
-        UpdateJump();
-        UpdateGravityScale();
+            UpdateVelocity();
+            UpdateDirection();
+            UpdateJump();
+            UpdateGravityScale();
     }
     #endregion
 
@@ -150,23 +150,28 @@ public class PlayerController : MonoBehaviour
     private void UpdateHealth()
     {
         if (isBeAttacked == true)
-        {                     
-            StartCoroutine(BeAttacked());
-            if (PlayerHealth <= 0)
+        {
+            if (PlayerHealth > 0)
             {
-                animator.SetTrigger("Dead");
+                StartCoroutine(BeAttacked());
             }
         }
     }
 
     IEnumerator BeAttacked()
-    {
+    {        
+        PlayerHealth--;
         canMove = false;
         animator.Play("Player_BeAttacked");
         yield return new WaitForSeconds(0.1f);
-        PlayerHealth--;
         canMove = true;
         isBeAttacked = false;
+        
+        if (PlayerHealth <= 1)
+        {
+            animator.SetTrigger("Dead");
+            canMove = false;
+        }
     }
 
     #endregion
