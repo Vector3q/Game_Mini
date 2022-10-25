@@ -1,61 +1,58 @@
 fileFormatVersion: 2
-guid: 532db2b50ce2f7e4989c92cf8e205f24
+guid: 574f72f5123cc7c49abc6cf97ab74521
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7991209938272625500
-    second: "\u58F3\u88C2\u5F00_0"
+      213: -1986664786156708404
+    second: "boss\u98DE_0"
   - first:
-      213: 6838228067224336368
-    second: "\u58F3\u88C2\u5F00_1"
+      213: 6774220298754569562
+    second: "boss\u98DE_1"
   - first:
-      213: 8917094589891542817
-    second: "\u58F3\u88C2\u5F00_2"
+      213: 1189598138616814351
+    second: "boss\u98DE_2"
   - first:
-      213: 5849240842021842293
-    second: "\u58F3\u88C2\u5F00_3"
+      213: -4641676369176843366
+    second: "boss\u98DE_3"
   - first:
-      213: -7745885467354250989
-    second: "\u58F3\u88C2\u5F00_4"
+      213: -6371602220668671327
+    second: "boss\u98DE_4"
   - first:
-      213: -7124854725301575332
-    second: "\u58F3\u88C2\u5F00_5"
+      213: 4895865167635707788
+    second: "boss\u98DE_5"
   - first:
-      213: -4856211341780168268
-    second: "\u58F3\u88C2\u5F00_6"
+      213: -461056959241244165
+    second: "boss\u98DE_6"
   - first:
-      213: 1442278121576942989
-    second: "\u58F3\u88C2\u5F00_7"
+      213: 3327371712898225348
+    second: "boss\u98DE_7"
   - first:
-      213: -2596856527203667847
-    second: "\u58F3\u88C2\u5F00_8"
+      213: -4966889629173082992
+    second: "boss\u98DE_8"
   - first:
-      213: 8904484378362539494
-    second: "\u58F3\u88C2\u5F00_9"
+      213: 7280319628668435545
+    second: "boss\u98DE_9"
   - first:
-      213: 7283873411164223611
-    second: "\u58F3\u88C2\u5F00_10"
+      213: 8936087021669864556
+    second: "boss\u98DE_10"
   - first:
-      213: 7786304459781268948
-    second: "\u58F3\u88C2\u5F00_11"
+      213: -1294532597906710023
+    second: "boss\u98DE_11"
   - first:
-      213: 3647920216644394744
-    second: "\u58F3\u88C2\u5F00_12"
+      213: 5029199517654270469
+    second: "boss\u98DE_12"
   - first:
-      213: -3894862193571122219
-    second: "\u58F3\u88C2\u5F00_13"
+      213: -2868321163186288976
+    second: "boss\u98DE_13"
   - first:
-      213: 1260390990613941540
-    second: "\u58F3\u88C2\u5F00_14"
+      213: 5445712281171692087
+    second: "boss\u98DE_14"
   - first:
-      213: -6668738899296520215
-    second: "\u58F3\u88C2\u5F00_15"
+      213: -1093097055293729042
+    second: "boss\u98DE_15"
   - first:
-      213: 2891936006565583777
-    second: "\u58F3\u88C2\u5F00_16"
-  - first:
-      213: -5756554356074154969
-    second: "\u58F3\u88C2\u5F00_17"
+      213: -1013907514394918286
+    second: "boss\u98DE_16"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -145,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_0"
+      name: "boss\u98DE_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 1698
-        width: 336
-        height: 350
+        y: 1631
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c53af40891b76ee60800000000000000
-      internalID: 7991209938272625500
+      spriteID: ccd1a5d17e2fd64e0800000000000000
+      internalID: -1986664786156708404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_1"
+      name: "boss\u98DE_1"
       rect:
         serializedVersion: 2
-        x: 336
-        y: 1698
-        width: 336
-        height: 350
+        x: 362
+        y: 1631
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f73308523446ee50800000000000000
-      internalID: 6838228067224336368
+      spriteID: a55b189687dd20e50800000000000000
+      internalID: 6774220298754569562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_2"
+      name: "boss\u98DE_2"
       rect:
         serializedVersion: 2
-        x: 672
-        y: 1698
-        width: 336
-        height: 350
+        x: 724
+        y: 1631
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12ffa03e842efbb70800000000000000
-      internalID: 8917094589891542817
+      spriteID: f0b98bd443d428010800000000000000
+      internalID: 1189598138616814351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_3"
+      name: "boss\u98DE_3"
       rect:
         serializedVersion: 2
-        x: 1008
-        y: 1698
-        width: 336
-        height: 350
+        x: 1086
+        y: 1631
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57d2b622e8dac2150800000000000000
-      internalID: 5849240842021842293
+      spriteID: a9ba3e45fe3759fb0800000000000000
+      internalID: -4641676369176843366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_4"
+      name: "boss\u98DE_4"
       rect:
         serializedVersion: 2
-        x: 1344
-        y: 1698
-        width: 336
-        height: 350
+        x: 1448
+        y: 1631
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,41 +240,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3114d77f436118490800000000000000
-      internalID: -7745885467354250989
+      spriteID: 1aa24fad9858397a0800000000000000
+      internalID: -6371602220668671327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_5"
-      rect:
-        serializedVersion: 2
-        x: 1680
-        y: 1698
-        width: 336
-        height: 350
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c51e22e506e6f1d90800000000000000
-      internalID: -7124854725301575332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_6"
+      name: "boss\u98DE_5"
       rect:
         serializedVersion: 2
         x: 0
-        y: 1348
-        width: 336
-        height: 350
+        y: 1214
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,20 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b158f293854b9cb0800000000000000
-      internalID: -4856211341780168268
+      spriteID: c8772293e6b91f340800000000000000
+      internalID: 4895865167635707788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_7"
+      name: "boss\u98DE_6"
       rect:
         serializedVersion: 2
-        x: 336
-        y: 1348
-        width: 336
-        height: 350
+        x: 362
+        y: 1214
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8d49ef5f40040410800000000000000
-      internalID: 1442278121576942989
+      spriteID: bf1343b632ff999f0800000000000000
+      internalID: -461056959241244165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_8"
+      name: "boss\u98DE_7"
       rect:
         serializedVersion: 2
-        x: 672
-        y: 1348
-        width: 336
-        height: 350
+        x: 724
+        y: 1214
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,20 +303,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 970fe5b4fbc16fbd0800000000000000
-      internalID: -2596856527203667847
+      spriteID: 4c45bf691f23d2e20800000000000000
+      internalID: 3327371712898225348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_9"
+      name: "boss\u98DE_8"
       rect:
         serializedVersion: 2
-        x: 1008
-        y: 1348
-        width: 336
-        height: 350
+        x: 1086
+        y: 1214
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -348,20 +324,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ed60583d55139b70800000000000000
-      internalID: 8904484378362539494
+      spriteID: 094119ea230121bb0800000000000000
+      internalID: -4966889629173082992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_10"
+      name: "boss\u98DE_9"
       rect:
         serializedVersion: 2
-        x: 1344
-        y: 1348
-        width: 336
-        height: 350
+        x: 1448
+        y: 1214
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,41 +345,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b783b5d9644851560800000000000000
-      internalID: 7283873411164223611
+      spriteID: 95cf5162124e80560800000000000000
+      internalID: 7280319628668435545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_11"
-      rect:
-        serializedVersion: 2
-        x: 1680
-        y: 1348
-        width: 336
-        height: 350
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d56d4e07a28e0c60800000000000000
-      internalID: 7786304459781268948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_12"
+      name: "boss\u98DE_10"
       rect:
         serializedVersion: 2
         x: 0
-        y: 998
-        width: 336
-        height: 350
+        y: 797
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,20 +366,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fe1e0a0c1400a230800000000000000
-      internalID: 3647920216644394744
+      spriteID: c645c900dcb530c70800000000000000
+      internalID: 8936087021669864556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_13"
+      name: "boss\u98DE_11"
       rect:
         serializedVersion: 2
-        x: 336
-        y: 998
-        width: 336
-        height: 350
+        x: 362
+        y: 797
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,20 +387,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d33817887ba2f9c0800000000000000
-      internalID: -3894862193571122219
+      spriteID: 9f16b9ff575e80ee0800000000000000
+      internalID: -1294532597906710023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_14"
+      name: "boss\u98DE_12"
       rect:
         serializedVersion: 2
-        x: 672
-        y: 998
-        width: 336
-        height: 350
+        x: 724
+        y: 797
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,20 +408,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42d85a99deecd7110800000000000000
-      internalID: 1260390990613941540
+      spriteID: 5024952c05e4bc540800000000000000
+      internalID: 5029199517654270469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_15"
+      name: "boss\u98DE_13"
       rect:
         serializedVersion: 2
-        x: 1008
-        y: 998
-        width: 336
-        height: 350
+        x: 1086
+        y: 797
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -474,20 +429,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e7f997bd41e373a0800000000000000
-      internalID: -6668738899296520215
+      spriteID: 0b6cb8e591da138d0800000000000000
+      internalID: -2868321163186288976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_16"
+      name: "boss\u98DE_14"
       rect:
         serializedVersion: 2
-        x: 1344
-        y: 998
-        width: 336
-        height: 350
+        x: 1448
+        y: 797
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -495,20 +450,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1abd080d978322820800000000000000
-      internalID: 2891936006565583777
+      spriteID: 73a8834977e039b40800000000000000
+      internalID: 5445712281171692087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u58F3\u88C2\u5F00_17"
+      name: "boss\u98DE_15"
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 998
-        width: 336
-        height: 350
+        x: 0
+        y: 380
+        width: 362
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -516,8 +471,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 724f8fb005c9c10b0800000000000000
-      internalID: -5756554356074154969
+      spriteID: ee6113a050a84d0f0800000000000000
+      internalID: -1093097055293729042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "boss\u98DE_16"
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 380
+        width: 362
+        height: 417
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2724461dc70ede1f0800000000000000
+      internalID: -1013907514394918286
       vertices: []
       indices: 
       edges: []

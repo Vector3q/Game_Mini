@@ -40,10 +40,15 @@ public class enemyState : MonoBehaviour
 private void AnimatorController()
     {
         animaInfo = enemyAnimator.GetCurrentAnimatorStateInfo(0);
+        enemyAnimator.SetBool("isGround", isGround);
 
-        if(!isGround && myrigidbody.velocity.y < 0.5f && !animaInfo.IsName("Green Jump To Fall - Animation"))
+        //if(!isGround && myrigidbody.velocity.y < 0.5f && !animaInfo.IsName("Green Jump To Fall - Animation"))
+        //{
+        //    enemyAnimator.Play("Green Jump To Fall - Animation");
+        //}
+        if (!isGround && myrigidbody.velocity.y < 0.5f && !animaInfo.IsName("JumpToFall"))
         {
-            enemyAnimator.Play("Green Jump To Fall - Animation");
+            enemyAnimator.Play("JumpToFall");
         }
     }
 

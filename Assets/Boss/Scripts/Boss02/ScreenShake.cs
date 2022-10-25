@@ -16,7 +16,7 @@ public class ScreenShake : MonoBehaviour
     }
     IEnumerator CameraShake()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.33f);
         while (shake >= 0.5f)
         {
             transform.position = new Vector3(

@@ -32,15 +32,18 @@ public class Jump_1 : Action
     {
         animaInfo = enemyAnimator.GetCurrentAnimatorStateInfo(0);
         if (target == null) return TaskStatus.Failure;
-        if (enemyState.isGround && !jumping && !animaInfo.IsName("Green Jump Start-up - Animation"))
+        //if (enemyState.isGround && !jumping && !animaInfo.IsName("Green Jump Start-up - Animation"))
+        if (enemyState.isGround && !jumping && !animaInfo.IsName("StartJump"))
         {
-            enemyAnimator.Play("Green Jump Start-up - Animation");
+            //enemyAnimator.Play("Green Jump Start-up - Animation");
+            enemyAnimator.Play("StartJump");
             tmp_target = target.position;
             direction = transform.position.x - tmp_target.x < 0 ? 1 : -1;
             transform.localScale = new Vector3(direction, 1, 1);
         }
-        if(animaInfo.IsName("Green Jump Start-up - Animation") && animaInfo.normalizedTime>=0.9f && !jumping)
-        {
+        //if(animaInfo.IsName("Green Jump Start-up - Animation") && animaInfo.normalizedTime>=0.9f && !jumping)
+         if (animaInfo.IsName("StartJump") && animaInfo.normalizedTime >= 0.9f && !jumping)
+            {
             jumping = true;
             myrigidbody.gravityScale = 1f;
             myrigidbody.AddForce(Vector2.up * jump_force, ForceMode2D.Impulse);
