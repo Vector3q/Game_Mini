@@ -27,13 +27,13 @@ public class Attack : Action
         {
             if (Time.time-c_time>=time)
             {
-                ani.Play("Attack_unbreak");
+                ani.Play("Smash_unbreak");
                 canShoot = true;
                 c_time = Time.time;
                 c_count++;
             }
             animaInfo = ani.GetCurrentAnimatorStateInfo(0);
-            if (animaInfo.IsName("Attack_unbreak")&&animaInfo.normalizedTime>=0.5f&&canShoot)
+            if (animaInfo.IsName("Smash_unbreak")&&animaInfo.normalizedTime>=0.9f&&canShoot)
             {
                 canShoot = false;
                 var bullet_L = GameObject.Instantiate(bullet, this.transform.position, this.transform.rotation);
@@ -48,10 +48,10 @@ public class Attack : Action
             return TaskStatus.Running;
         }
         animaInfo = ani.GetCurrentAnimatorStateInfo(0);
-        while (animaInfo.IsName("Attack_unbreak"))
+        while (animaInfo.IsName("Smash_unbreak"))
         {
             animaInfo = ani.GetCurrentAnimatorStateInfo(0);
-            if (animaInfo.normalizedTime >= 0.5f && canShoot)
+            if (animaInfo.normalizedTime >= 0.9f && canShoot)
             {
                 canShoot = false;
                 var bullet_L = GameObject.Instantiate(bullet, this.transform.position, this.transform.rotation);
