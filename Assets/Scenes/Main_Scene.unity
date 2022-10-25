@@ -8122,7 +8122,7 @@ MonoBehaviour:
     durationTime: 0
     atkInterval: 0
     owner: {fileID: 0}
-    prefabName: 
+    prefabName: Empty
     skillPrefab: {fileID: 0}
     animationName: 
     hitFxName: 
