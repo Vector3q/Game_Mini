@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeAttack05 : Action
+public class BeAttack02 : Action
 {
     private Animator ani;
     
@@ -15,15 +15,13 @@ public class BeAttack05 : Action
     }
     public override TaskStatus OnUpdate()
     {
-        if (enemyState.HP == 0)
+        if(enemyState.HP==0)
         {
             return TaskStatus.Running;
         }
-        ani.Play("Rat_Hit");
-        Boss05State.HP -= 1;
-        if(Boss05State.HP==0)
+        enemyState.HP -= 1;
+        if(enemyState.HP == 0)
         {
-            ani.Play("Rat_Death");
             return TaskStatus.Running;
         }
         return TaskStatus.Success;

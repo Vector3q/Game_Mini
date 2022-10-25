@@ -7,6 +7,7 @@ public class FlyTo : Action
 {
     public Vector3 target;
     public GameObject Bullet;
+    private Animator ani;
     public float fireSpeed;
     public float speed;
 
@@ -15,6 +16,7 @@ public class FlyTo : Action
 
     public override void OnStart()
     {
+        ani = gameObject.GetComponentInChildren<Animator>();
         c_time = Time.time;
         base.OnStart();
     }
@@ -22,6 +24,7 @@ public class FlyTo : Action
     {
         if (Time.time - c_time >= time)
         {
+            ani.Play("Shoot");
             var bullet=GameObject.Instantiate(Bullet, gameObject.transform.position, gameObject.transform.rotation);
             bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, fireSpeed);
             c_time = Time.time;
