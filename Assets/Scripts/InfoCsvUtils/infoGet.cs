@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class infoGet : MonoBehaviour
 {
@@ -70,9 +71,15 @@ public class infoGet : MonoBehaviour
     /// </summary>
     public string getBossName()
     {
-        string name = bosslist[bossRandomSeq[curStage]][2];
+        string name = bosslist[bossRandomSeq[curStage-1]][2];
         Debug.Log("该Boss的名字是：" + name);
         return name;
+    }
+
+    public void refreshBossImage()
+    {
+        GameObject bossImage = GameObject.Find("bossImage");
+        bossImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("BossPic/boss" + bossRandomSeq[curStage - 1]);
     }
 
     /// <summary>
