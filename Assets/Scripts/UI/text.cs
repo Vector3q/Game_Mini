@@ -46,10 +46,10 @@ public class text : MonoBehaviour
 
     }
 
-    public void Scenechange()
-    {
-        SceneManager.LoadScene("Main Scene");
-    }
+    // public void Scenechange()
+    // {
+    //     SceneManager.LoadScene("Main Scene");
+    // }
 
 
 }
