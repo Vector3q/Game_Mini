@@ -8558,8 +8558,8 @@ MonoBehaviour:
     selectorType: 0
   - skillID: 7
     name: "\u5C04\u65E5"
-    description: "\u5411\u73A9\u5BB6\u4E0A\u65B9\u5C04\u7BAD "
-    coolTime: 10
+    description: 
+    coolTime: 2
     coolRemain: 0
     attackDistance: 0
     attackTargetTags:
@@ -8572,9 +8572,9 @@ MonoBehaviour:
     durationTime: 0
     atkInterval: 0
     owner: {fileID: 0}
-    prefabName: Skill.archery
+    prefabName: Skill.punch
     skillPrefab: {fileID: 0}
-    animationName: 
+    animationName: Player_Uppercut
     hitFxName: 
     hitFxPrefab: {fileID: 0}
     selectorType: 0

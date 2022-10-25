@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4564606769866835751}
   - component: {fileID: 8213825872501715742}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Detect
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6498641684889323601}
   - component: {fileID: 6498641684889323604}
   - component: {fileID: 3295536717520113771}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Skill.punch
   m_TagString: Weapon
   m_Icon: {fileID: 0}
