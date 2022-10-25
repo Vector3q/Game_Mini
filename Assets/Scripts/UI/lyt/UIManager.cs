@@ -125,4 +125,18 @@ public class UIManager : MonoBehaviour
         lines = info.Split(new char[] { '*' });
         return lines;
     }
+
+    #region Debug
+
+    public void Test()
+    {
+        List<string> bossInf = info.getBossInfo();
+        bossInfo.text = bossInf[0] + '\n' + '\n' + bossInf[1];
+        loadInfo.text = loadInfo.text = tooLongHandle(info.getLoadInfo())[0] + "\n" + tooLongHandle(info.getLoadInfo())[1] + "\n" + tooLongHandle(info.getLoadInfo())[2];
+        loseInfo.text = info.getLossInfo();
+        bossName.text = "击杀者：" + info.getBossName();
+        info.refreshBossImage();
+    }
+
+    #endregion
 }

@@ -6,7 +6,12 @@ using UnityEngine.UI;
 public class infoGet : MonoBehaviour
 {
     public List<GameObject> bossObjs;
+    public GameObject bossImage;
 
+    [Header("Debug")]
+    public bool DebugSingeBoss = false;
+    public int DebugWhichBoss = 0;
+    public bool DebugBossInorder = false;
 
     static List<List<string>> bosslist = new List<List<string>>(); 
     static List<List<string>> information = new List<List<string>>();
@@ -22,15 +27,13 @@ public class infoGet : MonoBehaviour
         lyrics = CSVUtils.ParseCSV("lyrics", 1);
 
         BossSeqInit();
+
+        Test();
     }
 
     void Start()
     {
-        //for (int i = 0; i < bossObjs.Count; i++)
-        //{
-        //    getBossInfo();
-        //    Debug.Log("i" + i);
-        //}
+
     }
 
     public void BossSeqInit()
@@ -71,6 +74,10 @@ public class infoGet : MonoBehaviour
     /// </summary>
     public string getBossName()
     {
+        if (curStage == 0)
+        {
+            ++curStage;
+        }
         string name = bosslist[bossRandomSeq[curStage-1]][2];
         Debug.Log("该Boss的名字是：" + name);
         return name;
@@ -78,7 +85,6 @@ public class infoGet : MonoBehaviour
 
     public void refreshBossImage()
     {
-        GameObject bossImage = GameObject.Find("bossImage");
         bossImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("BossPic/boss" + bossRandomSeq[curStage - 1]);
     }
 
@@ -175,4 +181,26 @@ public class infoGet : MonoBehaviour
     }
     #endregion
 
+    #region Debug
+    public void Test()
+    {
+        curStage = 0;
+        if (DebugSingeBoss)
+        {
+            for (int i = 0; i < bossObjs.Count; ++i)
+            {
+                bossRandomSeq[i] = DebugWhichBoss;
+            }
+        }
+
+        if (DebugBossInorder)
+        {
+            for (int i = 0; i < bossObjs.Count; i++)
+            {
+                bossRandomSeq[i] = i;
+            }
+        }
+    }
+
+    #endregion
 }
