@@ -8583,8 +8583,8 @@ MonoBehaviour:
   SkillPool:
   - skillID: 1
     name: "\u80CC\u523A"
-    description: "\u95EA\u73B0\u5230\u654C\u4EBA\u80CC\u540E\u7684\u4E2D\u7B49\u8DDD\u79BB"
-    coolTime: 10
+    description: 
+    coolTime: 2
     coolRemain: 0
     attackDistance: 0
     attackTargetTags:
@@ -8599,10 +8599,10 @@ MonoBehaviour:
     owner: {fileID: 0}
     prefabName: Skill.assassinate
     skillPrefab: {fileID: 0}
-    animationName: 
+    animationName: Player_BackAttack
     hitFxName: 
     hitFxPrefab: {fileID: 0}
-    selectorType: 2
+    selectorType: 0
   - skillID: 2
     name: "\u70B8\u5F39"
     description: 
@@ -8652,9 +8652,7 @@ MonoBehaviour:
     selectorType: 0
   - skillID: 4
     name: "\u7A79\u9876\u4E4B\u4E0B"
-    description: "1. \u5728\u5934\u4E0A\u5F62\u6210\u9632\u5FA1\u76FE\uFF0C\u9632\u5FA1\u81EA\u4E0A\u5411\u4E0B\u7684\u653B\u51FB
-      2. \u6309\u4F4F\u6280\u80FD\u952E\u65F6\u4EA7\u751F\u6548\u679C 3. \u6301\u7EED
-      _3s_ 4. \u95F4\u6B47 _0.5s_ \u540E\u5141\u8BB8\u4E0B\u4E00\u6B21\u91CA\u653E "
+    description: 
     coolTime: 10
     coolRemain: 0
     attackDistance: 0
