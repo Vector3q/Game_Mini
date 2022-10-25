@@ -9235,7 +9235,7 @@ MonoBehaviour:
       3. \u653B\u51FB\u8303\u56F4\u76F8\u5F53\u4E8E\u5DE6\u53F3\u540C\u65F6\u91CA\u653E\u65A9\u51FB\u7684\u8303\u56F4
       4. \u8303\u56F4\u5185\u591A\u4E2A\u654C\u4EBA\u540C\u65F6\u88AB\u4F24\u5BB3\uFF0C\u51FB\u4E2D\u540C\u65F6\u88AB\u5F39\u5F00
       5. \u5BF9\u62A4\u7532\u65E0\u6548\uFF08\u88AB\u683C\u6321\uFF09  "
-    coolTime: 5
+    coolTime: 3
     coolRemain: 0
     attackDistance: 0
     attackTargetTags:
@@ -9257,7 +9257,7 @@ MonoBehaviour:
   - skillID: 4
     name: "\u7A79\u9876\u4E4B\u4E0B"
     description: 
-    coolTime: 10
+    coolTime: 5
     coolRemain: 0
     attackDistance: 0
     attackTargetTags:
@@ -9304,7 +9304,7 @@ MonoBehaviour:
       _2s_ \u60AC\u6D6E\u6548\u679C\uFF08\u4E0B\u843D\u51CF\u6162\uFF09 2. \u677E\u624B\u540E\u6B63\u5E38\u4E0B\u843D
       3. \u8DF3\u8DC3\u9AD8\u5EA6\u4E0D\u53D8  4. \u8DF3\u8DC3\u81F3\u6BD4\u5E73\u5E38\u66F4\u9AD8\u7684\u9AD8\u5EA6\uFF08\u4F9D\u7136\u65E0\u6CD5\u591F\u5230B007\uFF09
       5. \u4ECE\u7A7A\u4E2D\u5411\u4E0B\u65A9\u51FB "
-    coolTime: 10
+    coolTime: 3
     coolRemain: 0
     attackDistance: 0
     attackTargetTags:
@@ -9319,7 +9319,7 @@ MonoBehaviour:
     owner: {fileID: 0}
     prefabName: Skill.fallattack
     skillPrefab: {fileID: 0}
-    animationName: 
+    animationName: Player_Chopup
     hitFxName: 
     hitFxPrefab: {fileID: 0}
     selectorType: 0

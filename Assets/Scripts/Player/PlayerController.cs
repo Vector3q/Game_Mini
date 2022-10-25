@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [Header("依赖组件")]
     public Animator animator = null;
     public Rigidbody2D controllerRigibody;
+    private SpriteRenderer mt;
 
     [Header("基础属性")]
     public int PlayerHealth = 3;
@@ -74,7 +75,7 @@ public class PlayerController : MonoBehaviour
     {
         controllerRigibody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
+        mt = gameObject.GetComponent<SpriteRenderer>();
         gameObject.GetComponent<CharacterSkillManager>().skills[0] = game_manager.GetComponent<GameManager>().SkillPool[7];
     }
 
@@ -169,7 +170,13 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator BeAttacked()
     {
+        mt.material.SetColor("_Color", Color.white);
+        mt.material.SetInt("_BeAttack", 1);
+        yield return new WaitForSeconds(0.1f);
+        mt.material.SetInt("_BeAttack", 0);
+
         yield return new WaitForSeconds(0.4f);
+
         canMove = true;
         isBeAttacked = false;
         
@@ -380,12 +387,12 @@ public class PlayerController : MonoBehaviour
     {
         FlashInput = true;
         animator.SetTrigger(animatorFlashTrigger);
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.02f);
         maxSpeed = Flashspeed;
         controllerRigibody.AddForce(new Vector2(10* vectorInput.x * MoveForce, 0), ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.43f);
         maxSpeed = Speed;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         FlashInput = false;
     }
 
