@@ -13,8 +13,7 @@ public class UIManager : MonoBehaviour
     public GameObject getskill;
     public GameObject load;
     public GameObject lose;
-    private Text bossInfo1;
-    private Text bossInfo2;
+    private Text bossInfo;
     private Text loadInfo;
     private Text loseInfo;
     public Text bossName;
@@ -29,14 +28,13 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        bossInfo1 = getinfo.transform.Find("bossInfo1").GetComponent<Text>();
-        bossInfo2 = getinfo.transform.Find("bossInfo2").GetComponent<Text>();
+        bossInfo = getinfo.transform.Find("bossInfo1").GetComponent<Text>();
         loadInfo = load.transform.Find("loadInfo").GetComponent<Text>();
         loseInfo = lose.transform.Find("loseInfo").GetComponent<Text>();
 
-        List<string> bossInfo = info.getBossInfo();
-        bossInfo1.text = tooLongHandle(bossInfo[0])[0] + "\n" + tooLongHandle(bossInfo[0])[1] + '\n' + '\n' + tooLongHandle(bossInfo[1])[0] + "\n" + tooLongHandle(bossInfo[1])[1];
-        loadInfo.text = tooLongHandle(info.getLoadInfo())[0] + "\n" + tooLongHandle(info.getLoadInfo())[1] + "\n" + tooLongHandle(info.getLoadInfo())[2];
+        List<string> bossInf = info.getBossInfo();
+        bossInfo.text = bossInf[0] + '\n' + '\n' + bossInf[1];
+        loadInfo.text = loadInfo.text = tooLongHandle(info.getLoadInfo())[0] + "\n" + tooLongHandle(info.getLoadInfo())[1] + "\n" + tooLongHandle(info.getLoadInfo())[2];
         loseInfo.text = info.getLossInfo();
         bossName.text = "击杀者：" + info.getBossName();
     }

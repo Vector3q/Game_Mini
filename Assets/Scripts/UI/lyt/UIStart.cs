@@ -15,7 +15,6 @@ public class UIStart : MonoBehaviour
 
     public void startGame()
     {
-        start.SetActive(false);
-        loadFirst.SetActive(true);
+        SceneManager.LoadScene("Main_Scene");
     }
 }

@@ -14,13 +14,16 @@ public class textN : MonoBehaviour
     string str1 = "";
     bool ison = true;
 
+    public GameObject start;
+    public GameObject loadFirst;
+
     // Start is called before the first frame update
     void Start()
     {
         tex = GetComponent<Text>();
         str = tex.text;
         tex.text = "";
-        i = 12;
+        i = 24;
     }
 
     // Update is called once per frame
@@ -34,13 +37,13 @@ public class textN : MonoBehaviour
                 if (index >= str.Length)
                 {
                     ison = false;
-                    Invoke("Scenechange", 1);
+                    Invoke("Scenechange", 3);
                     return;
                 }
                 str1 = str1 + str[index].ToString();
                 tex.text = str1;
                 index += 1;
-                i = 12;
+                i = 24;
             }
         }
 
@@ -48,6 +51,7 @@ public class textN : MonoBehaviour
 
     public void Scenechange()
     {
-        SceneManager.LoadScene("Main_Scene");
+        start.SetActive(true);
+        loadFirst.SetActive(false);
     }
 }
