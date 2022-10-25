@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D controllerRigibody;
 
     [Header("基础属性")]
-    public int PlayerHealth = 10;
+    public int PlayerHealth = 3;
 
     [Header("移动参数")]
     public Vector2 vectorInput;
@@ -55,7 +55,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("动画参数")]
     private int animatorGroundedBool;
-    private int animatorStopBool;
     private int animatorMovementSpeed;
     private int animatorVelocitySpeed;
     private int animatorJumpTrigger;
@@ -130,7 +129,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         animatorGroundedBool = Animator.StringToHash("Grounded");
-        animatorStopBool = Animator.StringToHash("Stop");
         animatorMovementSpeed = Animator.StringToHash("Movement");
         animatorVelocitySpeed = Animator.StringToHash("Velocity");
         animatorJumpTrigger = Animator.StringToHash("Jump");
@@ -143,11 +141,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        UpdateHealth();
-            UpdateVelocity();
+        UpdateVelocity();
+        if (canMove)
+        {
+            UpdateHealth();
             UpdateDirection();
             UpdateJump();
             UpdateGravityScale();
+        }
     }
     #endregion
 
@@ -156,23 +157,23 @@ public class PlayerController : MonoBehaviour
     {
         if (isBeAttacked == true)
         {
-            if (PlayerHealth > 0)
+            if (canMove  && PlayerHealth > 0)
             {
+                canMove = false;
+                PlayerHealth--;
+                animator.Play("Player_BeAttacked");
                 StartCoroutine(BeAttacked());
             }
         }
     }
 
     IEnumerator BeAttacked()
-    {        
-        PlayerHealth--;
-        canMove = false;
-        animator.Play("Player_BeAttacked");
-        yield return new WaitForSeconds(0.1f);
+    {
+        yield return new WaitForSeconds(0.4f);
         canMove = true;
         isBeAttacked = false;
         
-        if (PlayerHealth <= 1)
+        if (PlayerHealth <= 0)
         {
             animator.SetTrigger("Dead");
             canMove = false;
@@ -193,16 +194,13 @@ public class PlayerController : MonoBehaviour
         if (vectorInput.x == 0 && FlashInput) { controllerRigibody.AddForce(new Vector2(x * MoveForce, 0), ForceMode2D.Impulse); }
         Vector2 velocity = controllerRigibody.velocity;
         if (vectorInput.x == 0 && !FlashInput){velocity.x = 0;}
+        if(!canMove) { velocity.x = 0; }
         if (FlashInput) { velocity.y = 0; }
         velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
         velocity.y = Mathf.Clamp(velocity.y, -maxFallVelocity, maxJumpVelocity);
         controllerRigibody.velocity = velocity;
         animator.SetFloat(animatorVelocitySpeed, controllerRigibody.velocity.y);
         animator.SetInteger(animatorMovementSpeed, (int)controllerRigibody.velocity.x);
-        if (vectorInput.x == 0)
-            animator.SetBool(animatorStopBool, true);
-        else
-            animator.SetBool(animatorStopBool, false);
     }
 
     /// <summary>
@@ -350,7 +348,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="context"></param>
     private void Attack_started(InputAction.CallbackContext context)
     {
-        if (!FlashInput && !isSkilling)
+        if (canMove && !FlashInput && !isSkilling)
         {
             AttackInput = true;
             animator.Play("Player_CommonAttack");
@@ -373,7 +371,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="context"></param>
     private void Flash_started(InputAction.CallbackContext context)
     {
-        if(!FlashInput)
+        if(canMove && !FlashInput)
             StartCoroutine(Flash());
     }
 
@@ -406,12 +404,15 @@ public class PlayerController : MonoBehaviour
     /// <param name="context"></param>
     private void Skill_1_started(InputAction.CallbackContext context)
     {
-        Game.Skill.CharacterSkillManager manager = GetComponent<Game.Skill.CharacterSkillManager>();
-        if (manager.skills[0].isPassive)
-            return;
-        Game.Skill.SkillData data = manager.PrepareSkill(manager.skills[0].skillID);
-        if (data != null)
-            manager.GenerateSkill(data);
+        if (canMove)
+        {
+            Game.Skill.CharacterSkillManager manager = GetComponent<Game.Skill.CharacterSkillManager>();
+            if (manager.skills[0].isPassive)
+                return;
+            Game.Skill.SkillData data = manager.PrepareSkill(manager.skills[0].skillID);
+            if (data != null)
+                manager.GenerateSkill(data);
+        }
     }
 
     private void Skill_1_performed(InputAction.CallbackContext context)
@@ -430,12 +431,15 @@ public class PlayerController : MonoBehaviour
     /// <param name="context"></param>
     private void Skill_2_started(InputAction.CallbackContext context)
     {
-        Game.Skill.CharacterSkillManager manager = GetComponent<Game.Skill.CharacterSkillManager>();
-        if (manager.skills[1].isPassive)
-            return;
-        Game.Skill.SkillData data = manager.PrepareSkill(manager.skills[1].skillID);
-        if (data != null)
-            manager.GenerateSkill(data);
+        if (canMove)
+        {
+            Game.Skill.CharacterSkillManager manager = GetComponent<Game.Skill.CharacterSkillManager>();
+            if (manager.skills[1].isPassive)
+                return;
+            Game.Skill.SkillData data = manager.PrepareSkill(manager.skills[1].skillID);
+            if (data != null)
+                manager.GenerateSkill(data);
+        }
     }
 
     private void Skill_2_performed(InputAction.CallbackContext context)

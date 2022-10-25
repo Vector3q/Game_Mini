@@ -12,22 +12,22 @@ public class GameEvents : MonoBehaviour
         current = this;
     }
 
-    public event Action onBossDie;
-    public event Action onPlayerDie;
+    public event Action OnBossDie;
+    public event Action OnPlayerDie;
 
     public void BossDie()
     {
-        if (onBossDie != null)
+        if (OnBossDie != null)
         {
-            onBossDie();
+            OnBossDie();
         }
     }
 
     public void PlayerDie()
     {
-        if (onPlayerDie != null)
+        if (OnPlayerDie != null)
         {
-            onPlayerDie();
+            OnPlayerDie();
         }
     }
 }

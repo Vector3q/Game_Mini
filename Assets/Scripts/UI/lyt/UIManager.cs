@@ -33,14 +33,14 @@ public class UIManager : MonoBehaviour
         loseInfo.text = info.getLossInfo();
         //bossName.text = "击杀者：" + info.getBossName();
 
-        GameEvents.current.onBossDie += onPortalOpen;
-        GameEvents.current.onPlayerDie += onLoseShow;
+        GameEvents.current.OnBossDie += onPortalOpen;
+        GameEvents.current.OnPlayerDie += onLoseShow;
     }
 
     void OnDestroy()
     {
-        GameEvents.current.onBossDie -= onPortalOpen;
-        GameEvents.current.onPlayerDie -= onLoseShow;
+        GameEvents.current.OnBossDie -= onPortalOpen;
+        GameEvents.current.OnPlayerDie -= onLoseShow;
     }
 
     #region PortalRise
