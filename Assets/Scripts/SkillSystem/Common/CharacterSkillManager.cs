@@ -24,7 +24,7 @@ namespace Game.Skill
         /// 初始化技能
         /// </summary>
         /// <param name="data"></param>
-        private void InitSkill(SkillData data)
+        public void InitSkill(SkillData data)
         {
             //prefabName --> skillPrefab
             data.skillPrefab = Resources.Load<GameObject>("Skill/" + data.prefabName);
@@ -67,8 +67,11 @@ namespace Game.Skill
                 Debug.LogError("Cannot generate null skill");
                 return;
             }
-
-            if(data.skillID == 2)
+            if (data.skillID == 8)
+            {
+                return;
+            }
+            if (data.skillID == 2)
             {
                 if (!gameObject.GetComponent<PlayerController>().isOnGround)
                     return;
@@ -82,15 +85,24 @@ namespace Game.Skill
                 }
             }
 
+
+            //Debug.Log("ID:" + data.skillID);
+            //Debug.Log("prefabName:" + data.skillPrefab);
+
             //创建技能预制体
             GameObject skillGo = Instantiate(data.skillPrefab, this.transform.position, this.transform.rotation);
 
+            
+
             //传递技能数据
             SkillDeployer deployer = skillGo.GetComponent<SkillDeployer>();
+
+            Debug.Log("Here");
+
             deployer.SkillData = data;
 
             //播放技能动画
-            if(data.animationName != "")
+            if (data.animationName != "")
             {
                 
                 anima.Play(data.animationName);

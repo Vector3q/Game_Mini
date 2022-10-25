@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Game.Skill;
 public class SkillChoose : MonoBehaviour
 {
-    GameObject player;
-    GameManager manager;
+    public GameObject player;
+    
     public void changeSkillID_1()
     {
         GameManager.skillID = 1;
@@ -34,5 +34,13 @@ public class SkillChoose : MonoBehaviour
     public void changeSkillID_7()
     {
         GameManager.skillID = 7;
+    }
+
+    public void SelectSkill()
+    {
+        player.GetComponent<CharacterSkillManager>().skills[0] = gameObject.GetComponent<GameManager>().SkillPool[GameManager.skillID - 1].Clone() as SkillData;
+        player.GetComponent<CharacterSkillManager>().InitSkill(player.GetComponent<CharacterSkillManager>().skills[0]);
+        //player.GetComponent<CharacterSkillManager>().skills[0].prefabName = gameObject.GetComponent<GameManager>().SkillPool[GameManager.skillID - 1].prefabName;
+        //player.GetComponent<CharacterSkillManager>().skills[0].animationName = gameObject.GetComponent<GameManager>().SkillPool[GameManager.skillID - 1].animationName;
     }
 }

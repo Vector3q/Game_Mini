@@ -10,6 +10,7 @@ namespace Game.Skill
         {
             get
             {
+                
                 return _skillData;
             }
             set
@@ -24,8 +25,10 @@ namespace Game.Skill
 
         private void _initDeployer()
         {
+            Debug.Log("Here2");
             _selector = DeployerConfigFactory.CreateAttackSelector(_skillData);
             _impactArray = DeployerConfigFactory.CreateImpactEffect(_skillData);
+            Debug.Log("Here1");
         }
         /// <summary>
         /// ¼ÆËãÄ¿±ê
