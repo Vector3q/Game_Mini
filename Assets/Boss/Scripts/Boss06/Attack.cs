@@ -10,8 +10,13 @@ public class Attack : Action
     public float time;
     private float c_time;
     public GameObject bullet;
+    private Animator ani;
+    private AnimatorStateInfo animaInfo;
+    bool canShoot = false;
+
     public override void OnStart()
     {
+        ani = gameObject.GetComponentInChildren<Animator>();
         c_count = 0;
         c_time = Time.time;
         base.OnStart();
@@ -20,19 +25,43 @@ public class Attack : Action
     {
         while(c_count<max_count)
         {
-            if(Time.time-c_time>=time)
+            if (Time.time-c_time>=time)
             {
-                Debug.Log("attack");
-
-                var bullet_L= GameObject.Instantiate(bullet, this.transform.position, this.transform.rotation);
+                ani.Play("Attack_unbreak");
+                canShoot = true;
+                c_time = Time.time;
+                c_count++;
+            }
+            animaInfo = ani.GetCurrentAnimatorStateInfo(0);
+            if (animaInfo.IsName("Attack_unbreak")&&animaInfo.normalizedTime>=0.5f&&canShoot)
+            {
+                canShoot = false;
+                var bullet_L = GameObject.Instantiate(bullet, this.transform.position, this.transform.rotation);
                 var bullet_R = GameObject.Instantiate(bullet, transform.position, transform.rotation);
                 var rbL = bullet_L.GetComponent<Rigidbody2D>();
                 var rbR = bullet_R.GetComponent<Rigidbody2D>();
                 rbL.velocity = new Vector2(10, 0);
                 rbR.velocity = new Vector2(-10, 0);
-
-                c_time = Time.time;
-                c_count++;
+                bullet_R.transform.localScale = new Vector3(1, 1, 1);
+                bullet_L.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            return TaskStatus.Running;
+        }
+        animaInfo = ani.GetCurrentAnimatorStateInfo(0);
+        while (animaInfo.IsName("Attack_unbreak"))
+        {
+            animaInfo = ani.GetCurrentAnimatorStateInfo(0);
+            if (animaInfo.normalizedTime >= 0.5f && canShoot)
+            {
+                canShoot = false;
+                var bullet_L = GameObject.Instantiate(bullet, this.transform.position, this.transform.rotation);
+                var bullet_R = GameObject.Instantiate(bullet, transform.position, transform.rotation);
+                var rbL = bullet_L.GetComponent<Rigidbody2D>();
+                var rbR = bullet_R.GetComponent<Rigidbody2D>();
+                rbL.velocity = new Vector2(10, 0);
+                rbR.velocity = new Vector2(-10, 0);
+                bullet_R.transform.localScale = new Vector3(1, 1, 1);
+                bullet_L.transform.localScale = new Vector3(-1, 1, 1);
             }
             return TaskStatus.Running;
         }
