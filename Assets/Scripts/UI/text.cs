@@ -20,7 +20,7 @@ public class text : MonoBehaviour
         tex = GetComponent<Text>();
         str = tex.text;
         tex.text = "";
-        i = 6;
+        i = 10;
     }
 
     // Update is called once per frame
@@ -40,16 +40,9 @@ public class text : MonoBehaviour
                 str1 = str1 + str[index].ToString();
                 tex.text = str1;
                 index += 1;
-                i = 6;
+                i = 10;
             }
         }
 
     }
-
-    // public void Scenechange()
-    // {
-    //     SceneManager.LoadScene("Main Scene");
-    // }
-
-
 }
