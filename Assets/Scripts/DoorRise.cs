@@ -21,5 +21,7 @@ public class DoorRise : MonoBehaviour
         {
             animator.SetTrigger("DoorRise");
         }
+
+        
     }
 }

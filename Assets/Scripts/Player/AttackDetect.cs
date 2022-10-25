@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class AttackDetect : MonoBehaviour
 {
-    private void OnTriggerStay2D(Collider2D co)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (PlayerController.AttackInput == true)
-        {
-            Debug.Log(co.name);
-        }
+        Debug.Log("Attack:" + collision.name);
     }
 }
