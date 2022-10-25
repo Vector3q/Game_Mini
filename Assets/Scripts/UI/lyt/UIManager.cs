@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
         bossInfo1.text = tooLongHandle(bossInfo[0])[0] + "\n" + tooLongHandle(bossInfo[0])[1] + '\n' + '\n' + tooLongHandle(bossInfo[1])[0] + "\n" + tooLongHandle(bossInfo[1])[1];
         loadInfo.text = tooLongHandle(info.getLoadInfo())[0] + "\n" + tooLongHandle(info.getLoadInfo())[1] + "\n" + tooLongHandle(info.getLoadInfo())[2];
         loseInfo.text = info.getLossInfo();
-        //bossName.text = "击杀者：" + info.getBossName();
+        bossName.text = "击杀者：" + info.getBossName();
     }
 
     void OnDestroy()
