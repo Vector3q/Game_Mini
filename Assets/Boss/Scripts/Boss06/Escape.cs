@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Escape : Action
 {
-    public bool beAttack;
+    public GameObject target;
     public override TaskStatus OnUpdate()
     {
        
