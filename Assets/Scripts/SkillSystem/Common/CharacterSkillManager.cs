@@ -97,7 +97,6 @@ namespace Game.Skill
             //传递技能数据
             SkillDeployer deployer = skillGo.GetComponent<SkillDeployer>();
 
-            Debug.Log("Here");
 
             deployer.SkillData = data;
 

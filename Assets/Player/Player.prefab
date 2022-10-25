@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1740071665646276502}
   - component: {fileID: 2377225091532664693}
+  - component: {fileID: 8638766097973641244}
   m_Layer: 6
   m_Name: BeAttack
   m_TagString: Untagged
@@ -57,6 +58,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0283508, y: 2.2638025}
   m_EdgeRadius: 0
+--- !u!114 &8638766097973641244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540303853997463081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df244556427865941877dd119fd4a59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 560285918874428779}
 --- !u!1 &560285918874428779
 GameObject:
   m_ObjectHideFlags: 0
