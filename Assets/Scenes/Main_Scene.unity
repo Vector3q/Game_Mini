@@ -9394,13 +9394,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossObjs:
+  - {fileID: 7242531275041277428, guid: 176a25b99a6e042b9801f0c1829ad651, type: 3}
+  - {fileID: 3518653828451949012, guid: bff545961ab666d46b37822a559f2258, type: 3}
+  - {fileID: 7861100346039590874, guid: ec5eccc9871544210afa52fe4e084acc, type: 3}
+  - {fileID: 530492503396298717, guid: c099b2946dcb54cc9966b860c901f438, type: 3}
   - {fileID: 6655618051500590707, guid: 7ade3801e1c46e042a7b2c97f4e365fc, type: 3}
-  - {fileID: 6655618051500590707, guid: 7ade3801e1c46e042a7b2c97f4e365fc, type: 3}
-  - {fileID: 6655618051500590707, guid: 7ade3801e1c46e042a7b2c97f4e365fc, type: 3}
-  - {fileID: 6655618051500590707, guid: 7ade3801e1c46e042a7b2c97f4e365fc, type: 3}
-  - {fileID: 6655618051500590707, guid: 7ade3801e1c46e042a7b2c97f4e365fc, type: 3}
-  - {fileID: 6655618051500590707, guid: 7ade3801e1c46e042a7b2c97f4e365fc, type: 3}
-  - {fileID: 6655618051500590707, guid: 7ade3801e1c46e042a7b2c97f4e365fc, type: 3}
+  - {fileID: 1281688399442126790, guid: 382dfffaeaf3e4354b20d9379f3fa669, type: 3}
+  - {fileID: 8266089336831558373, guid: e849718993eb943e497977183fa7b42c, type: 3}
 --- !u!114 &2009845535
 MonoBehaviour:
   m_ObjectHideFlags: 0
