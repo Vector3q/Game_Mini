@@ -8,6 +8,7 @@ public class enemyState : MonoBehaviour
     public Animator enemyAnimator;
 
     private Rigidbody2D myrigidbody;
+    private SpriteRenderer mt;
     private AnimatorStateInfo animaInfo;
 
     public int max_sheld;
@@ -20,6 +21,7 @@ public class enemyState : MonoBehaviour
         HP = max_HP;
         enemyAnimator = gameObject.GetComponentInChildren<Animator>();
         myrigidbody = gameObject.GetComponent<Rigidbody2D>();
+        mt = gameObject.GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -30,7 +32,11 @@ public class enemyState : MonoBehaviour
 
     private void BeAttacked()
     {
-        if (sheld > 0) sheld--;
+        if (sheld > 0)
+        {
+            StartCoroutine(recover());
+            sheld--;
+        }
     }
 
 private void AnimatorController()
@@ -59,5 +65,14 @@ private void AnimatorController()
     {
         if (collision.tag == "Ground") isGround = false;
     }
-    
+
+
+    IEnumerator recover()
+    {
+        mt.material.SetColor("_Color", Color.white);
+        mt.material.SetInt("_BeAttack", 1);
+        yield return new WaitForSeconds(0.1f);
+        mt.material.SetInt("_BeAttack", 0);
+        yield break;
+    }
 }

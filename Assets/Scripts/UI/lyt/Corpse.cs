@@ -18,9 +18,12 @@ public class Corpse : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.name == "Player" && Input.GetKeyDown(KeyCode.J))
+        if (collision.name == "Player" && !startFight)
         {
-            InfoUI.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.J)){
+                InfoUI.SetActive(true);
+                startFight = true;
+            }
         }
     }
 

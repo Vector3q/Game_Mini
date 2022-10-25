@@ -8,7 +8,7 @@ public class BeAttackDetect : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (Player.GetComponent<PlayerController>().isBeAttacked == false && collision.gameObject.tag == "Enemy")
         {
             Debug.Log("BeAttack:" + collision.gameObject.name);
             Player.GetComponent<PlayerController>().isBeAttacked = true;

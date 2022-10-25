@@ -9,7 +9,7 @@ public class text : MonoBehaviour
 {
     string str;
     Text tex;
-    int i = 0;   //╣ВуШуБ╦Ж©ирт╣ВуШЁЖож╣дкы╤х
+    int i = 0;   //О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╣О©╫О©╫О©╫О©╫О©╫О©╫ж╣О©╫О©╫ы╤О©╫
     int index = 0;
     string str1 = "";
     bool ison = true;
