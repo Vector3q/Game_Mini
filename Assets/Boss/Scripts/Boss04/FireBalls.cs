@@ -8,10 +8,8 @@ public class FireBalls : Action
     public Rigidbody2D rb;
     public GameObject FireBall;
     private Animator ani;
-    public float speed;
 
     public float offset;
-    public int OFFset;
     
     public int index;
     public int num;
@@ -25,8 +23,7 @@ public class FireBalls : Action
     }
     public override TaskStatus OnUpdate()
     {
-        ani.Play("Golem_Reset");
-        rb.velocity = new Vector2(0, speed);
+        rb.velocity = new Vector2(0, 0);
         for(int i=-14;i<=14;i++)
         {   
             if(i<=index-Ct[num] || i>=index+Ct[num])
@@ -39,14 +36,6 @@ public class FireBalls : Action
         if (num >= 6) { num = 0;
 
             index = Random.Range(-14, 14);
-            //if(index<-4)
-            //    index = index + Random.Range(3-OFFset, 3+OFFset);
-            //else if(index>4)
-            //    index = index + Random.Range(-3-OFFset, -3+OFFset);
-            //else 
-            //    index = index + Random.Range(-OFFset, OFFset);
-            //if (index >= 14) index = 14;
-            //else if (index <= -14) index = -14;
         }
         return TaskStatus.Success;
     }
