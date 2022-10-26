@@ -15,6 +15,7 @@ public class Escape : Action
     public override void OnStart()
     {
         target = GameObject.FindGameObjectWithTag("Player");
+        point = new Vector3[3];
         point[0] = new Vector3(-30, 0, -1);
         point[1] = new Vector3(0, 0, -1);
         point[2] = new Vector3(30, 0, -1);
