@@ -341,6 +341,12 @@ public class PlayerController : MonoBehaviour
                 CRIsource.Play("Land");
                 isOnGround = true;
             }
+            //ÅÐ¶ÏÎªÂäµØ×´Ì¬
+            if (collision.gameObject.tag == "Enemy" && !isOnGround)
+            {
+                CRIsource.Play("Land");
+                isOnGround = true;
+            }
         }
         animator.SetBool(animatorGroundedBool, isOnGround);
     }

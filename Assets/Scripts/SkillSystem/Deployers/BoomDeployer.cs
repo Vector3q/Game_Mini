@@ -19,18 +19,7 @@ namespace Game.Skill
         }
         public override void DeploySkill()
         {
-            Destroy(gameObject, 5f);
-            StartCoroutine(waitForBoom());
-        }
-
-        public IEnumerator waitForBoom()
-        {
-            yield return new WaitForSeconds(5f);
-            //播放动画
-
-            //等待指定帧数
-
-            //造成伤害
+            Destroy(gameObject, 2.8f);
         }
     }
 }
