@@ -20,7 +20,7 @@ public class Rest : Action
     {
 
         rb.velocity = new Vector2(0, 0);
-        gameObject.transform.position = new Vector3(Random.Range(-7, 7), 1.7f, -1);
+        gameObject.transform.position = new Vector3(Random.Range(-20, 20), 1.7f, -1);
         ani.Play("rest");
         arrey.SetActive(false);
         arrey.SetActive(true);

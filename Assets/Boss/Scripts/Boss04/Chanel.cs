@@ -41,11 +41,12 @@ public class Chanel : Action
         }
         if (animaInfo.IsName("Attack") && animaInfo.normalizedTime >= 0.9f)
         { 
-            gameObject.transform.position = new Vector3(99, 99);
+            gameObject.transform.position = new Vector3(0, 20);
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             flag = true;
             return TaskStatus.Success;
         }
-        gameObject.transform.position = new Vector3(0, 5);
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, -65);
         ani.Play("Attack");
         arrey.SetActive(true);
         ani_a.Play("out");

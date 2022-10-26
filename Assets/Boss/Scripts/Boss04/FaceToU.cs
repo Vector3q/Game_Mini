@@ -7,9 +7,11 @@ public class FaceToU : MonoBehaviour
     public GameObject target;
     public static int HP;
     private SpriteRenderer mt;
+    private Transform ori;
     // Start is called before the first frame update
     void Start()
     {
+        ori = gameObject.transform;
         target = GameObject.FindGameObjectWithTag("Player");
         HP = 5;
         mt = gameObject.GetComponentInChildren<SpriteRenderer>();
@@ -18,7 +20,7 @@ public class FaceToU : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.localScale = new Vector3((gameObject.transform.position.x > target.transform.position.x ? 1 : -1), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+        gameObject.transform.localScale = new Vector3((gameObject.transform.position.x > target.transform.position.x ? 1 : -1)*ori.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
     }
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
