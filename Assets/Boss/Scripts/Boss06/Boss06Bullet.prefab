@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7250476860490061531}
-  - component: {fileID: 7250476860490061532}
   - component: {fileID: 7250476860490061533}
   - component: {fileID: 113664628051743768}
+  - component: {fileID: 3783605670278232062}
   m_Layer: 3
   m_Name: Boss06Bullet
   m_TagString: Enemy
@@ -28,42 +28,12 @@ Transform:
   m_GameObject: {fileID: 7250476860490061530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.27, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 7250476860633217483}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &7250476860490061532
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7250476860490061530}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -12.67, y: 4.117}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -3.9041004, y: 3.1559925}
-      - {x: -7.4853535, y: 1.5642629}
-      - {x: -10.758036, y: -6.407979}
-      - {x: 8.503014, y: -6.4627457}
-      - {x: -0.31994438, y: -3.2223046}
 --- !u!114 &7250476860490061533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,12 +61,42 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!60 &3783605670278232062
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7250476860490061530}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -18.050234, y: 4.790549}
+      - {x: -21.287655, y: 2.4148772}
+      - {x: -23.331078, y: -3.7572217}
+      - {x: -18.124289, y: -3.6368864}
+      - {x: -18.723698, y: 2.9563842}
 --- !u!1 &7250476860633217482
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7250476860633217482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.045, y: 2.992, z: 0}
+  m_LocalPosition: {x: -12.045, y: 1.562, z: 0}
   m_LocalScale: {x: 5.2585, y: 4.166605, z: 5}
   m_Children: []
   m_Father: {fileID: 7250476860490061531}

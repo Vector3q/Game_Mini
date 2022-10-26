@@ -11,6 +11,7 @@ public class BeAttack07 : Action
 
     public override void OnAwake()
     {
+        ani = gameObject.GetComponentInChildren<Animator>();
         mt = gameObject.GetComponentInChildren<SpriteRenderer>();
         base.OnAwake();
     }
@@ -24,6 +25,7 @@ public class BeAttack07 : Action
         StartCoroutine(recover());
         if (Boss07State.HP == 0)
         {
+            ani.Play("dead");
             GameEvents.current.BossDie();
             return TaskStatus.Running;
         }

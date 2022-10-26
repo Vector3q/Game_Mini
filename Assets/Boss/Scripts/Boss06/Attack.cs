@@ -40,10 +40,10 @@ public class Attack : Action
                 var bullet_R = GameObject.Instantiate(bullet, transform.position, transform.rotation);
                 var rbL = bullet_L.GetComponent<Rigidbody2D>();
                 var rbR = bullet_R.GetComponent<Rigidbody2D>();
-                rbL.velocity = new Vector2(10, 0);
-                rbR.velocity = new Vector2(-10, 0);
-                bullet_R.transform.localScale = new Vector3(1, 1, 1);
-                bullet_L.transform.localScale = new Vector3(-1, 1, 1);
+                rbL.velocity = new Vector2(15, 0);
+                rbR.velocity = new Vector2(-15, 0);
+                bullet_R.transform.localScale = new Vector3(0.6f, 0.5f, 1);
+                bullet_L.transform.localScale = new Vector3(-0.6f, 0.5f, 1);
             }
             return TaskStatus.Running;
         }
@@ -58,10 +58,10 @@ public class Attack : Action
                 var bullet_R = GameObject.Instantiate(bullet, transform.position, transform.rotation);
                 var rbL = bullet_L.GetComponent<Rigidbody2D>();
                 var rbR = bullet_R.GetComponent<Rigidbody2D>();
-                rbL.velocity = new Vector2(10, 0);
-                rbR.velocity = new Vector2(-10, 0);
-                bullet_R.transform.localScale = new Vector3(1, 1, 1);
-                bullet_L.transform.localScale = new Vector3(-1, 1, 1);
+                rbL.velocity = new Vector2(15, 0);
+                rbR.velocity = new Vector2(-15, 0);
+                bullet_R.transform.localScale = new Vector3(0.6f, 0.5f, 1);
+                bullet_L.transform.localScale = new Vector3(-0.6f, 0.5f, 1);
             }
             return TaskStatus.Running;
         }
