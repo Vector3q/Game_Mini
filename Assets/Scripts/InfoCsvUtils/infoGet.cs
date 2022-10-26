@@ -85,7 +85,7 @@ public class infoGet : MonoBehaviour
 
     public void refreshBossImage()
     {
-        bossImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("BossPic/boss" + bossRandomSeq[curStage - 1]);
+        bossImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("BossPic/boss" + (bossRandomSeq[curStage - 1]+1));
     }
 
     /// <summary>
