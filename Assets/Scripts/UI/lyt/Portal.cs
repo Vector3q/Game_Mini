@@ -10,28 +10,32 @@ public class Portal : MonoBehaviour
 
     public GameObject EnterDialog;
 
-    private float trigDelay = 2f;
-    private float trigTimer;
-    private bool corpTrig = false;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         EnterDialog.SetActive(true);
         if (collision.gameObject.tag == "Player")
         {
-            corpTrig = true;
-            //if (Input.GetKey(KeyCode.J))
-            //{
-            //    load.SetActive(true);
+            if (Input.GetKey(KeyCode.J))
+            {
+                load.SetActive(true);
 
-            //    Invoke(nameof(winLoad), duration);
-            //}
+                Invoke(nameof(winLoad), duration);
+            }
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         EnterDialog.SetActive(true);
+        if (collision.gameObject.tag == "Player")
+        {
+            if (Input.GetKey(KeyCode.J))
+            {
+                load.SetActive(true);
+
+                Invoke(nameof(winLoad), duration);
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -45,23 +49,10 @@ public class Portal : MonoBehaviour
         SceneManager.LoadScene("Main_Scene");
     }
 
-    private void enterNext()
-    {
-        load.SetActive(true);
-        Invoke(nameof(winLoad), duration);
-        trigTimer = 0;
-    }
+
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.J) && corpTrig)
-        {
-            trigTimer = Time.time + trigDelay;
-        }
 
-        if (trigTimer > Time.time)
-        {
-            enterNext();
-        }
     }
 }
