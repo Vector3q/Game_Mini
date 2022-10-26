@@ -13,7 +13,7 @@ namespace Game.Skill
         private void Start()
         {
             originalTrans = gameObject.transform.position;
-            gameObject.transform.position = new Vector3(originalTrans.x, originalTrans.y - 0.5f, originalTrans.z);
+            gameObject.transform.position = new Vector3(originalTrans.x, originalTrans.y + 0.5f, originalTrans.z);
             
             DeploySkill();
         }

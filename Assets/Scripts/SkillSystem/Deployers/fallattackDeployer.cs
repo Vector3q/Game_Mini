@@ -15,7 +15,21 @@ namespace Game.Skill
         public override void DeploySkill()
         {
             player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 100), ForceMode2D.Impulse);
-            Destroy(gameObject, 1.5f);
+            player.GetComponent<PlayerController>().maxJumpVelocity = 80f;
+            player.GetComponent<PlayerController>().maxFallVelocity = 40f;
+            player.GetComponent<PlayerController>().jumpGravityScale = 40f;
+            player.GetComponent<PlayerController>().fallGravityScale = 40f;
+            StartCoroutine(wait());
+            Destroy(gameObject, 2f);
+        }
+        private IEnumerator wait()
+        {
+            yield return new WaitForSeconds(1.5f);
+            player.GetComponent<PlayerController>().jumpGravityScale = 5f;
+            player.GetComponent<PlayerController>().fallGravityScale = 12f;
+            player.GetComponent<PlayerController>().maxJumpVelocity = 25f;
+            player.GetComponent<PlayerController>().maxFallVelocity = 25f;
+            Destroy(gameObject);
         }
     }
 }
