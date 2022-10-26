@@ -6,11 +6,13 @@ using UnityEngine;
 public class BeAttack05 : Action
 {
     private Animator ani;
-    
+    private SpriteRenderer mt;
+
 
     public override void OnAwake()
     {
         ani = gameObject.GetComponentInChildren<Animator>();
+        mt = gameObject.GetComponentInChildren<SpriteRenderer>();
         base.OnAwake();
     }
     public override TaskStatus OnUpdate()
@@ -21,14 +23,22 @@ public class BeAttack05 : Action
         }
         ani.Play("Rat_Hit");
         Boss05State.HP -= 1;
-        if(Boss05State.HP==0)
+        StartCoroutine(recover());
+        if (Boss05State.HP==0)
         {
             ani.Play("Rat_Death");
             return TaskStatus.Running;
         }
         return TaskStatus.Success;
     }
-
+    IEnumerator recover()
+    {
+        mt.material.SetColor("_Color", Color.red);
+        mt.material.SetInt("_BeAttack", 1);
+        yield return new WaitForSeconds(0.1f);
+        mt.material.SetInt("_BeAttack", 0);
+        yield break;
+    }
 
 
 }

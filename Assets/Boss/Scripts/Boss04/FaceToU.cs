@@ -10,6 +10,7 @@ public class FaceToU : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player");
         HP = 5;
         mt = gameObject.GetComponentInChildren<SpriteRenderer>();
     }
