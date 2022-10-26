@@ -24,11 +24,11 @@ namespace Game.Skill
         }
         private IEnumerator wait()
         {
-            yield return new WaitForSeconds(1.5f);
-            player.GetComponent<PlayerController>().jumpGravityScale = 5f;
-            player.GetComponent<PlayerController>().fallGravityScale = 12f;
+            yield return new WaitForSeconds(0.6f);
             player.GetComponent<PlayerController>().maxJumpVelocity = 25f;
             player.GetComponent<PlayerController>().maxFallVelocity = 25f;
+            player.GetComponent<PlayerController>().jumpGravityScale = 5f;
+            player.GetComponent<PlayerController>().fallGravityScale = 12f;
             Destroy(gameObject);
         }
     }
