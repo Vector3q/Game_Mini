@@ -143,9 +143,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         UpdateVelocity();
+        UpdateHealth();
         if (canMove)
         {
-            UpdateHealth();
             UpdateDirection();
             UpdateJump();
             UpdateGravityScale();
@@ -219,13 +219,13 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat(animatorVelocitySpeed, controllerRigibody.velocity.y);
         animator.SetInteger(animatorMovementSpeed, (int)controllerRigibody.velocity.x);
 
-/*        if (isBeAttacked)
+        if (isBeAttacked)
         {
-            controllerRigibody.AddForce(new Vector2(-x * 5, 0), ForceMode2D.Impulse);
+            controllerRigibody.AddForce(new Vector2(-x * 8, 0), ForceMode2D.Impulse);
             velocity = controllerRigibody.velocity;
             velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
             controllerRigibody.velocity = velocity;
-        }*/
+        }
     }
 
     /// <summary>
@@ -233,7 +233,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void UpdateDirection()
     {
-        {
+        if(!isBeAttacked){
             if (controllerRigibody.velocity.x > 1f && isFacingLeft)
             {
                 isFacingLeft = false;
