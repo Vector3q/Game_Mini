@@ -54,7 +54,7 @@ public class Portal : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) && corpTrig)
+        if (Input.GetKey(KeyCode.J) && corpTrig)
         {
             trigTimer = Time.time + trigDelay;
         }
