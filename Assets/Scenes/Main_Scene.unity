@@ -11546,8 +11546,8 @@ MonoBehaviour:
   - {fileID: 6154456410948627414, guid: 7b30ff938bdd45e4787c474678a4de26, type: 3}
   - {fileID: 8266089336831558373, guid: e849718993eb943e497977183fa7b42c, type: 3}
   bossImage: {fileID: 625057752}
-  DebugSingeBoss: 1
-  DebugWhichBoss: 5
+  DebugSingeBoss: 0
+  DebugWhichBoss: 0
   DebugBossInorder: 0
 --- !u!114 &2009845535
 MonoBehaviour:
