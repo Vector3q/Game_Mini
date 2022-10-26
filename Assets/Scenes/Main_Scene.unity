@@ -7177,8 +7177,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: 0}
-  m_SizeDelta: {x: 373.7322, y: 68.145}
+  m_AnchoredPosition: {x: 14, y: 0}
+  m_SizeDelta: {x: 718.0289, y: 68.145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294143056
 MonoBehaviour:
@@ -7207,7 +7207,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -8221,13 +8221,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: Speed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1455144922}
     - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: maxSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: CRIsource
       value: 
       objectReference: {fileID: 1455144921}
+    - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: Flashspeed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: PlayerHealth
       value: 3
@@ -8238,19 +8250,19 @@ PrefabInstance:
       objectReference: {fileID: 2009845531}
     - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: maxFallVelocity
-      value: 25
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: maxJumpVelocity
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: fallGravityScale
-      value: 12
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: jumpGravityScale
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 560285918874428788, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: controllerRigibody
