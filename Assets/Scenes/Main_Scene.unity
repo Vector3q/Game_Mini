@@ -11543,11 +11543,11 @@ MonoBehaviour:
   - {fileID: 7861100346039590874, guid: ec5eccc9871544210afa52fe4e084acc, type: 3}
   - {fileID: 530492503396298717, guid: c099b2946dcb54cc9966b860c901f438, type: 3}
   - {fileID: 6655618051500590707, guid: 7ade3801e1c46e042a7b2c97f4e365fc, type: 3}
-  - {fileID: 1281688399442126790, guid: 382dfffaeaf3e4354b20d9379f3fa669, type: 3}
+  - {fileID: 6154456410948627414, guid: 7b30ff938bdd45e4787c474678a4de26, type: 3}
   - {fileID: 8266089336831558373, guid: e849718993eb943e497977183fa7b42c, type: 3}
   bossImage: {fileID: 625057752}
-  DebugSingeBoss: 0
-  DebugWhichBoss: 0
+  DebugSingeBoss: 1
+  DebugWhichBoss: 5
   DebugBossInorder: 0
 --- !u!114 &2009845535
 MonoBehaviour:
@@ -12140,7 +12140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4496113899681307832, guid: cbffd895663763244be456a1d0fd65f4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5374955746828599767, guid: cbffd895663763244be456a1d0fd65f4, type: 3}
       propertyPath: m_RootOrder

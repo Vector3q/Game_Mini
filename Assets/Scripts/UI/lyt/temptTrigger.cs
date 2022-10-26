@@ -19,4 +19,9 @@ public class temptTrigger : MonoBehaviour
     //        GameEvents.current.PlayerDie();
     //    }
     //}
+
+    private void Start()
+    {
+        
+    }
 }
