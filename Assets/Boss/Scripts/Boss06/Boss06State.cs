@@ -11,6 +11,7 @@ public class Boss06State : MonoBehaviour
     public int max_sheld;
     public int max_HP;
     static public int HP, sheld;
+    static public bool isGround;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class Boss06State : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ani.SetBool("isGround", isGround);
         ani.SetFloat("jump", rb.velocity.y);
         Debug.Log(sheld);
 
@@ -41,11 +43,11 @@ public class Boss06State : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Weapon") BeAttacked();
-        if (collision.tag == "Ground") ani.SetBool("isGround", true);
+        if (collision.tag == "Ground") isGround = true; 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Ground") ani.SetBool("isGround", false);
+        if (collision.tag == "Ground") isGround = false; 
     }
 
 
