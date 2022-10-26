@@ -198,17 +198,34 @@ public class PlayerController : MonoBehaviour
     {
         int x = 1;
         if (isFacingLeft) x = -1;
-        controllerRigibody.AddForce(new Vector2(vectorInput.x * MoveForce, 0), ForceMode2D.Impulse);
-        if (vectorInput.x == 0 && FlashInput) { controllerRigibody.AddForce(new Vector2(x * MoveForce, 0), ForceMode2D.Impulse); }
+        if(!isBeAttacked)
+        {
+            if (vectorInput.x != 0)
+            {
+                controllerRigibody.AddForce(new Vector2(vectorInput.x * MoveForce, 0), ForceMode2D.Impulse);
+            }
+            else if (vectorInput.x == 0 && FlashInput) 
+            { 
+                controllerRigibody.AddForce(new Vector2(x * MoveForce, 0), ForceMode2D.Impulse); 
+            }
+        }
         Vector2 velocity = controllerRigibody.velocity;
-        if (vectorInput.x == 0 && !FlashInput){velocity.x = 0;}
         if(!canMove) { velocity.x = 0; }
+        if (vectorInput.x == 0 && !FlashInput){velocity.x = 0;}
         if (FlashInput) { velocity.y = 0; }
         velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
         velocity.y = Mathf.Clamp(velocity.y, -maxFallVelocity, maxJumpVelocity);
         controllerRigibody.velocity = velocity;
         animator.SetFloat(animatorVelocitySpeed, controllerRigibody.velocity.y);
         animator.SetInteger(animatorMovementSpeed, (int)controllerRigibody.velocity.x);
+
+/*        if (isBeAttacked)
+        {
+            controllerRigibody.AddForce(new Vector2(-x * 5, 0), ForceMode2D.Impulse);
+            velocity = controllerRigibody.velocity;
+            velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
+            controllerRigibody.velocity = velocity;
+        }*/
     }
 
     /// <summary>
