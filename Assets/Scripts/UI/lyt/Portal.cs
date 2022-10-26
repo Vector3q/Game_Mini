@@ -15,7 +15,7 @@ public class Portal : MonoBehaviour
         EnterDialog.SetActive(true);
         if (collision.gameObject.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.J))
+            if (Input.GetKey(KeyCode.J))
             {
                 load.SetActive(true);
 
@@ -28,7 +28,7 @@ public class Portal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.J))
+            if (Input.GetKey(KeyCode.J))
             {
                 load.SetActive(true);
 
