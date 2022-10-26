@@ -20,11 +20,11 @@ public class text : MonoBehaviour
         tex = GetComponent<Text>();
         str = tex.text;
         tex.text = "";
-        i = 10;
+        i = 4;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (ison)
         {
@@ -40,7 +40,7 @@ public class text : MonoBehaviour
                 str1 = str1 + str[index].ToString();
                 tex.text = str1;
                 index += 1;
-                i = 10;
+                i = 4;
             }
         }
 

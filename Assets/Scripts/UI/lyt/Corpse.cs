@@ -11,7 +11,7 @@ public class Corpse : MonoBehaviour
 
     public GameObject Dialog;
 
-    private float trigDelay = 1f;
+    private float trigDelay = 2f;
     private float trigTimer;
     private bool corpTrig = false;
     
@@ -30,16 +30,10 @@ public class Corpse : MonoBehaviour
         }
     }
 
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (collision.name == "Player" && !startFight)
-    //    {
-    //        if(Input.GetKey(KeyCode.J)){
-    //            InfoUI.SetActive(true);
-    //            startFight = true;
-    //        }
-    //    }
-    //}
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Dialog.SetActive(true);
+    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -56,7 +50,7 @@ public class Corpse : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) && corpTrig)
+        if (Input.GetKey(KeyCode.J) && corpTrig)
         {
             trigTimer = Time.time + trigDelay;
         }

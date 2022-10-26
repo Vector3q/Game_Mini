@@ -10,7 +10,7 @@ public class Portal : MonoBehaviour
 
     public GameObject EnterDialog;
 
-    private float trigDelay = 1f;
+    private float trigDelay = 2f;
     private float trigTimer;
     private bool corpTrig = false;
 
@@ -29,18 +29,10 @@ public class Portal : MonoBehaviour
         }
     }
 
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        if (Input.GetKey(KeyCode.J))
-    //        {
-    //            load.SetActive(true);
-
-    //            Invoke(nameof(winLoad), duration);
-    //        }
-    //    }
-    //}
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        EnterDialog.SetActive(true);
+    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
