@@ -8,11 +8,13 @@ public class Corpse : MonoBehaviour
 
     public GameObject InfoUI;
 
+    public GameObject Dialog;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.name == "Player" && !startFight)
         {
-            // 浮现对话框
+            Dialog.SetActive(true);
         }
     }
 
@@ -29,6 +31,6 @@ public class Corpse : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // 对话框消失
+        Dialog.SetActive(false);
     }
 }
