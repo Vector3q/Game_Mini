@@ -17,7 +17,7 @@ public class BeAttack05 : Action
     }
     public override TaskStatus OnUpdate()
     {
-        if (enemyState.HP == 0)
+        if (Boss05State.HP == 0)
         {
             return TaskStatus.Running;
         }
