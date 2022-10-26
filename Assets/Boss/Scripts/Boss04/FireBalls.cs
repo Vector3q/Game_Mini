@@ -24,12 +24,12 @@ public class FireBalls : Action
     public override TaskStatus OnUpdate()
     {
         rb.velocity = new Vector2(0, 0);
-        for(int i=-15;i<=15;i++)
+        for(int i=-18;i<=18;i++)
         {   
             if(i<=index-Ct[num] || i>=index+Ct[num])
             {
                 var ball = GameObject.Instantiate(FireBall, new Vector3(1.0f * i * 2 +Random.Range(-offset,offset), 9+ Random.Range(-0.02f,0.02f), 0), gameObject.transform.rotation);
-                ball.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -1);
+                ball.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -3);
             }
         }
         num++;
