@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Jump_1 : Action
 {
-    public Transform target;
+    public GameObject target;
     public ScreenShake screen;
 
     public float jump_force;
@@ -22,6 +22,8 @@ public class Jump_1 : Action
 
     public override void OnAwake()
     {
+        screen = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenShake>();
+        target = GameObject.FindGameObjectWithTag("Player");
         enemyAnimator = gameObject.GetComponentInChildren<Animator>();
         myrigidbody = gameObject.GetComponent<Rigidbody2D>();
         jumping = false;
@@ -37,7 +39,7 @@ public class Jump_1 : Action
         {
             //enemyAnimator.Play("Green Jump Start-up - Animation");
             enemyAnimator.Play("StartJump");
-            tmp_target = target.position;
+            tmp_target = target.transform.position;
             direction = transform.position.x - tmp_target.x < 0 ? 1 : -1;
             transform.localScale = new Vector3(direction, 1, 1);
         }

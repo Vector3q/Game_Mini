@@ -10,10 +10,14 @@ public class Escape : Action
     public GameObject target;
     public Rigidbody2D rb;
 
-    public Transform[] point;
+    public Vector3[] point;
     static private int index=0;
     public override void OnStart()
     {
+        target = GameObject.FindGameObjectWithTag("Player");
+        point[0] = new Vector3(-30, 0, -1);
+        point[1] = new Vector3(0, 0, -1);
+        point[2] = new Vector3(30, 0, -1);
         ani = gameObject.GetComponentInChildren<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         base.OnStart();
@@ -22,8 +26,8 @@ public class Escape : Action
     {
         if(Boss06State.isGround)
         {
-            var dir = point[index].position - gameObject.transform.position + new Vector3(0, force, 0);
-            gameObject.transform.localScale = new Vector2(gameObject.transform.position.x > target.transform.position.x ? 1 : -1, 1);
+            var dir = point[index] - gameObject.transform.position + new Vector3(0, force, 0);
+            gameObject.transform.localScale = new Vector2((gameObject.transform.position.x > target.transform.position.x ? 1 : -1)*gameObject.transform.localScale.x, gameObject.transform.localScale.y);
             ani.Play("StartJump");
             rb.AddForce(dir, ForceMode2D.Impulse);
             int add = Random.Range(0, 1);
