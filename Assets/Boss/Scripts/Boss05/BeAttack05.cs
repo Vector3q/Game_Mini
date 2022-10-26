@@ -7,6 +7,7 @@ public class BeAttack05 : Action
 {
     private Animator ani;
     private SpriteRenderer mt;
+    public Material[] mtls;
 
 
     public override void OnAwake()
@@ -26,6 +27,7 @@ public class BeAttack05 : Action
         StartCoroutine(recover());
         if (Boss05State.HP==0)
         {
+            mt.sharedMaterial = mtls[1];
             ani.Play("Rat_Death");
             return TaskStatus.Running;
         }
