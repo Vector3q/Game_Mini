@@ -6,16 +6,36 @@ using UnityEngine;
 public class BeAttack04 : Action
 {
     private Animator ani;
-    // Start is called before the first frame update
-    public override void OnStart()
-    {
-        ani = gameObject.GetComponentInChildren<Animator>();
-        base.OnStart();
-    }
+    private SpriteRenderer mt;
 
+
+    public override void OnAwake()
+    {
+        mt = gameObject.GetComponentInChildren<SpriteRenderer>();
+        base.OnAwake();
+    }
     public override TaskStatus OnUpdate()
     {
-        ani.Play("Golem_Hit_A");
+        if (FaceToU.HP == 0)
+        {
+            return TaskStatus.Running;
+        }
+        FaceToU.HP -= 1;
+        StartCoroutine(recover());
+        if (FaceToU.HP == 0)
+        {
+            return TaskStatus.Running;
+        }
         return TaskStatus.Success;
+    }
+
+
+    IEnumerator recover()
+    {
+        mt.material.SetColor("_Color", Color.red);
+        mt.material.SetInt("_BeAttack", 1);
+        yield return new WaitForSeconds(0.1f);
+        mt.material.SetInt("_BeAttack", 0);
+        yield break;
     }
 }
