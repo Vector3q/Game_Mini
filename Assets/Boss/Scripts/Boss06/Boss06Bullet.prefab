@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7250476860490061532}
   - component: {fileID: 7250476860490061533}
   - component: {fileID: 113664628051743768}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Boss06Bullet
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,11 +59,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -4.1062584, y: 4.9754133}
-      - {x: -7.3842773, y: 3.6869204}
+    - - {x: -3.9041004, y: 3.1559925}
+      - {x: -7.4853535, y: 1.5642629}
       - {x: -10.758036, y: -6.407979}
       - {x: 8.503014, y: -6.4627457}
-      - {x: -0.5726414, y: -1.8071997}
+      - {x: -0.31994438, y: -3.2223046}
 --- !u!114 &7250476860490061533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 7250476860633217483}
   - component: {fileID: 7250476860633217485}
   - component: {fileID: 7250476860633217484}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,8 +123,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7250476860633217482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.67, y: 4.117, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: -12.045, y: 2.992, z: 0}
+  m_LocalScale: {x: 5.2585, y: 4.166605, z: 5}
   m_Children: []
   m_Father: {fileID: 7250476860490061531}
   m_RootOrder: 0
