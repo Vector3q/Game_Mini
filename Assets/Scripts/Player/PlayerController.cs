@@ -219,7 +219,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat(animatorVelocitySpeed, controllerRigibody.velocity.y);
         animator.SetInteger(animatorMovementSpeed, (int)controllerRigibody.velocity.x);
 
-        if (isBeAttacked)
+        if (isBeAttacked&&PlayerHealth>0)
         {
             controllerRigibody.AddForce(new Vector2(-x * 8, 0), ForceMode2D.Impulse);
             velocity = controllerRigibody.velocity;
