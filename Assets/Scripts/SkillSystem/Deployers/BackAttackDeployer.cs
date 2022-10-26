@@ -21,7 +21,7 @@ namespace Game.Skill
         private IEnumerator wait()
         {
             yield return new WaitForSeconds(0.5f);
-            SkillData.owner.transform.position = new Vector3(boss.transform.position.x + boss.transform.localScale.x/2 + 2, SkillData.owner.transform.position.y, SkillData.owner.transform.position.z);
+            SkillData.owner.transform.position = new Vector3(boss.transform.position.x + boss.transform.localScale.x/2 + 4, SkillData.owner.transform.position.y, SkillData.owner.transform.position.z);
             Debug.Log("new" + new Vector3(boss.transform.position.x + boss.transform.localScale.x, SkillData.owner.transform.position.y, SkillData.owner.transform.position.z));
         }
     }
