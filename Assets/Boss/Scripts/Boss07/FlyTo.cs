@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class FlyTo : Action
 {
-    public Vector3 target;
     public GameObject Bullet;
     private Animator ani;
     public float fireSpeed;
@@ -30,9 +29,12 @@ public class FlyTo : Action
             c_time = Time.time;
         }
 
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, target, speed * Time.deltaTime);
-        if(Mathf.Abs(gameObject.transform.position.x-target.x)<=0.1f)
-             return TaskStatus.Success;
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, Boss07State.target[Boss07State.index], speed * Time.deltaTime);
+        if(Mathf.Abs(gameObject.transform.position.x-Boss07State.target[Boss07State.index].x)<=0.1f)
+        {
+            Boss07State.index = (Boss07State.index + 3) % 2;
+            return TaskStatus.Success;
+        }
         return TaskStatus.Running;
     }
 

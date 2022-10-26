@@ -6,15 +6,16 @@ using UnityEngine;
 public class TurnAround : Action
 {
     private Animator ani;
-    public override void OnStart()
+    private static Transform ori;
+    public override void OnAwake()
     {
+        ori = gameObject.transform;
         ani = gameObject.GetComponentInChildren<Animator>();
-        base.OnStart();
     }
     public override TaskStatus OnUpdate()
     {
-        ani.Play("strike");
-        gameObject.transform.localScale = new Vector3(-gameObject.transform.localScale.x,gameObject.transform.localScale.y);
+        gameObject.transform.localScale = new Vector3(-ori.localScale.x, ori.localScale.y);
+        
         return TaskStatus.Success;
     }
 }
