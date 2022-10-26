@@ -25,6 +25,7 @@ public class BeAttack02 : Action
         StartCoroutine(recover());
         if(enemyState.HP == 0)
         {
+            GameEvents.current.BossDie();
             return TaskStatus.Running;
         }
         return TaskStatus.Success;

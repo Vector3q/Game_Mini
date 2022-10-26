@@ -24,6 +24,7 @@ public class BeAttack07 : Action
         StartCoroutine(recover());
         if (Boss07State.HP == 0)
         {
+            GameEvents.current.BossDie();
             return TaskStatus.Running;
         }
         return TaskStatus.Success;

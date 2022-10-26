@@ -15,6 +15,11 @@ public class Corpse : MonoBehaviour
         if(collision.name == "Player" && !startFight)
         {
             Dialog.SetActive(true);
+            if (Input.GetKey(KeyCode.J))
+            {
+                InfoUI.SetActive(true);
+                startFight = true;
+            }
         }
     }
 
@@ -22,7 +27,7 @@ public class Corpse : MonoBehaviour
     {
         if (collision.name == "Player" && !startFight)
         {
-            if(Input.GetKeyDown(KeyCode.J)){
+            if(Input.GetKey(KeyCode.J)){
                 InfoUI.SetActive(true);
                 startFight = true;
             }
