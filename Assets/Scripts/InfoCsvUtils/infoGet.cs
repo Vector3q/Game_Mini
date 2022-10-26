@@ -27,8 +27,6 @@ public class infoGet : MonoBehaviour
         lyrics = CSVUtils.ParseCSV("lyrics", 1);
 
         BossSeqInit();
-
-        Test();
     }
 
     void Start()
@@ -67,6 +65,10 @@ public class infoGet : MonoBehaviour
     public void battleStart()
     {
         Instantiate(bossObjs[bossRandomSeq[curStage]]);
+        if (++curStage >= bossObjs.Count)
+        {
+            curStage = 0;
+        }
     }
 
     /// <summary>
@@ -74,18 +76,14 @@ public class infoGet : MonoBehaviour
     /// </summary>
     public string getBossName()
     {
-        if (curStage == 0)
-        {
-            ++curStage;
-        }
-        string name = bosslist[bossRandomSeq[curStage-1]][2];
+        string name = bosslist[bossRandomSeq[curStage]][2];
         Debug.Log("该Boss的名字是：" + name);
         return name;
     }
 
     public void refreshBossImage()
     {
-        bossImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("BossPic/boss" + (bossRandomSeq[curStage - 1]+1));
+        bossImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("BossPic/boss" + (bossRandomSeq[curStage]+1));
     }
 
     /// <summary>
@@ -97,10 +95,6 @@ public class infoGet : MonoBehaviour
         //Debug.Log("curStage"+curStage);
 
         List<string> bossInfo = getOneBossInfo(curStage);
-        if(++curStage >= bossObjs.Count)
-        {
-            curStage = 0;
-        }
 
         return bossInfo;
     }
@@ -184,7 +178,6 @@ public class infoGet : MonoBehaviour
     #region Debug
     public void Test()
     {
-        curStage = 0;
         if (DebugSingeBoss)
         {
             for (int i = 0; i < bossObjs.Count; ++i)

@@ -34,7 +34,7 @@ public class text : MonoBehaviour
                 if (index >= str.Length)
                 {
                     ison = false;
-                    Invoke("Scenechange", 1);
+                    //Invoke("Scenechange", 1);
                     return;
                 }
                 str1 = str1 + str[index].ToString();
