@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public bool bossStart = false;
     public infoGet info;
+    public Corpse corp;
 
     public GameObject getinfo;
     public GameObject getskill;
@@ -86,6 +87,7 @@ public class UIManager : MonoBehaviour
     public void backButton()
     {
         getinfo.SetActive(false);
+        corp.startFight = false;
     }
 
     public void skillButton()

@@ -19,6 +19,7 @@ public class UIDebug : MonoBehaviour
         inf.DebugWhichBoss = 0;
         inf.Test();
         uiM.Test();
+        debugPanel.SetActive(false);
     }
 
     public void DebugBoss2()
@@ -27,6 +28,7 @@ public class UIDebug : MonoBehaviour
         inf.DebugWhichBoss = 1;
         inf.Test();
         uiM.Test();
+        debugPanel.SetActive(false);
     }
 
     public void DebugBoss3()
@@ -35,6 +37,7 @@ public class UIDebug : MonoBehaviour
         inf.DebugWhichBoss = 2;
         inf.Test();
         uiM.Test();
+        debugPanel.SetActive(false);
     }
 
     public void DebugBoss4()
@@ -43,6 +46,7 @@ public class UIDebug : MonoBehaviour
         inf.DebugWhichBoss = 3;
         inf.Test();
         uiM.Test();
+        debugPanel.SetActive(false);
     }
 
     public void DebugBoss5()
@@ -51,6 +55,7 @@ public class UIDebug : MonoBehaviour
         inf.DebugWhichBoss = 4;
         inf.Test();
         uiM.Test();
+        debugPanel.SetActive(false);
     }
 
     public void DebugBoss6()
@@ -59,6 +64,7 @@ public class UIDebug : MonoBehaviour
         inf.DebugWhichBoss = 5;
         inf.Test();
         uiM.Test();
+        debugPanel.SetActive(false);
     }
 
     public void DebugBoss7()
@@ -67,6 +73,7 @@ public class UIDebug : MonoBehaviour
         inf.DebugWhichBoss = 6;
         inf.Test();
         uiM.Test();
+        debugPanel.SetActive(false);
     }
 
     public void DebugOrder()
@@ -74,5 +81,6 @@ public class UIDebug : MonoBehaviour
         inf.DebugBossInorder = true;
         inf.Test();
         uiM.Test();
+        debugPanel.SetActive(false);
     }
 }

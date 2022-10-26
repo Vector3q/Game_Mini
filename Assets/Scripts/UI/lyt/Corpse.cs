@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Corpse : MonoBehaviour
 {
-    bool startFight = false;
+    public bool startFight = false;
 
     public GameObject InfoUI;
 

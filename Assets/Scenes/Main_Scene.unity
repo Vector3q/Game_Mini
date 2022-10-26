@@ -4961,7 +4961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 298, y: 525}
+  m_AnchoredPosition: {x: 485, y: 526}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &862568458
@@ -7737,6 +7737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b931185685a4433c9392e2dd23aa318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startFight: 0
   InfoUI: {fileID: 152947557}
   Dialog: {fileID: 533396096}
 --- !u!61 &1365902073
@@ -10324,6 +10325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossStart: 0
   info: {fileID: 2009845534}
+  corp: {fileID: 1365902072}
   getinfo: {fileID: 152947557}
   getskill: {fileID: 165515048}
   load: {fileID: 1791956113}
@@ -11759,7 +11761,7 @@ MonoBehaviour:
   - {fileID: 8820365163459389983, guid: b361ed880b2fbcf4695c31d55fad32c3, type: 3}
   bossImage: {fileID: 625057752}
   DebugSingeBoss: 0
-  DebugWhichBoss: 0
+  DebugWhichBoss: 6
   DebugBossInorder: 0
 --- !u!114 &2009845535
 MonoBehaviour:
