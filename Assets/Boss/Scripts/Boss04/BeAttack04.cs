@@ -7,6 +7,7 @@ public class BeAttack04 : Action
 {
     private Animator ani;
     private SpriteRenderer mt;
+    public Material[] mtls;
 
 
     public override void OnAwake()
@@ -24,6 +25,8 @@ public class BeAttack04 : Action
         StartCoroutine(recover());
         if (FaceToU.HP == 0)
         {
+            mt.sharedMaterial = mtls[1];
+            ani.Play("dead");
             return TaskStatus.Running;
         }
         return TaskStatus.Success;

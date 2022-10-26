@@ -7,6 +7,7 @@ public class BeAttack02 : Action
 {
     private Animator ani;
     private SpriteRenderer mt;
+    public Material[] mtls;
 
 
     public override void OnAwake()
@@ -25,6 +26,8 @@ public class BeAttack02 : Action
         StartCoroutine(recover());
         if(enemyState.HP == 0)
         {
+            mt.sharedMaterial = mtls[1];
+            ani.Play("dead");
             GameEvents.current.BossDie();
             return TaskStatus.Running;
         }
