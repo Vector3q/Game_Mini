@@ -29,6 +29,7 @@ public class BeAttack05 : Action
         {
             mt.sharedMaterial = mtls[1];
             ani.Play("Rat_Death");
+            StartCoroutine(dead());
             return TaskStatus.Running;
         }
         return TaskStatus.Success;
@@ -42,5 +43,11 @@ public class BeAttack05 : Action
         yield break;
     }
 
+    IEnumerator dead()
+    {
+        yield return new WaitForSeconds(0.3f);
+        gameObject.SetActive(false);
+        yield break;
+    }
 
 }
