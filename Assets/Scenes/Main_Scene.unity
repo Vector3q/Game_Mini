@@ -11629,7 +11629,7 @@ MonoBehaviour:
   - skillID: 1
     name: "\u80CC\u523A"
     description: 
-    coolTime: 1.2
+    coolTime: 1
     coolRemain: 0
     attackDistance: 0
     attackTargetTags:
@@ -11676,7 +11676,7 @@ MonoBehaviour:
       3. \u653B\u51FB\u8303\u56F4\u76F8\u5F53\u4E8E\u5DE6\u53F3\u540C\u65F6\u91CA\u653E\u65A9\u51FB\u7684\u8303\u56F4
       4. \u8303\u56F4\u5185\u591A\u4E2A\u654C\u4EBA\u540C\u65F6\u88AB\u4F24\u5BB3\uFF0C\u51FB\u4E2D\u540C\u65F6\u88AB\u5F39\u5F00
       5. \u5BF9\u62A4\u7532\u65E0\u6548\uFF08\u88AB\u683C\u6321\uFF09  "
-    coolTime: 0.8
+    coolTime: 0.5
     coolRemain: 0
     attackDistance: 0
     attackTargetTags:
@@ -11744,7 +11744,7 @@ MonoBehaviour:
   - skillID: 6
     name: "\u4E0B\u780D"
     description: "5. \u4ECE\u7A7A\u4E2D\u5411\u4E0B\u65A9\u51FB "
-    coolTime: 1.8
+    coolTime: 1
     coolRemain: 0
     attackDistance: 0
     attackTargetTags:
@@ -11766,7 +11766,7 @@ MonoBehaviour:
   - skillID: 7
     name: "\u5C04\u65E5"
     description: 
-    coolTime: 0.8
+    coolTime: 0.6
     coolRemain: 0
     attackDistance: 0
     attackTargetTags:
