@@ -85,7 +85,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: PlayAttack
+    functionName: PlaySe
     data: "6\u6C14\u6CE2"
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
