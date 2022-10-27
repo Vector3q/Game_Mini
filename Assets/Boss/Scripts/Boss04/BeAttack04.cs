@@ -27,6 +27,7 @@ public class BeAttack04 : Action
         {
             mt.sharedMaterial = mtls[1];
             ani.Play("dead");
+            StartCoroutine(dead());
             return TaskStatus.Running;
         }
         return TaskStatus.Success;
@@ -39,6 +40,12 @@ public class BeAttack04 : Action
         mt.material.SetInt("_BeAttack", 1);
         yield return new WaitForSeconds(0.1f);
         mt.material.SetInt("_BeAttack", 0);
+        yield break;
+    }
+    IEnumerator dead()
+    {
+        yield return new WaitForSeconds(0.3f);
+        gameObject.SetActive(false);
         yield break;
     }
 }
