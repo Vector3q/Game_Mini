@@ -31,6 +31,6 @@ public class GameManager : MonoBehaviour
             _instance = this;
         }
 
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
     }
 }
