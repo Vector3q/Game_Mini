@@ -113,13 +113,14 @@ public class UIManager : MonoBehaviour
 
     public void restartButton()
     {
-        SceneManager.LoadScene("Main_Scene");
+        SceneManager.LoadScene("Start_Scene");
     }
 
     public void quitButton()
     {
         Application.Quit();
     }
+
     #endregion
 
     private string[] tooLongHandle(string info)

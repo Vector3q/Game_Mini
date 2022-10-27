@@ -17,4 +17,10 @@ public class UIStart : MonoBehaviour
     {
         SceneManager.LoadScene("Main_Scene");
     }
+
+    public void skip()
+    {
+        start.SetActive(true);
+        loadFirst.SetActive(false);
+    }
 }
