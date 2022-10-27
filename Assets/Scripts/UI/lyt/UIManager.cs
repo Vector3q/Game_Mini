@@ -113,7 +113,7 @@ public class UIManager : MonoBehaviour
 
     public void restartButton()
     {
-        SceneManager.LoadScene("Start_Scene");
+        SceneManager.LoadScene("Main_Scene");
     }
 
     public void quitButton()
