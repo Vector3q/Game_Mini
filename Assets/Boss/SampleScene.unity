@@ -856,7 +856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3518653828451949012, guid: bff545961ab666d46b37822a559f2258, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3518653828451949013, guid: bff545961ab666d46b37822a559f2258, type: 3}
       propertyPath: m_RootOrder
@@ -4145,6 +4145,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1067945750018724901, guid: 7b30ff938bdd45e4787c474678a4de26, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3889855083097357168, guid: 7b30ff938bdd45e4787c474678a4de26, type: 3}
       propertyPath: m_Name
       value: Boss06
