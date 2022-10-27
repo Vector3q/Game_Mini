@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/CodeTest/zyp/StartScene.unity
     guid: 73d9cfb77e322804bab6322143a0de15
-  - enabled: 1
+  - enabled: 0
     path: Assets/CodeTest/zyp/Main Scene.unity
     guid: 71767987b5ad91c439530caeae24c6e7
   - enabled: 1
