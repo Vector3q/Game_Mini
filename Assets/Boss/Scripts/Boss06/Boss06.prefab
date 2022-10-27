@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1067945750018724902}
   - component: {fileID: 1067945750018724903}
   - component: {fileID: 8946249089339658285}
-  - component: {fileID: 8957007306700263907}
+  - component: {fileID: 3181218522042652330}
   m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
@@ -116,9 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527a2e92d37bcce4ba449815f5976ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atomBsource: {fileID: 8957007306700263907}
+  atomBsource: {fileID: 3181218522042652330}
   a: 0
---- !u!114 &8957007306700263907
+--- !u!114 &3181218522042652330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,7 +149,7 @@ MonoBehaviour:
     - 0
     - 0
     - 0
-  _cueName: 6land
+  _cueName: "6\u6C14\u6CE2"
   _cueSheet: BOSS
 --- !u!1 &6609910412448686063
 GameObject:

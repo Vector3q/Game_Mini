@@ -1071,7 +1071,7 @@ MonoBehaviour:
   _use3dPositioning: 1
   _freezeOrientation: 0
   _loop: 0
-  _volume: 1
+  _volume: 0.492
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
@@ -10124,7 +10124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initializesFileSystem: 1
   fileSystemConfig:
-    numberOfLoaders: 16
+    numberOfLoaders: 50
     numberOfBinders: 8
     numberOfInstallers: 2
     installBufferSize: 4096
@@ -10136,7 +10136,7 @@ MonoBehaviour:
   initializesAtom: 1
   atomConfig:
     acfFileName: 
-    maxVirtualVoices: 34
+    maxVirtualVoices: 66
     maxVoiceLimitGroups: 32
     maxCategories: 32
     maxAisacs: 8
@@ -10145,11 +10145,11 @@ MonoBehaviour:
     maxBeatSyncCallbacksPerFrame: 1
     maxCueLinkCallbacksPerFrame: 1
     standardVoicePoolConfig:
-      memoryVoices: 16
-      streamingVoices: 8
+      memoryVoices: 24
+      streamingVoices: 16
     hcaMxVoicePoolConfig:
-      memoryVoices: 5
-      streamingVoices: 5
+      memoryVoices: 16
+      streamingVoices: 10
     outputSamplingRate: 0
     usesInGamePreview: 0
     inGamePreviewMode: 0
@@ -10206,7 +10206,7 @@ MonoBehaviour:
       voices: 16
   initializesMana: 1
   manaConfig:
-    numberOfDecoders: 8
+    numberOfDecoders: 16
     numberOfMaxEntries: 4
     pcH264PlaybackConfig:
       useH264Playback: 1

@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 3518653828957144674}
   - component: {fileID: 3518653828957144675}
   - component: {fileID: 6017856498893489014}
-  - component: {fileID: 1783502545070453036}
+  - component: {fileID: 3909618937394240888}
   m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
@@ -685,9 +685,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527a2e92d37bcce4ba449815f5976ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atomBsource: {fileID: 1783502545070453036}
+  atomBsource: {fileID: 3909618937394240888}
   a: 0
---- !u!114 &1783502545070453036
+--- !u!114 &3909618937394240888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -705,7 +705,7 @@ MonoBehaviour:
   _use3dPositioning: 1
   _freezeOrientation: 0
   _loop: 0
-  _volume: 0.681
+  _volume: 1
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1

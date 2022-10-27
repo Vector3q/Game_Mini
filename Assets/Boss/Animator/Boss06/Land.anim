@@ -71,7 +71,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: PlayAttack
-    data: 6land
+    data: "6\u6C14\u6CE2"
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

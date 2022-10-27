@@ -74,6 +74,8 @@ GameObject:
   - component: {fileID: 5875282084347606993}
   - component: {fileID: 5875282084347606992}
   - component: {fileID: 5783582803866272193}
+  - component: {fileID: 7412762584483969684}
+  - component: {fileID: 3019801782094332690}
   m_Layer: 0
   m_Name: Skill.boom
   m_TagString: Weapon
@@ -180,6 +182,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b92ec3aa7a80a64192513c6d23cab52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7412762584483969684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5875282084347606995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 527a2e92d37bcce4ba449815f5976ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atomBsource: {fileID: 3019801782094332690}
+  a: 0
+--- !u!114 &3019801782094332690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5875282084347606995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _freezeOrientation: 0
+  _loop: 0
+  _volume: 0.681
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+  _use3dRandomization: 0
+  _randomPositionListMaxLength: 0
+  randomize3dConfig:
+    followsOriginalSource: 0
+    calculationType: 0
+    calculationParameters:
+    - 0
+    - 0
+    - 0
+  _cueName: "\u70B8\u5F39"
+  _cueSheet: "\u6280\u80FD"
 --- !u!1 &6016042638250717552
 GameObject:
   m_ObjectHideFlags: 0
