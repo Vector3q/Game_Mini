@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }
 
-    public static int skillID = 0;
+    public static int skillID = 8;
 
     public Game.Skill.SkillData[] SkillPool;
 

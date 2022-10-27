@@ -39,10 +39,12 @@ public class SkillChoose : MonoBehaviour
 
     public void SelectSkill()
     {
-        player.GetComponent<CharacterSkillManager>().skills[0] = gameObject.GetComponent<GameManager>().SkillPool[GameManager.skillID - 1].Clone() as SkillData;
-        player.GetComponent<CharacterSkillManager>().InitSkill(player.GetComponent<CharacterSkillManager>().skills[0]);
-        //player.GetComponent<CharacterSkillManager>().skills[0].prefabName = gameObject.GetComponent<GameManager>().SkillPool[GameManager.skillID - 1].prefabName;
-        //player.GetComponent<CharacterSkillManager>().skills[0].animationName = gameObject.GetComponent<GameManager>().SkillPool[GameManager.skillID - 1].animationName;
-        skillText.text = player.GetComponent<CharacterSkillManager>().skills[0].name;
+        if(GameManager.skillID != 8)
+        {
+            player.GetComponent<CharacterSkillManager>().skills[0] = gameObject.GetComponent<GameManager>().SkillPool[GameManager.skillID - 1].Clone() as SkillData;
+            player.GetComponent<CharacterSkillManager>().InitSkill(player.GetComponent<CharacterSkillManager>().skills[0]);
+            skillText.text = player.GetComponent<CharacterSkillManager>().skills[0].name;
+        }
+
     }
 }

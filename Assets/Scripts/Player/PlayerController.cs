@@ -462,15 +462,15 @@ public class PlayerController : MonoBehaviour
     /// <param name="context"></param>
     private void Skill_2_started(InputAction.CallbackContext context)
     {
-        if (canMove)
-        {
-            Game.Skill.CharacterSkillManager manager = GetComponent<Game.Skill.CharacterSkillManager>();
-            if (manager.skills[1].isPassive)
-                return;
-            Game.Skill.SkillData data = manager.PrepareSkill(manager.skills[1].skillID);
-            if (data != null)
-                manager.GenerateSkill(data);
-        }
+        //if (canMove)
+        //{
+        //    Game.Skill.CharacterSkillManager manager = GetComponent<Game.Skill.CharacterSkillManager>();
+        //    if (manager.skills[1].isPassive)
+        //        return;
+        //    Game.Skill.SkillData data = manager.PrepareSkill(manager.skills[1].skillID);
+        //    if (data != null)
+        //        manager.GenerateSkill(data);
+        //}
     }
 
     private void Skill_2_performed(InputAction.CallbackContext context)

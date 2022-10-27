@@ -8254,8 +8254,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.data[0].name
+      value: "\u70B8\u5F39"
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].name
       value: "\u70B8\u5F39"
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.data[0].skillID
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].skillID
@@ -8263,18 +8275,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[0].coolTime
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].coolTime
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.data[0].prefabName
+      value: Skill.boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].prefabName
       value: Skill.boom
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.data[0].description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
       propertyPath: skills.Array.data[1].description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
+      propertyPath: skills.Array.data[0].animationName
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 273146051805335489, guid: 3614d7dda8ad8214785038dd1ae8961c, type: 3}
@@ -11728,10 +11752,7 @@ MonoBehaviour:
     selectorType: 0
   - skillID: 3
     name: "\u87BA\u65CB\u65A9"
-    description: "1. \u84C4\u529B _2s_ \u5185\u4E0D\u80FD\u88AB\u51FB\u4E2D 2. \u95EA\u907F\u81F3\u7A7A\u4E2D\u5219\u84C4\u529B\u4E2D\u65AD\uFF0C\u8DF3\u8DC3\u4E0D\u4F1A
-      3. \u653B\u51FB\u8303\u56F4\u76F8\u5F53\u4E8E\u5DE6\u53F3\u540C\u65F6\u91CA\u653E\u65A9\u51FB\u7684\u8303\u56F4
-      4. \u8303\u56F4\u5185\u591A\u4E2A\u654C\u4EBA\u540C\u65F6\u88AB\u4F24\u5BB3\uFF0C\u51FB\u4E2D\u540C\u65F6\u88AB\u5F39\u5F00
-      5. \u5BF9\u62A4\u7532\u65E0\u6548\uFF08\u88AB\u683C\u6321\uFF09  "
+    description: 
     coolTime: 0.5
     coolRemain: 0
     attackDistance: 0
@@ -11752,7 +11773,7 @@ MonoBehaviour:
     hitFxPrefab: {fileID: 0}
     selectorType: 0
   - skillID: 4
-    name: "\u7A79\u9876\u4E4B\u4E0B"
+    name: "\u7A79\u9876"
     description: 
     coolTime: 3
     coolRemain: 0
@@ -11774,10 +11795,8 @@ MonoBehaviour:
     hitFxPrefab: {fileID: 0}
     selectorType: 0
   - skillID: 5
-    name: "\u98DE"
-    description: "1. \u8DF3\u8D77\u540E\u5728\u7A7A\u4E2D\u6309\u4F4F\u6280\u80FD\u952E\uFF0C\u6709
-      _2s_ \u60AC\u6D6E\u6548\u679C\uFF08\u4E0B\u843D\u51CF\u6162\uFF09 2. \u677E\u624B\u540E\u6B63\u5E38\u4E0B\u843D
-      3. \u8DF3\u8DC3\u9AD8\u5EA6\u4E0D\u53D8  4. \u8DF3\u8DC3\u81F3\u6BD4\u5E73\u5E38\u66F4\u9AD8\u7684\u9AD8\u5EA6\uFF08\u4F9D\u7136\u65E0\u6CD5\u591F\u5230B007\uFF09 "
+    name: "\u7FBD\u843D"
+    description: 
     coolTime: 0
     coolRemain: 0
     attackDistance: 0
@@ -11798,8 +11817,8 @@ MonoBehaviour:
     hitFxPrefab: {fileID: 0}
     selectorType: 0
   - skillID: 6
-    name: "\u4E0B\u780D"
-    description: "5. \u4ECE\u7A7A\u4E2D\u5411\u4E0B\u65A9\u51FB "
+    name: "\u843D\u5730\u65A9"
+    description: 
     coolTime: 1
     coolRemain: 0
     attackDistance: 0
